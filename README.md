@@ -207,16 +207,20 @@ Desenvolvido com abordagem **Desktop-First** e breakpoint estratégico:
 </details>
 
 ---
-### 🔧 **Instalação**
+### 🔧 **Instalação e Links** 
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/challenge-front-sprint1.git
+git clone https://github.com/FIAP-Cod3X/Challenge_Front_Sprint1.git
 
 # Navegue para o diretório
 cd challenge-front-sprint1
 ```
 ### 💻 **Para acessar a versão online:**
+
+Visite nossa organização Cod3X:
+
+[Cod3X](https://github.com/FIAP-Cod3X)
 
 Ou, se preferir, acesse o site que está hospedado diretamente no GitHub Pages através do link abaixo:
 
