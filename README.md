@@ -224,7 +224,7 @@ Visite nossa organização Cod3X:
 
 Ou, se preferir, acesse o site que está hospedado diretamente no GitHub Pages através do link abaixo:
 
-[Clique aqui para visitar nosso site hospedado](https://pabloedinha.github.io/Challenge_Front_Sprint1/index.html)
+[Clique aqui para visitar nosso site hospedado](https://fiap-cod3x.github.io/Challenge_Front_Sprint1/index.html)
 
 ---
 
