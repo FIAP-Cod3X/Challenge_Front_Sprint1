@@ -1,65 +1,75 @@
-/* =========================
-   DASHBOARD - ESTILOS ESPECÍFICOS
-   ========================= */
+/* ========================================================================
+   DASHBOARD - STYLE SHEET
+   ======================================================================== */
 
-/* =========================
-   CONTAINER PRINCIPAL
-   ========================= */
+
+/* ========================================================================
+   1. CONTAINER PRINCIPAL
+   ======================================================================== */
+
+/* 1.1 Container do Dashboard */
 .container-dashboard {
+    min-height: 80vh;
     padding: 2rem;
-    background: #F4F4F9;
-    min-height: 80vh
+    background: #f4f4f9;
 }
 
-/* =========================
-   BOTÃO DE LOGOUT NO DASHBOARD
-   ========================= */
+
+/* 1.2 Botão de Logout */
 .botao-logout {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 25px;
     background: #e84a5f;
     color: #fff;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
 }
-/* =========================
-   CABEÇALHO DO DASHBOARD
-   ========================= */
+
+
+/* ========================================================================
+   2. CABEÇALHO DO DASHBOARD
+   ======================================================================== */
+
+/* 2.1 Container do Cabeçalho */
 .cabecalho-dashboard {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
     padding: 1.5rem 2rem;
-    background: #fff;
     border-radius: 15px;
+    background: #fff;
     box-shadow: 0 4px 15px #3a506b1a;
 }
 
+
+/* 2.2 Boas-vindas */
 .boas-vindas h1 {
+    margin-bottom: 0.5rem;
+    color: #3a506b;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 2rem;
-    color: #3A506B;
-    margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 .boas-vindas p {
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
-    opacity: 0.8;
     font-size: 1rem;
+    opacity: 0.8;
 }
 
+
+/* 2.3 Data e Hora */
 .data-hora {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font-family: 'Open Sans', Arial, sans-serif;
     color: #96ac3f;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 500;
 }
 
@@ -67,35 +77,44 @@
     font-size: 1.2rem;
 }
 
-/* Usuario logado no header */
+
+/* 2.4 Usuário Logado */
 .usuario-logado {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
     font-weight: 500;
 }
 
 .usuario-logado i {
-    font-size: 1.5rem;
     color: #96ac3f;
+    font-size: 1.5rem;
 }
 
-/* =========================
-   TÍTULOS DAS SEÇÕES
-   ========================= */
+
+
+/* ========================================================================
+   3. TÍTULOS DAS SEÇÕES
+   ======================================================================== */
+
+/* 3.1 Título de Seção */
 .titulo-secao-dashboard {
+    margin-bottom: 2rem;
+    color: #3a506b;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 1.6rem;
-    color: #3A506B;
-    margin-bottom: 2rem;
     font-weight: 600;
 }
 
-/* =========================
-   SEÇÃO DE ESTATÍSTICAS
-   ========================= */
+
+
+/* ========================================================================
+   4. SEÇÃO DE ESTATÍSTICAS
+   ======================================================================== */
+
+/* 4.1 Container de Estatísticas */
 .secao-estatisticas {
     margin-bottom: 3rem;
 }
@@ -106,113 +125,137 @@
     gap: 1.5rem;
 }
 
+
+/* 4.2 Cards de Estatística */
 .card-estatistica {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px #3a506b1a;
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    padding: 2rem;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 15px #3a506b1a;
     transition: all 0.3s;
 }
 
 .card-estatistica:hover {
-    transform: translateY(-3px);
     box-shadow: 0 8px 25px #3a506b26;
+    transform: translateY(-3px);
 }
 
+
+/* 4.3 Ícones das Estatísticas */
 .icone-estatistica {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.card-estatistica.atendimentos .icone-estatistica {
-    background: #96ac3f1a;
-}
-
-.card-estatistica.voluntarios .icone-estatistica {
-    background: #3a506b1a;
-}
-
-.card-estatistica.pendencias .icone-estatistica {
-    background: #e884071a;
-}
-
-.card-estatistica.sucesso .icone-estatistica {
-    background: #28a7451a;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
 }
 
 .icone-estatistica i {
     font-size: 1.5rem;
 }
 
-.card-estatistica.atendimentos .icone-estatistica i { color: #96ac3f; }
-.card-estatistica.voluntarios .icone-estatistica i { color: #3A506B; }
-.card-estatistica.pendencias .icone-estatistica i { color: #e88407; }
-.card-estatistica.sucesso .icone-estatistica i { color: #28a745; }
+.card-estatistica.atendimentos .icone-estatistica {
+    background: #96ac3f1a;
+}
 
+.card-estatistica.atendimentos .icone-estatistica i {
+    color: #96ac3f;
+}
+
+.card-estatistica.voluntarios .icone-estatistica {
+    background: #3a506b1a;
+}
+
+.card-estatistica.voluntarios .icone-estatistica i {
+    color: #3a506b;
+}
+
+.card-estatistica.pendencias .icone-estatistica {
+    background: #e884071a;
+}
+
+.card-estatistica.pendencias .icone-estatistica i {
+    color: #e88407;
+}
+
+.card-estatistica.sucesso .icone-estatistica {
+    background: #28a7451a;
+}
+
+.card-estatistica.sucesso .icone-estatistica i {
+    color: #28a745;
+}
+
+
+
+/* 4.4 Informações das Estatísticas */
 .info-estatistica h3 {
+    margin-bottom: 0.5rem;
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.9rem;
-    color: #3A506B;
-    margin-bottom: 0.5rem;
     font-weight: 500;
 }
 
 .info-estatistica .numero {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 2rem;
-    color: #3A506B;
-    font-weight: 700;
     display: block;
     margin-bottom: 0.3rem;
+    color: #3a506b;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .info-estatistica .periodo {
+    color: #999;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.8rem;
-    color: #999;
 }
 
-/* =========================
-   SEÇÃO DA TABELA
-   ========================= */
+
+
+/* ========================================================================
+   5. SEÇÃO DA TABELA
+   ======================================================================== */
+
+/* 5.1 Container da Tabela */
 .secao-tabela {
     margin-bottom: 3rem;
 }
 
 .container-tabela {
-    background: #fff;
     border-radius: 15px;
+    background: #fff;
     box-shadow: 0 4px 15px rgba(58, 80, 107, 0.1);
     overflow: hidden;
 }
 
+
+/* 5.2 Estrutura da Tabela */
 .tabela-dashboard {
     width: 100%;
     border-collapse: collapse;
 }
 
 .tabela-dashboard th {
-    background: #3A506B;
-    color: #fff;
     padding: 1rem;
-    text-align: left;
+    background: #3a506b;
+    color: #fff;
     font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 600;
     font-size: 0.9rem;
+    font-weight: 600;
+    text-align: left;
 }
 
 .tabela-dashboard td {
     padding: 1rem;
     border-bottom: 1px solid #f0f0f0;
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
 }
 
 .tabela-dashboard tbody tr:hover {
@@ -223,7 +266,9 @@
     border-bottom: none;
 }
 
-/* Status badges */
+
+
+/* 5.3 Status Badges */
 .status {
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
@@ -257,13 +302,15 @@
     color: #96ac3f;
 }
 
+
+/* 5.4 Botão de Ação */
 .botao-acao {
-    background: none;
+    padding: 0.5rem;
     border: none;
+    border-radius: 6px;
+    background: none;
     color: #96ac3f;
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 6px;
     transition: all 0.3s;
 }
 
@@ -272,9 +319,13 @@
     color: #7a8f35;
 }
 
-/* =========================
-   SEÇÃO DE AÇÕES RÁPIDAS
-   ========================= */
+
+
+/* ========================================================================
+   6. SEÇÃO DE AÇÕES RÁPIDAS
+   ======================================================================== */
+
+/* 6.1 Container de Ações Rápidas */
 .secao-acoes-rapidas {
     margin-bottom: 3rem;
 }
@@ -285,59 +336,67 @@
     gap: 1.5rem;
 }
 
+
+/* 6.2 Cards de Ação */
 .card-acao {
-    background: #fff;
     padding: 2rem;
     border-radius: 15px;
+    background: #fff;
     box-shadow: 0 4px 15px #3a506b1a;
     text-align: center;
     transition: all 0.3s;
 }
 
 .card-acao:hover {
-    transform: translateY(-3px);
     box-shadow: 0 8px 25px #3a506b26;
+    transform: translateY(-3px);
 }
 
+
+/* 6.3 Ícones das Ações */
 .icone-acao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 60px;
     height: 60px;
     margin: 0 auto 1.5rem;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: #96ac3f1a;
 }
 
 .icone-acao i {
-    font-size: 1.5rem;
     color: #96ac3f;
+    font-size: 1.5rem;
 }
 
+
+/* 6.4 Textos dos Cards */
 .card-acao h3 {
+    margin-bottom: 1rem;
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.1rem;
-    color: #3A506B;
-    margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .card-acao p {
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
-    opacity: 0.8;
     margin-bottom: 1.5rem;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.9rem;
     line-height: 1.5;
+    opacity: 0.8;
 }
 
+
+/* 6.5 Botão de Ação Rápida */
 .botao-acao-rapida {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
     background: #96ac3f;
     color: #fff;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: 500;
     cursor: pointer;
