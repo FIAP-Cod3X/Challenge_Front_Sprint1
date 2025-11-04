@@ -1,48 +1,57 @@
-/* =========================
-   PÁGINA LOGIN - ESTILOS ESPECÍFICOS
-   ========================= */
+/* ========================================================================
+   PÁGINA LOGIN - STYLE SHEET
+   ======================================================================== */
 
-/* =========================
-   CONTAINER PRINCIPAL
-   ========================= */
+
+/* ========================================================================
+   1. CONTAINER PRINCIPAL
+   ======================================================================== */
+
+/* 1.1 Container de Login */
 .container-login {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #F4F4F9 0%, #fff 50%, #F4F4F9 100%);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
     padding: 2rem;
-    position: relative;
+    background: linear-gradient(135deg, #f4f4f9 0%, #fff 50%, #f4f4f9 100%);
 }
 
-/* =========================
-   SEÇÃO LOGIN
-   ========================= */
+
+
+/* 1.2 Seção de Login */
 .secao-login {
-    width: 100%;
-    max-width: 650px;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 650px;
 }
 
 .formulario-login-wrapper {
-    background: #fff;
     border-radius: 24px;
+    background: #fff;
     box-shadow: 0 20px 60px #3a506b26;
     overflow: hidden;
 }
 
-/* =========================
-   CABEÇALHO DO LOGIN
-   ========================= */
+
+
+/* ========================================================================
+   2. CABEÇALHO DO LOGIN
+   ======================================================================== */
+
+/* 2.1 Container do Cabeçalho */
 .cabecalho-login {
-    background: linear-gradient(135deg, #3A506B, #96ac3f);
-    padding: 3rem 2rem 2rem;
-    text-align: center;
-    color: #F4F4F9;
     position: relative;
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(135deg, #3a506b, #96ac3f);
+    color: #f4f4f9;
+    text-align: center;
 }
 
+
+/* 2.2 Logo */
 .logo-login {
     margin-bottom: 1.5rem;
 }
@@ -53,51 +62,65 @@
     filter: brightness(0) invert(1);
 }
 
+
+
+/* 2.3 Ícone do Cabeçalho */
 .icone-login {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    background: #ffffff33;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: #ffffff33;
     animation: pulseIcon 2s ease-in-out infinite;
 }
 
 .icone-login i {
+    color: #f4f4f9;
     font-size: 2rem;
-    color: #F4F4F9;
 }
 
 @keyframes pulseIcon {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
+
+/* 2.4 Títulos do Cabeçalho */
 .titulo-login {
+    margin-bottom: 0.5rem;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 2rem;
-    margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 .subtitulo-login {
+    margin: 0;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 1rem;
-    opacity: 0.9;
-    margin: 0;
     line-height: 1.5;
+    opacity: 0.9;
 }
 
-/* =========================
-   FORMULÁRIO DE LOGIN
-   ========================= */
+
+
+/* ========================================================================
+   3. FORMULÁRIO DE LOGIN
+   ======================================================================== */
+
+/* 3.1 Container do Formulário */
 .formulario-login {
     padding: 3rem 2rem;
 }
 
-/* Grupos de campos */
+
+/* 3.2 Grupos de Campos */
 .grupo-campo-login {
     margin-bottom: 2rem;
 }
@@ -108,16 +131,18 @@
     gap: 0.8rem;
 }
 
-/* Labels dos campos */
+
+
+/* 3.3 Labels dos Campos */
 .label-campo-login {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #3A506B;
-    margin-bottom: 0.8rem;
 }
 
 .label-campo-login i {
@@ -125,25 +150,34 @@
     font-size: 1.1rem;
 }
 
-/* Campos de input */
+.label-checkbox-login {
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+
+
+/* 3.4 Campos de Input */
 .campo-input-login {
     width: 100%;
     padding: 1.2rem 1.5rem;
     border: 2px solid #e0e0e0;
     border-radius: 12px;
+    background: #fafafa;
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 1rem;
-    color: #3A506B;
-    background: #fafafa;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .campo-input-login:focus {
-    outline: none;
     border-color: #96ac3f;
     background: #fff;
     box-shadow: 0 0 0 3px #96ac3f1a;
+    outline: none;
     transform: translateY(-2px);
 }
 
@@ -151,7 +185,9 @@
     color: #999;
 }
 
-/* Container da senha com botão */
+
+
+/* 3.5 Container de Senha */
 .container-senha {
     position: relative;
 }
@@ -162,49 +198,52 @@
 
 .botao-mostrar-senha {
     position: absolute;
-    right: 1rem;
     top: 50%;
-    transform: translateY(-50%);
-    background: none;
+    right: 1rem;
+    padding: 0.5rem;
     border: none;
+    border-radius: 6px;
+    background: none;
     color: #999;
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 6px;
+    transform: translateY(-50%);
     transition: all 0.3s;
 }
 
 .botao-mostrar-senha:hover {
-    color: #96ac3f;
     background: #96ac3f1a;
+    color: #96ac3f;
 }
 
-/* Opções do login */
+
+
+/* 3.6 Opções do Login */
 .opcoes-login {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
-    gap: 1rem;
 }
 
-/* Checkbox customizado */
+
+/* 3.7 Checkbox Customizado */
 .campo-checkbox-login {
+    position: relative;
     width: 18px;
     height: 18px;
     border: 2px solid #e0e0e0;
     border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    appearance: none;
     background: #fafafa;
+    appearance: none;
+    cursor: pointer;
     transition: all 0.3s;
 }
 
 .campo-checkbox-login:checked {
-    background: #96ac3f;
     border-color: #96ac3f;
+    background: #96ac3f;
 }
 
 .campo-checkbox-login:checked::after {
@@ -212,26 +251,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     color: #fff;
     font-size: 12px;
     font-weight: bold;
+    transform: translate(-50%, -50%);
 }
 
-.label-checkbox-login {
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
 
-/* Link esqueci senha */
+/* 3.8 Link Esqueci Senha */
 .link-esqueci-senha {
-    font-family: 'Open Sans', Arial, sans-serif;
     color: #96ac3f;
-    text-decoration: none;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
+    text-decoration: none;
     transition: all 0.3s;
 }
 
@@ -240,99 +273,123 @@
     text-decoration: underline;
 }
 
-/* Botão principal de login */
+
+
+/* 3.9 Botão Principal de Login */
 .botao-login-principal {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     gap: 0.8rem;
+    margin-bottom: 2rem;
     padding: 1.2rem 2rem;
     border: none;
     border-radius: 12px;
-    font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #F4F4F9;
     background: linear-gradient(135deg, #96ac3f, #7a8f35);
+    color: #f4f4f9;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px #96ac3f4d;
-    margin-bottom: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .botao-login-principal:hover {
     background: linear-gradient(135deg, #7a8f35, #6b7d2f);
-    transform: translateY(-3px);
     box-shadow: 0 8px 25px #96ac3f66;
+    transform: translateY(-3px);
 }
 
 .botao-login-principal:active {
     transform: translateY(-1px);
 }
 
-/* Divisor */
+
+
+/* 3.10 Divisor */
 .divisor-login {
-    text-align: center;
-    margin: 2rem 0;
     position: relative;
+    margin: 2rem 0;
+    text-align: center;
 }
 
 .divisor-login::before {
     content: '';
     position: absolute;
     top: 50%;
-    left: 0;
     right: 0;
+    left: 0;
     height: 1px;
     background: #e0e0e0;
 }
 
 .divisor-login span {
-    background: #fff;
-    padding: 0 1rem;
-    color: #999;
-    font-family: 'Open Sans', Arial, sans-serif;
     position: relative;
     z-index: 1;
+    padding: 0 1rem;
+    background: #fff;
+    color: #999;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
-/* Botão de cadastro */
+
+
+/* 3.11 Botão de Cadastro */
 .botao-cadastro-novo {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     gap: 0.8rem;
     padding: 1.2rem 2rem;
-    border: 2px solid #3A506B;
+    border: 2px solid #3a506b;
     border-radius: 12px;
-    font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #3A506B;
     background: transparent;
+    color: #3a506b;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .botao-cadastro-novo:hover {
-    background: #3A506B;
-    color: #F4F4F9;
-    transform: translateY(-2px);
+    background: #3a506b;
+    color: #f4f4f9;
     box-shadow: 0 4px 15px #3a506b4d;
+    transform: translateY(-2px);
 }
 
-/* Informações de segurança */
+
+
+/* 3.12 Texto de Ajuda */
+.texto-ajuda-login {
+    display: block;
+    margin-top: 0.4rem;
+    color: #999;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.8rem;
+}
+
+
+/* ========================================================================
+   4. INFORMAÇÕES DE SEGURANÇA
+   ======================================================================== */
+
+/* 4.1 Container de Segurança */
 .info-seguranca {
     display: flex;
     justify-content: space-around;
     padding: 2rem;
-    background: #f8f9fa;
     border-top: 1px solid #e0e0e0;
+    background: #f8f9fa;
 }
 
+
+/* 4.2 Itens de Segurança */
 .item-seguranca {
     display: flex;
     flex-direction: column;
@@ -347,40 +404,39 @@
 }
 
 .item-seguranca span {
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.8rem;
-    color: #3A506B;
     font-weight: 500;
 }
 
-/* Link de volta */
+
+
+/* ========================================================================
+   5. LINK DE VOLTA
+   ======================================================================== */
+
+/* 5.1 Container do Link */
 .link-voltar {
-    text-align: center;
     padding: 1.5rem 2rem;
+    text-align: center;
 }
 
+
+/* 5.2 Botão Voltar */
 .botao-voltar-home {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Open Sans', Arial, sans-serif;
     color: #96ac3f;
-    text-decoration: none;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
+    text-decoration: none;
     transition: all 0.3s;
 }
 
 .botao-voltar-home:hover {
     color: #7a8f35;
     transform: translateX(-3px);
-}
-
-/* Texto de ajuda */
-.texto-ajuda-login {
-    font-size: 0.8rem;
-    color: #999;
-    margin-top: 0.4rem;
-    display: block;
-    font-family: 'Open Sans', Arial, sans-serif;
 }
