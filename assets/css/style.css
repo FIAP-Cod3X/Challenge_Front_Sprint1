@@ -78,19 +78,6 @@ body {
 }
 
 
-/* 2.4.1 Classe para Ocultar Visualmente (Acessibilidade) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    border: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-}
-
 
 /* 2.5 Links de Navegação */
 .links-navegacao {
