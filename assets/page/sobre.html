@@ -5,6 +5,9 @@
     <!-- Meta tags obrigatórias para responsividade e codificação -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça as funcionalidades, tecnologias e roadmap do projeto Cod3X - uma plataforma de gestão de atendimentos para a Turma do Bem com recursos avançados e acessibilidade inclusiva.">
+    <meta name="keywords" content="Cod3X, funcionalidades, tecnologias, roadmap, gestão de atendimentos, acessibilidade, HTML5, CSS3, JavaScript, Angular, MySQL">
+    <meta name="author" content="FIAP-Cod3X">
     <title>Sobre o Projeto - Cod3X</title>
 
     <!-- Google Fonts: Carregamento otimizado com preconnect para melhor performance -->
@@ -29,15 +32,15 @@
     <!-- ========================================
          CABEÇALHO PRINCIPAL DA APLICAÇÃO
          ======================================== -->
-    <header class="cabecalho-principal">
-        <nav class="secao-navegacao" role="navigation" aria-label="Navegação principal">
+    <header class="cabecalho-principal" role="banner">
+        <nav class="secao-navegacao menu-navegacao" aria-label="Navegação principal">
             <!-- Logo: Sempre linkado para a página inicial -->
-            <a href="../../index.html" class="link-logo">
+            <a href="../../index.html" class="link-logo" aria-label="Página inicial do Cod3X">
                 <img src="../img/logo.png" alt="Logo do projeto Cod3X" class="imagem-logo">
             </a>
 
             <!-- Menu de navegação: Lista não ordenada para melhor semântica -->
-            <ul role="menubar">
+            <ul role="menubar" aria-label="Menu principal">
                 <li role="none">
                     <a href="../../index.html" class="links-navegacao" role="menuitem">Início</a>
                 </li>
@@ -56,8 +59,9 @@
             </ul>
 
             <!-- Formulário de busca: Importante usar form para acessibilidade -->
-            <form class="barra-pesquisa" role="search">
-                <input type="search" placeholder="Pesquisar" aria-label="Campo de pesquisa">
+            <form class="barra-pesquisa" role="search" aria-label="Busca no site">
+                <label for="campo-busca-sobre" class="visually-hidden">Pesquisar no site</label>
+                <input type="search" id="campo-busca-sobre" placeholder="Pesquisar" aria-label="Campo de pesquisa">
                 <button type="submit" aria-label="Executar pesquisa">
                     <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 </button>
@@ -65,8 +69,8 @@
 
             <!-- Botões de autenticação: Separados em container próprio -->
             <div class="botoes-autenticacao">
-                <a href="./login-cadastro.html" class="botao-autenticacao botao-login">Login</a>
-                <a href="./login-cadastro.html" class="botao-autenticacao botao-cadastro">Cadastro</a>
+                <a href="./login-cadastro.html" class="botao-autenticacao botao-login" aria-label="Fazer login no sistema">Login</a>
+                <a href="./login-cadastro.html" class="botao-autenticacao botao-cadastro" aria-label="Criar nova conta">Cadastro</a>
             </div>
         </nav>
     </header>
@@ -74,7 +78,7 @@
     <!-- ========================================
          CONTEÚDO PRINCIPAL DA PÁGINA
          ======================================== -->
-    <main role="main">
+    <main id="conteudo-principal">
         <!-- ========================================
              SEÇÃO: FUNCIONALIDADES PRINCIPAIS
              ======================================== -->
@@ -88,146 +92,146 @@
                 <!-- Grid: Container responsivo para os cartões de funcionalidade -->
                 <div class="grid-funcionalidades" role="region" aria-label="Lista de funcionalidades">
                     <!-- Funcionalidade 1: Centralização de Atendimentos -->
-                    <article class="card-funcionalidade centralizacao">
+                    <article class="card-funcionalidade centralizacao" aria-labelledby="func-centralizacao">
                         <div class="icone-funcionalidade" aria-hidden="true">
                             <i class="fa-solid fa-inbox"></i>
                         </div>
-                        <h3>Centralização de Atendimentos</h3>
+                        <h3 id="func-centralizacao">Centralização de Atendimentos</h3>
                         <p>
                             Todos os contatos recebidos são convertidos em tickets/protocolos em uma única plataforma,
                             acabando com a perda de informações.
                         </p>
                         <!-- Exemplo visual: Demonstração da funcionalidade -->
-                        <div class="detalhe-visual" aria-label="Exemplo de ticket de atendimento">
+                        <figure class="detalhe-visual" aria-label="Exemplo de ticket de atendimento">
                             <div class="exemplo-ticket">
                                 <div class="cabecalho-ticket">
-                                    <span class="id-ticket">#001</span>
-                                    <span class="status-ticket aberto">Aberto</span>
+                                    <span class="id-ticket" aria-label="ID do ticket">#001</span>
+                                    <span class="status-ticket aberto" aria-label="Status: Aberto">Aberto</span>
                                 </div>
                                 <div class="conteudo-ticket">Solicitação de voluntariado</div>
                             </div>
-                        </div>
+                        </figure>
                     </article>
 
                     <!-- Funcionalidade 2: Roteamento Automático -->
-                    <article class="card-funcionalidade roteamento">
+                    <article class="card-funcionalidade roteamento" aria-labelledby="func-roteamento">
                         <div class="icone-funcionalidade" aria-hidden="true">
                             <i class="fa-solid fa-route"></i>
                         </div>
-                        <h3>Roteamento Automático</h3>
+                        <h3 id="func-roteamento">Roteamento Automático</h3>
                         <p>
                             O sistema analisa o assunto das mensagens e, com base em palavras-chave e uso de PLN para
                             identificar o contexto,
                             encaminha o atendimento para a área responsável.
                         </p>
                         <!-- Fluxo visual: Demonstração do processo de roteamento -->
-                        <div class="detalhe-visual" aria-label="Fluxo de roteamento automático">
+                        <figure class="detalhe-visual" aria-label="Fluxo de roteamento automático">
                             <div class="fluxo-roteamento">
-                                <div class="entrada-fluxo">📧 Email</div>
+                                <div class="entrada-fluxo" aria-label="Entrada via email">📧 Email</div>
                                 <div class="seta-fluxo" aria-hidden="true">➜</div>
-                                <div class="analise-fluxo">🔍 Análise</div>
+                                <div class="analise-fluxo" aria-label="Análise automática">🔍 Análise</div>
                                 <div class="seta-fluxo" aria-hidden="true">➜</div>
-                                <div class="destino-fluxo">👥 Equipe</div>
+                                <div class="destino-fluxo" aria-label="Direcionado à equipe">👥 Equipe</div>
                             </div>
-                        </div>
+                        </figure>
                     </article>
 
                     <!-- Funcionalidade 3: Acompanhamento de Status -->
-                    <article class="card-funcionalidade acompanhamento">
+                    <article class="card-funcionalidade acompanhamento" aria-labelledby="func-acompanhamento">
                         <div class="icone-funcionalidade" aria-hidden="true">
                             <i class="fa-solid fa-tasks"></i>
                         </div>
-                        <h3>Acompanhamento de Status</h3>
+                        <h3 id="func-acompanhamento">Acompanhamento de Status</h3>
                         <p>
                             Permite o acompanhamento do ciclo de vida de cada solicitação com status claros
                             e atualizáveis em tempo real.
                         </p>
                         <!-- Linha do tempo: Estados do ticket -->
-                        <div class="detalhe-visual" aria-label="Linha do tempo de status">
+                        <figure class="detalhe-visual" aria-label="Linha do tempo de status">
                             <div class="linha-status">
-                                <div class="status-item aberto">Aberto</div>
-                                <div class="status-item andamento">Em Andamento</div>
-                                <div class="status-item concluido">Concluído</div>
+                                <div class="status-item aberto" aria-label="Status: Aberto">Aberto</div>
+                                <div class="status-item andamento" aria-label="Status: Em Andamento">Em Andamento</div>
+                                <div class="status-item concluido" aria-label="Status: Concluído">Concluído</div>
                             </div>
-                        </div>
+                        </figure>
                     </article>
 
                     <!-- Funcionalidade 4: Relatórios Gerenciais -->
-                    <article class="card-funcionalidade relatorios">
+                    <article class="card-funcionalidade relatorios" aria-labelledby="func-relatorios">
                         <div class="icone-funcionalidade" aria-hidden="true">
                             <i class="fa-solid fa-chart-bar"></i>
                         </div>
-                        <h3>Relatórios Gerenciais</h3>
+                        <h3 id="func-relatorios">Relatórios Gerenciais</h3>
                         <p>
                             A plataforma gera relatórios estatísticos sobre o volume de atendimentos por status
                             e por área, fornecendo dados para decisões estratégicas.
                         </p>
                         <!-- Gráfico visual: Representação de dados -->
-                        <div class="detalhe-visual" aria-label="Exemplo de gráfico de relatórios">
-                            <div class="mini-grafico">
-                                <div class="barra-grafico" style="height: 60%;" aria-label="60% de dados"></div>
-                                <div class="barra-grafico" style="height: 80%;" aria-label="80% de dados"></div>
-                                <div class="barra-grafico" style="height: 40%;" aria-label="40% de dados"></div>
-                                <div class="barra-grafico" style="height: 90%;" aria-label="90% de dados"></div>
+                        <figure class="detalhe-visual" aria-label="Exemplo de gráfico de relatórios">
+                            <div class="mini-grafico" role="img" aria-label="Gráfico de barras mostrando volume de atendimentos">
+                                <div class="barra-grafico" style="height: 60%;" aria-label="Barra 1: 60%"></div>
+                                <div class="barra-grafico" style="height: 80%;" aria-label="Barra 2: 80%"></div>
+                                <div class="barra-grafico" style="height: 40%;" aria-label="Barra 3: 40%"></div>
+                                <div class="barra-grafico" style="height: 90%;" aria-label="Barra 4: 90%"></div>
                             </div>
-                        </div>
+                        </figure>
                     </article>
 
                     <!-- Funcionalidade 5: Integração Multi-canal -->
-                    <article class="card-funcionalidade integracao">
+                    <article class="card-funcionalidade integracao" aria-labelledby="func-integracao">
                         <div class="icone-funcionalidade" aria-hidden="true">
                             <i class="fa-solid fa-plug"></i>
                         </div>
-                        <h3>Integração Multi-canal</h3>
+                        <h3 id="func-integracao">Integração Multi-canal</h3>
                         <p>
                             Conectamos diretamente com as APIs do WhatsApp Business e Gmail, sincronizando
                             automaticamente todas as mensagens recebidas nos canais já utilizados pela ONG.
                         </p>
                         <!-- Canais de integração: Demonstração visual -->
-                        <div class="detalhe-visual" aria-label="Canais de integração disponíveis">
+                        <figure class="detalhe-visual" aria-label="Canais de integração disponíveis">
                             <div class="canais-integracao">
-                                <div class="canal-item whatsapp">
+                                <div class="canal-item whatsapp" aria-label="Integração WhatsApp">
                                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                                     <span>WhatsApp</span>
                                 </div>
-                                <div class="sincronizacao-icon" aria-hidden="true">
+                                <div class="sincronizacao-icon" aria-label="Sincronização automática">
                                     <i class="fa-solid fa-sync-alt"></i>
                                 </div>
-                                <div class="canal-item gmail">
+                                <div class="canal-item gmail" aria-label="Integração Gmail">
                                     <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                                     <span>Gmail</span>
                                 </div>
                             </div>
-                        </div>
+                        </figure>
                     </article>
 
                     <!-- Funcionalidade 6: Acessibilidade Inclusiva -->
-                    <article class="card-funcionalidade acessibilidade">
+                    <article class="card-funcionalidade acessibilidade" aria-labelledby="func-acessibilidade">
                         <div class="icone-funcionalidade" aria-hidden="true">
                             <i class="fa-solid fa-universal-access"></i>
                         </div>
-                        <h3>Acessibilidade Inclusiva</h3>
+                        <h3 id="func-acessibilidade">Acessibilidade Inclusiva</h3>
                         <p>
                             Interface totalmente acessível com recursos como aumento de fonte, alto contraste e
                             compatibilidade total com leitores de tela.
                         </p>
                         <!-- Recursos de acessibilidade: Lista visual -->
-                        <div class="detalhe-visual" aria-label="Recursos de acessibilidade disponíveis">
-                            <div class="recursos-acessibilidade">
-                                <div class="recurso-item">
+                        <figure class="detalhe-visual" aria-label="Recursos de acessibilidade disponíveis">
+                            <ul class="recursos-acessibilidade">
+                                <li class="recurso-item">
                                     <i class="fa-solid fa-text-height" aria-hidden="true"></i>
                                     <span>Fonte Ajustável</span>
-                                </div>
-                                <div class="recurso-item">
+                                </li>
+                                <li class="recurso-item">
                                     <i class="fa-solid fa-volume-up" aria-hidden="true"></i>
                                     <span>Leitor de Voz</span>
-                                </div>
-                                <div class="recurso-item">
+                                </li>
+                                <li class="recurso-item">
                                     <i class="fa-solid fa-adjust" aria-hidden="true"></i>
                                     <span>Alto Contraste</span>
-                                </div>
-                            </div>
-                        </div>
+                                </li>
+                            </ul>
+                        </figure>
                     </article>
                 </div>
             </div>
@@ -247,47 +251,47 @@
                 <!-- Grid: Container responsivo para as tecnologias -->
                 <div class="grid-tecnologias" role="region" aria-label="Lista de tecnologias utilizadas">
                     <!-- Tecnologia 1: HTML5 -->
-                    <article class="card-tecnologia html">
+                    <article class="card-tecnologia html" aria-labelledby="tech-html">
                         <div class="icone-tecnologia" aria-hidden="true">
                             <i class="fa-brands fa-html5"></i>
                         </div>
-                        <h3>HTML5</h3>
+                        <h3 id="tech-html">HTML5</h3>
                         <p>Estrutura semântica e acessível para uma base sólida da aplicação web.</p>
                     </article>
 
                     <!-- Tecnologia 2: CSS3 -->
-                    <article class="card-tecnologia css">
+                    <article class="card-tecnologia css" aria-labelledby="tech-css">
                         <div class="icone-tecnologia" aria-hidden="true">
                             <i class="fa-brands fa-css3-alt"></i>
                         </div>
-                        <h3>CSS3</h3>
+                        <h3 id="tech-css">CSS3</h3>
                         <p>Estilização moderna com flexbox, grid e animações para uma interface responsiva.</p>
                     </article>
 
                     <!-- Tecnologia 3: JavaScript -->
-                    <article class="card-tecnologia javascript">
+                    <article class="card-tecnologia javascript" aria-labelledby="tech-javascript">
                         <div class="icone-tecnologia" aria-hidden="true">
                             <i class="fa-brands fa-js-square"></i>
                         </div>
-                        <h3>JavaScript</h3>
+                        <h3 id="tech-javascript">JavaScript</h3>
                         <p>Linguagem principal para interatividade e lógica de negócio no frontend.</p>
                     </article>
 
                     <!-- Tecnologia 4: Angular -->
-                    <article class="card-tecnologia angular">
+                    <article class="card-tecnologia angular" aria-labelledby="tech-angular">
                         <div class="icone-tecnologia" aria-hidden="true">
                             <i class="fa-brands fa-angular"></i>
                         </div>
-                        <h3>Angular</h3>
+                        <h3 id="tech-angular">Angular</h3>
                         <p>Framework robusto para desenvolvimento da versão avançada da plataforma.</p>
                     </article>
 
                     <!-- Tecnologia 5: MySQL -->
-                    <article class="card-tecnologia mysql">
+                    <article class="card-tecnologia mysql" aria-labelledby="tech-mysql">
                         <div class="icone-tecnologia" aria-hidden="true">
                             <i class="fa-solid fa-database"></i>
                         </div>
-                        <h3>MySQL</h3>
+                        <h3 id="tech-mysql">MySQL</h3>
                         <p>Sistema de gerenciamento de banco de dados confiável para armazenar informações.</p>
                     </article>
                 </div>
@@ -307,97 +311,97 @@
                 <div class="grid-roadmap" role="region" aria-label="Cronograma de desenvolvimento">
 
                     <!-- Sprint 1 -->
-                    <article class="card-sprint sprint-concluida">
-                        <div class="sprint-header">
-                            <div class="sprint-numero">1</div>
-                            <div class="sprint-status concluida">
-                                <i class="fa-solid fa-check"></i>
+                    <article class="card-sprint sprint-concluida" aria-labelledby="sprint-1">
+                        <header class="sprint-header">
+                            <div class="sprint-numero" aria-label="Sprint número 1">1</div>
+                            <div class="sprint-status concluida" aria-label="Status: Concluída">
+                                <i class="fa-solid fa-check" aria-hidden="true"></i>
                                 <span>Concluída</span>
                             </div>
-                        </div>
+                        </header>
                         <div class="sprint-content">
-                            <h3>Fundação e Prototipagem</h3>
+                            <h3 id="sprint-1">Fundação e Prototipagem</h3>
                             <p class="sprint-objetivo">
                                 Foco em planejar a solução, criar a estrutura visual inicial do site e validar o
                                 conceito.
                             </p>
                             <ul class="sprint-entregas">
-                                <li><i class="fa-solid fa-check-circle"></i>Documentação e pitch do projeto</li>
-                                <li><i class="fa-solid fa-check-circle"></i>Site estático com páginas principais</li>
-                                <li><i class="fa-solid fa-check-circle"></i>Modelagem do banco de dados</li>
-                                <li><i class="fa-solid fa-check-circle"></i>Protótipo em Python</li>
-                                <li><i class="fa-solid fa-check-circle"></i>Modelagem inicial do Chatbot</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Documentação e pitch do projeto</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Site estático com páginas principais</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Modelagem do banco de dados</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Protótipo em Python</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Modelagem inicial do Chatbot</li>
                             </ul>
                         </div>
                     </article>
 
                     <!-- Sprint 2 -->
-                    <article class="card-sprint sprint-futura">
-                        <div class="sprint-header">
-                            <div class="sprint-numero">2</div>
-                            <div class="sprint-status futura">
-                                <i class="fa-solid fa-clock"></i>
-                                <span>Futura</span>
+                    <article class="card-sprint sprint-concluida" aria-labelledby="sprint-2">
+                        <header class="sprint-header">
+                            <div class="sprint-numero" aria-label="Sprint número 2">2</div>
+                            <div class="sprint-status concluida" aria-label="Status: Concluída">
+                                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                <span>Concluída</span>
                             </div>
-                        </div>
+                        </header>
                         <div class="sprint-content">
-                            <h3>Desenvolvimento e Aprofundamento</h3>
+                            <h3 id="sprint-2">Desenvolvimento e Aprofundamento</h3>
                             <p class="sprint-objetivo">
                                 Aprofundar o desenvolvimento, tornando o site interativo e responsivo.
                             </p>
                             <ul class="sprint-entregas">
-                                <li><i class="fa-solid fa-circle"></i>Responsividade completa</li>
-                                <li><i class="fa-solid fa-circle"></i>Interatividade com JavaScript</li>
-                                <li><i class="fa-solid fa-circle"></i>Classes Java implementadas</li>
-                                <li><i class="fa-solid fa-circle"></i>Business Model Canvas</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Responsividade completa</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Interatividade com JavaScript</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Classes Java implementadas</li>
+                                <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i>Business Model Canvas</li>
                             </ul>
                         </div>
                     </article>
 
                     <!-- Sprint 3 -->
-                    <article class="card-sprint sprint-futura">
-                        <div class="sprint-header">
-                            <div class="sprint-numero">3</div>
-                            <div class="sprint-status futura">
-                                <i class="fa-solid fa-clock"></i>
+                    <article class="card-sprint sprint-futura" aria-labelledby="sprint-3">
+                        <header class="sprint-header">
+                            <div class="sprint-numero" aria-label="Sprint número 3">3</div>
+                            <div class="sprint-status futura" aria-label="Status: Futura">
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i>
                                 <span>Futura</span>
                             </div>
-                        </div>
+                        </header>
                         <div class="sprint-content">
-                            <h3>Back-end e Integração</h3>
+                            <h3 id="sprint-3">Back-end e Integração</h3>
                             <p class="sprint-objetivo">
                                 Construir o back-end, criar API e conectar front-end ao banco de dados.
                             </p>
                             <ul class="sprint-entregas">
-                                <li><i class="fa-solid fa-circle"></i>API REST para atendimentos</li>
-                                <li><i class="fa-solid fa-circle"></i>Banco de dados físico</li>
-                                <li><i class="fa-solid fa-circle"></i>Conexão com banco</li>
-                                <li><i class="fa-solid fa-circle"></i>Páginas dinâmicas</li>
-                                <li><i class="fa-solid fa-circle"></i>Sistema de autenticação</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>API REST para atendimentos</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>Banco de dados físico</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>Conexão com banco</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>Páginas dinâmicas</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>Sistema de autenticação</li>
                             </ul>
                         </div>
                     </article>
 
                     <!-- Sprint 4 -->
-                    <article class="card-sprint sprint-futura">
-                        <div class="sprint-header">
-                            <div class="sprint-numero">4</div>
-                            <div class="sprint-status futura">
-                                <i class="fa-solid fa-rocket"></i>
+                    <article class="card-sprint sprint-futura" aria-labelledby="sprint-4">
+                        <header class="sprint-header">
+                            <div class="sprint-numero" aria-label="Sprint número 4">4</div>
+                            <div class="sprint-status futura" aria-label="Status: Futura">
+                                <i class="fa-solid fa-rocket" aria-hidden="true"></i>
                                 <span>Futura</span>
                             </div>
-                        </div>
+                        </header>
                         <div class="sprint-content">
-                            <h3>Funcionalidades Avançadas</h3>
+                            <h3 id="sprint-4">Funcionalidades Avançadas</h3>
                             <p class="sprint-objetivo">
                                 Finalizar a plataforma com integrações externas e preparar implantação.
                             </p>
                             <ul class="sprint-entregas">
-                                <li><i class="fa-solid fa-circle"></i>APIs Gmail e WhatsApp</li>
-                                <li><i class="fa-solid fa-circle"></i>Dashboards gerenciais</li>
-                                <li><i class="fa-solid fa-circle"></i>Chat ao vivo</li>
-                                <li><i class="fa-solid fa-circle"></i>Testes completos</li>
-                                <li><i class="fa-solid fa-circle"></i>Implantação em nuvem</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>APIs Gmail e WhatsApp</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>Dashboards gerenciais</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>Chat ao vivo</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>Testes completos</li>
+                                <li><i class="fa-solid fa-circle" aria-hidden="true"></i>Implantação em nuvem</li>
                             </ul>
                         </div>
                     </article>
@@ -411,84 +415,84 @@
          ======================================== -->
     <footer class="rodape-principal" role="contentinfo">
         <!-- Container principal: Organiza o layout do rodapé -->
-        <section class="container-rodape">
+        <div class="container-rodape">
             <!-- Logo e descrição da empresa -->
             <div class="logo-rodape">
-                <img src="../img/logo.png" alt="Logo Cod3X">
+                <img src="../img/logo.png" alt="Logo Cod3X" loading="lazy">
                 <p>Cod3X - Tecnologia com Propósito</p>
             </div>
 
             <!-- Navegação 1: Links principais -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links de navegação">
+            <nav class="informacoes-rodape" aria-label="Links de navegação">
                 <h3>Navegação</h3>
                 <ul>
                     <li><a href="../../index.html">Início</a></li>
                     <li><a href="./quem-somos.html">Quem Somos</a></li>
-                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="./sobre.html" aria-current="page">Sobre</a></li>
                 </ul>
             </nav>
 
             <!-- Navegação 2: Suporte ao usuário -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links de suporte">
+            <nav class="informacoes-rodape" aria-label="Links de suporte">
                 <h3>Suporte</h3>
                 <ul>
                     <li><a href="./faq.html">FAQ</a></li>
                     <li><a href="./contato.html">Contato</a></li>
-                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#" aria-label="Central de ajuda">Ajuda</a></li>
                 </ul>
             </nav>
 
             <!-- Navegação 3: Informações do projeto -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links do projeto">
+            <nav class="informacoes-rodape" aria-label="Links do projeto">
                 <h3>Projeto</h3>
                 <ul>
-                    <li><a href="#">FIAP Challenge</a></li>
-                    <li><a href="#">Turma do Bem</a></li>
-                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#" aria-label="Sobre o FIAP Challenge">FIAP Challenge</a></li>
+                    <li><a href="#" aria-label="Conheça a Turma do Bem">Turma do Bem</a></li>
+                    <li><a href="#" aria-label="Documentação técnica">Documentação</a></li>
                 </ul>
             </nav>
 
             <!-- Navegação 4: Aspectos legais -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links legais">
+            <nav class="informacoes-rodape" aria-label="Links legais">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Termos de Uso</a></li>
-                    <li><a href="#">Privacidade</a></li>
-                    <li><a href="#">Licenças</a></li>
+                    <li><a href="#" aria-label="Termos de uso do serviço">Termos de Uso</a></li>
+                    <li><a href="#" aria-label="Política de privacidade">Privacidade</a></li>
+                    <li><a href="#" aria-label="Licenças de software">Licenças</a></li>
                 </ul>
             </nav>
-        </section>
+        </div>
 
         <!-- Divisor visual entre seções do rodapé -->
-        <hr class="linha-divisoria-rodape" role="separator">
+        <hr class="linha-divisoria-rodape">
 
         <!-- Seção inferior: Redes sociais e copyright -->
-        <section class="inferior-rodape">
+        <div class="inferior-rodape">
             <!-- Navegação das redes sociais: aria-label para acessibilidade -->
-            <nav class="redes-sociais" role="navigation" aria-label="Redes sociais">
+            <nav class="redes-sociais" aria-label="Redes sociais">
                 <ul class="icones-sociais">
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="WhatsApp">
+                        <a href="#" class="link-icone" aria-label="Fale conosco pelo WhatsApp">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="Facebook">
+                        <a href="#" class="link-icone" aria-label="Siga-nos no Facebook">
                             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="LinkedIn">
+                        <a href="#" class="link-icone" aria-label="Conecte-se no LinkedIn">
                             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="GitHub">
+                        <a href="#" class="link-icone" aria-label="Veja nosso código no GitHub">
                             <i class="fa-brands fa-github" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="Instagram">
+                        <a href="#" class="link-icone" aria-label="Siga-nos no Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                     </li>
@@ -496,8 +500,8 @@
             </nav>
 
             <!-- Copyright: Informações legais obrigatórias -->
-            <p>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</p>
-        </section>
+            <p><small>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</small></p>
+        </div>
     </footer>
 </body>
 
