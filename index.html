@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- Meta tags obrigatórias para responsividade e codificação -->
+    <!-- Meta Tags Essenciais -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge - Saúde Bucal para Todos</title>
+    <meta name="description" content="Projeto de saúde bucal gratuita para adolescentes e mulheres vítimas de violência. Conectamos dentistas voluntários com quem mais precisa.">
+    <meta name="keywords" content="saúde bucal, dentista voluntário, atendimento odontológico gratuito, inclusão social">
+    <meta name="author" content="Cod3X - FIAP">
+    <title>Cod3X - Saúde Bucal para Todos | Challenge FIAP</title>
     
-    <!-- Google Fonts: Carregamento otimizado com preconnect para melhor performance -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+    
+    <!-- Preconnect para Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
-    <!-- Arquivos CSS: Ordem de carregamento (geral -> específico) -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Folhas de Estilo -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/style-index.css">
-    
-    <!-- Font Awesome: Biblioteca de ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Favicon: Ícone da aba do navegador -->
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
 </head>
 
 <body>
-    <!-- ========================================
-         CABEÇALHO PRINCIPAL DA APLICAÇÃO
-         ======================================== -->
-    <header class="cabecalho-principal">
-        <nav class="secao-navegacao" role="navigation" aria-label="Navegação principal">
-            <!-- Logo: Sempre linkado para a página inicial -->
-            <a href="./index.html" class="link-logo">
-                <img src="./assets/img/logo.png" alt="Logo do projeto Cod3X" class="imagem-logo">
+    <!-- ============================================================
+         CABEÇALHO E NAVEGAÇÃO PRINCIPAL
+         ============================================================ -->
+    <header class="cabecalho-principal" role="banner">
+        <nav class="secao-navegacao" aria-label="Navegação principal">
+            <!-- Logo -->
+            <a href="./index.html" class="link-logo" aria-label="Ir para página inicial">
+                <img src="./assets/img/logo.png" alt="Logo Cod3X - Saúde Bucal para Todos" class="imagem-logo">
             </a>
             
-            <!-- Menu de navegação: Lista não ordenada para melhor semântica -->
-            <ul role="menubar">
+            <!-- Menu Principal -->
+            <ul class="menu-navegacao" role="menubar">
                 <li role="none">
                     <a href="./assets/page/quem-somos.html" class="links-navegacao" role="menuitem">Integrantes</a>
                 </li>
@@ -53,56 +58,51 @@
                 </li>
             </ul>
 
-            <!-- Formulário de busca: Importante usar form para acessibilidade -->
-            <form class="barra-pesquisa" role="search">
-                <input type="search" placeholder="Pesquisar" aria-label="Campo de pesquisa">
-                <button type="submit" aria-label="Executar pesquisa">
+            <!-- Busca -->
+            <form class="barra-pesquisa" role="search" aria-label="Buscar no site">
+                <input type="search" id="input-busca" name="busca" placeholder="Pesquisar" aria-label="Campo de pesquisa no site">
+                <button type="submit" aria-label="Executar busca">
                     <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 </button>
             </form>
             
-            <!-- Botões de autenticação: Separados em container próprio -->
+            <!-- Autenticação -->
             <div class="botoes-autenticacao">
-                <a href="./assets/page/login-cadastro.html" class="botao-autenticacao botao-login">Login</a>
-                <a href="./assets/page/login-cadastro.html" class="botao-autenticacao botao-cadastro">Cadastro</a>
+                <a href="./assets/page/login-cadastro.html" class="botao-autenticacao botao-login" aria-label="Acessar área de login">Login</a>
+                <a href="./assets/page/login-cadastro.html" class="botao-autenticacao botao-cadastro" aria-label="Criar nova conta">Cadastro</a>
             </div>
         </nav>
     </header>
 
-    <!-- ========================================
-         CONTEÚDO PRINCIPAL DA PÁGINA
-         ======================================== -->
-    <main role="main">
-        <!-- Seção Hero: Primeira impressão da página -->
-        <section class="secao-hero-principal">
-            <!-- Article: Conteúdo independente e reutilizável -->
-            <article class="conteudo-texto-hero">
-                <h1>A saúde bucal é um direito de todos</h1>
+    <!-- ============================================================
+         CONTEÚDO PRINCIPAL
+         ============================================================ -->
+    <main id="conteudo-principal">
+        
+        <!-- Hero Principal -->
+        <section class="secao-hero-principal" aria-labelledby="titulo-hero">
+            <div class="conteudo-texto-hero">
+                <h1 id="titulo-hero">A saúde bucal é um direito de todos</h1>
                 <p>
                     Um sorriso não deveria ser um privilégio. Ele é a expressão da nossa alegria, um passaporte para
                     oportunidades e um reflexo da nossa saúde. Através de uma rede de dentistas voluntários, oferecemos
                     tratamento completo e gratuito para quem mais precisa, quebrando o ciclo de exclusão e transformando
                     vidas. Porque acreditamos que um sorriso saudável tem o poder de gerar inclusão social.
                 </p>
-                <!-- CTA (Call to Action): Botão principal da seção -->
-                <a href="./assets/page/contato.html" class="botao-cta">Quero ajuda!</a>
-            </article>
+                <a href="./assets/page/contato.html" class="botao-cta" aria-label="Solicitar atendimento odontológico">Quero ajuda!</a>
+            </div>
             
-            <!-- Aside: Conteúdo complementar (imagem) -->
-            <aside class="container-imagem-hero">
-                <img src="./assets/img/sorriso.jpg" alt="Menina deitada na grama sorrindo, representando a alegria proporcionada pela saúde bucal">
-            </aside>
+            <figure class="container-imagem-hero">
+                <img src="./assets/img/sorriso.jpg" alt="Jovem sorrindo deitada na grama, representando felicidade e saúde bucal" loading="lazy">
+            </figure>
         </section>
 
-        <!-- ========================================
-             SEÇÃO: COMO PODEMOS AJUDAR
-             ======================================== -->
+        <!-- Como Podemos Ajudar -->
         <section class="secao-como-ajudar" aria-labelledby="titulo-como-ajudar">
             <h2 id="titulo-como-ajudar">Como podemos ajudar você hoje?</h2>
             
-            <!-- Container: Agrupa os cartões em flexbox ou grid -->
-            <div class="container-cartoes-ajuda" role="region" aria-label="Opções de ajuda disponíveis">
-                <!-- Cartão 1: Dentista Voluntário -->
+            <div class="container-cartoes-ajuda">
+                <!-- Cartão: Dentista Voluntário -->
                 <article class="cartao-ajuda cartao-voluntario">
                     <div class="icone-cartao" aria-hidden="true">
                         <i class="fa-solid fa-user-doctor"></i>
@@ -112,10 +112,10 @@
                         Faça parte de uma grande rede de voluntariados especializados conosco. Cadastre-se e ajude a
                         transformar vidas através da saúde bucal.
                     </p>
-                    <a href="./assets/page/login-cadastro.html" class="botao-cartao botao-voluntario">Saiba Mais</a>
+                    <a href="./assets/page/login-cadastro.html" class="botao-cartao botao-voluntario" aria-label="Saiba mais sobre como se tornar dentista voluntário">Saiba Mais</a>
                 </article>
 
-                <!-- Cartão 2: Atendimento Odontológico -->
+                <!-- Cartão: Atendimento Odontológico -->
                 <article class="cartao-ajuda cartao-atendimento">
                     <div class="icone-cartao" aria-hidden="true">
                         <i class="fa-solid fa-tooth"></i>
@@ -125,10 +125,10 @@
                         Se você tem entre 11 e 17 anos ou é uma mulher vítima de violência, veja como se inscrever em
                         nossos programas de atendimento gratuito.
                     </p>
-                    <a href="./assets/page/contato.html" class="botao-cartao botao-atendimento">Verificar Critérios</a>
+                    <a href="./assets/page/contato.html" class="botao-cartao botao-atendimento" aria-label="Verificar critérios de elegibilidade para atendimento">Verificar Critérios</a>
                 </article>
 
-                <!-- Cartão 3: Doação e Parceria -->
+                <!-- Cartão: Doação e Parceria -->
                 <article class="cartao-ajuda cartao-doacao">
                     <div class="icone-cartao" aria-hidden="true">
                         <i class="fa-solid fa-handshake"></i>
@@ -138,14 +138,12 @@
                         Sua contribuição é fundamental para continuarmos nosso trabalho de transformação social.
                         Apoie nossa causa e faça a diferença na vida de muitas pessoas. Essa é sua chance de mudar vidas.
                     </p>
-                    <a href="./assets/page/contato.html" class="botao-cartao botao-doacao">Quero doar!</a>
+                    <a href="./assets/page/contato.html" class="botao-cartao botao-doacao" aria-label="Fazer doação ou tornar-se parceiro">Quero doar!</a>
                 </article>
             </div>
         </section>
 
-        <!-- ========================================
-             SEÇÃO: PORTAL DE BENEFÍCIOS
-             ======================================== -->
+        <!-- Portal de Benefícios -->
         <section class="secao-portal-beneficios" aria-labelledby="titulo-portal-beneficios">
             <h2 id="titulo-portal-beneficios">Seu Portal Exclusivo</h2>
             <p>
@@ -155,38 +153,40 @@
                 de inscrição da ONG para <strong>acessar o portal</strong>.
             </p>
             
-            <!-- Lista de benefícios: UL para itens relacionados -->
-            <ul class="lista-beneficios" role="list" aria-label="Benefícios do portal exclusivo">
-                <li role="listitem">
+            <ul class="lista-beneficios">
+                <li>
                     <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
                     <span><strong>Rastreamento:</strong> Acompanhe em tempo real o andamento de suas solicitações.</span>
                 </li>
-                <li role="listitem">
+                <li>
                     <i class="fa-solid fa-file" aria-hidden="true"></i>
                     <span><strong>Relatórios:</strong> Documentos organizados e acessíveis em um só lugar.</span>
                 </li>
-                <li role="listitem">
+                <li>
                     <i class="fa-solid fa-bolt" aria-hidden="true"></i>
                     <span><strong>Agilidade:</strong> Respostas mais rápidas e comunicação direta com nossa equipe.</span>
                 </li>
             </ul>
         </section>
+        
     </main>
 
-    <!-- ========================================
-         RODAPÉ COM INFORMAÇÕES E REDES SOCIAIS
-         ======================================== -->
+    <!-- ============================================================
+         RODAPÉ
+         ============================================================ -->
     <footer class="rodape-principal" role="contentinfo">
-        <!-- Container principal: Organiza o layout do rodapé -->
-        <section class="container-rodape">
-            <!-- Logo e descrição da empresa -->
+        
+        <!-- Links de Navegação do Rodapé -->
+        <div class="container-rodape">
+            
+            <!-- Logo e Marca -->
             <div class="logo-rodape">
-                <img src="./assets/img/logo.png" alt="Logo Cod3X">
+                <img src="./assets/img/logo.png" alt="Logo Cod3X" loading="lazy">
                 <p>Cod3X - Tecnologia com Propósito</p>
             </div>
             
-            <!-- Navegação 1: Links principais -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links de navegação">
+            <!-- Navegação Principal -->
+            <nav class="informacoes-rodape" aria-label="Navegação do rodapé">
                 <h3>Navegação</h3>
                 <ul>
                     <li><a href="./index.html">Início</a></li>
@@ -195,8 +195,8 @@
                 </ul>
             </nav>
             
-            <!-- Navegação 2: Suporte ao usuário -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links de suporte">
+            <!-- Suporte -->
+            <nav class="informacoes-rodape" aria-label="Suporte">
                 <h3>Suporte</h3>
                 <ul>
                     <li><a href="./assets/page/faq.html">FAQ</a></li>
@@ -205,67 +205,74 @@
                 </ul>
             </nav>
             
-            <!-- Navegação 3: Informações do projeto -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links do projeto">
+            <!-- Projeto -->
+            <nav class="informacoes-rodape" aria-label="Sobre o projeto">
                 <h3>Projeto</h3>
                 <ul>
-                    <li><a href="#">FIAP Challenge</a></li>
-                    <li><a href="#">Turma do Bem</a></li>
-                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#" aria-label="Mais informações sobre FIAP Challenge">FIAP Challenge</a></li>
+                    <li><a href="#" aria-label="Mais informações sobre Turma do Bem">Turma do Bem</a></li>
+                    <li><a href="#" aria-label="Acessar documentação do projeto">Documentação</a></li>
                 </ul>
             </nav>
             
-            <!-- Navegação 4: Aspectos legais -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links legais">
+            <!-- Legal -->
+            <nav class="informacoes-rodape" aria-label="Informações legais">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Termos de Uso</a></li>
-                    <li><a href="#">Privacidade</a></li>
-                    <li><a href="#">Licenças</a></li>
+                    <li><a href="#" aria-label="Ler termos de uso">Termos de Uso</a></li>
+                    <li><a href="#" aria-label="Ler política de privacidade">Privacidade</a></li>
+                    <li><a href="#" aria-label="Ver licenças de software">Licenças</a></li>
                 </ul>
             </nav>
-        </section>
+            
+        </div>
         
-        <!-- Divisor visual entre seções do rodapé -->
-        <hr class="linha-divisoria-rodape" role="separator">
+        <!-- Divisor -->
+        <hr aria-hidden="true">
         
-        <!-- Seção inferior: Redes sociais e copyright -->
-        <section class="inferior-rodape">
-            <!-- Navegação das redes sociais: aria-label para acessibilidade -->
-            <nav class="redes-sociais" role="navigation" aria-label="Redes sociais">
-                <ul class="icones-sociais">
-                    <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="WhatsApp">
+        <!-- Redes Sociais e Copyright -->
+        <div class="inferior-rodape">
+            
+            <!-- Redes Sociais -->
+            <nav class="redes-sociais" aria-label="Redes sociais">
+                <ul>
+                    <li>
+                        <a href="#" aria-label="Visitar página do WhatsApp">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="Facebook">
+                    <li>
+                        <a href="#" aria-label="Visitar página do Facebook">
                             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="LinkedIn">
+                    <li>
+                        <a href="#" aria-label="Visitar página do LinkedIn">
                             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="GitHub">
+                    <li>
+                        <a href="#" aria-label="Visitar repositório no GitHub">
                             <i class="fa-brands fa-github" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="Instagram">
+                    <li>
+                        <a href="#" aria-label="Visitar página do Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                     </li>
                 </ul>
             </nav>
             
-            <!-- Copyright: Informações legais obrigatórias -->
-            <p>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</p>
-        </section>
+            <!-- Copyright -->
+            <p>
+                <small>&copy; 2025 Cod3X FIAP. Todos os direitos reservados.</small>
+            </p>
+            
+        </div>
+        
     </footer>
+
 </body>
 
 </html>
