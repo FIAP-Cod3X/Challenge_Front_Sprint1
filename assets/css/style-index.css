@@ -1,132 +1,134 @@
-/* =========================
-   PÁGINA INDEX - ESTILOS ESPECÍFICOS
-   ========================= */
+/* ========================================================================
+   PÁGINA INDEX - STYLE SHEET
+   ======================================================================== */
 
-/* =========================
-   SEÇÃO PRINCIPAL - HERO
-   ========================= */
-/* Container principal da seção hero */
+
+/* ========================================================================
+   1. SEÇÃO HERO PRINCIPAL
+   ======================================================================== */
+
+/* 1.1 Container Principal */
 .secao-hero-principal {
-    background: linear-gradient(-45deg, #96ac3f, #7a8f35, #96ac3f, #6b7d2f);
-    background-size: 400% 400%;
-    animation: movimentoGradiente 8s ease infinite;
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 4rem 2.8rem;
+    background: linear-gradient(-45deg, #96ac3f, #7a8f35, #96ac3f, #6b7d2f);
+    background-size: 400% 400%;
     flex-wrap: wrap;
-    position: relative;
     overflow: hidden;
+    animation: movimentoGradiente 8s ease infinite;
 }
 
-/* Animação de gradiente de fundo */
 @keyframes movimentoGradiente {
     0% {
         background-position: 0% 50%;
     }
-
     50% {
         background-position: 100% 50%;
     }
-
     100% {
         background-position: 0% 50%;
     }
 }
 
-/* Container do texto principal */
+
+/* 1.2 Conteúdo de Texto */
 .conteudo-texto-hero {
     width: 50%;
 }
 
-/* Título principal da seção */
 .conteudo-texto-hero h1 {
+    margin-bottom: 1rem;
+    color: #f4f4f9;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 2.5rem;
-    color: #F4F4F9;
-    margin-bottom: 1rem;
 }
 
-/* Parágrafo descritivo */
 .conteudo-texto-hero p {
+    color: #f4f4f9;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 1.2rem;
-    color: #F4F4F9;
     line-height: 1.6;
     text-align: justify;
 }
 
-/* Botão de call-to-action */
 .conteudo-texto-hero a {
     display: inline-block;
     margin: 1rem 0 2rem 0;
     padding: 0.8rem 1.5rem;
+    border-radius: 30px;
     background-color: #e88407;
-    color: #F4F4F9;
-    text-decoration: none;
+    color: #f4f4f9;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.2rem;
-    border-radius: 30px;
+    text-decoration: none;
     box-shadow: 0 4px 12px #9b45214d;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 
-/* Animação de hover no botão */
 .conteudo-texto-hero a:hover {
     background-color: #f79012;
     box-shadow: 0 6px 16px #ff9b7166;
     transform: translateY(-3px);
 }
 
-/* Imagem da seção principal */
+
+
+/* 1.3 Imagem Hero */
 .container-imagem-hero img {
     width: 550px;
     height: auto;
     border-radius: 30px;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 24px #3a506b14;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animação de hover na imagem */
 .container-imagem-hero img:hover,
 .container-imagem-hero img:focus {
-    transform: scale(1.07) rotate(-2deg);
     box-shadow: 0 8px 32px #3a506b2e;
+    transform: scale(1.07) rotate(-2deg);
 }
 
-/* =========================
-   SEÇÃO: COMO PODEMOS AJUDAR
-   ========================= */
-/* Estrutura principal da seção */
+
+
+/* ========================================================================
+   2. SEÇÃO COMO PODEMOS AJUDAR
+   ======================================================================== */
+
+/* 2.1 Container Principal */
 .secao-como-ajudar {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #F4F4F9 0%, #fff 100%);
+    background: linear-gradient(135deg, #f4f4f9 0%, #fff 100%);
     text-align: center;
 }
 
-/* Título principal da seção */
+
+/* 2.2 Título da Seção */
 .secao-como-ajudar h2 {
+    position: relative;
+    margin-bottom: 3rem;
+    color: #3a506b;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 2.5rem;
-    color: #3A506B;
-    margin-bottom: 3rem;
-    position: relative;
 }
 
-/* Linha decorativa sob o título */
 .secao-como-ajudar h2::after {
     content: "";
     position: absolute;
     bottom: -10px;
     left: 50%;
-    transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #96ac3f, #e88407);
     border-radius: 2px;
+    background: linear-gradient(90deg, #96ac3f, #e88407);
+    transform: translateX(-50%);
 }
 
-/* Container dos cartões */
+
+
+/* 2.3 Container dos Cartões */
 .container-cartoes-ajuda {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -135,26 +137,27 @@
     margin: 0 auto;
 }
 
-/* Estilo base dos cartões */
+
+/* 2.4 Cartões de Ajuda */
 .cartao-ajuda {
-    background: #fff;
-    border-radius: 20px;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 4px 20px #3a506b14;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid transparent;
     position: relative;
+    padding: 2rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 20px #3a506b14;
     overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animação de hover nos cartões */
 .cartao-ajuda:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 12px 40px #3a506b26;
     border-color: #e883076c;
+    box-shadow: 0 12px 40px #3a506b26;
+    transform: translateY(-12px) scale(1.02);
 }
 
-/* Efeito de brilho no hover */
+
+/* 2.5 Efeito de Brilho */
 .cartao-ajuda::before {
     content: "";
     position: absolute;
@@ -162,12 +165,29 @@
     left: -50%;
     width: 200%;
     height: 200%;
+    opacity: 0;
     transform: rotate(45deg);
     transition: all 0.6s;
-    opacity: 0;
 }
 
-/* Cores específicas do brilho para cada cartão */
+.cartao-ajuda:hover::before {
+    animation: efeitoBrilho 0.8s ease-in-out;
+}
+
+@keyframes efeitoBrilho {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
 .cartao-voluntario::before {
     background: linear-gradient(45deg, transparent, #96ac3f33, transparent);
 }
@@ -180,28 +200,8 @@
     background: linear-gradient(45deg, transparent, #e8840733, transparent);
 }
 
-/* Animação de brilho */
-.cartao-ajuda:hover::before {
-    animation: efeitoBrilho 0.8s ease-in-out;
-}
 
-@keyframes efeitoBrilho {
-    0% {
-        transform: translateX(-100%) translateY(-100%) rotate(45deg);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(100%) translateY(100%) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-/* Cores específicas das bordas no hover */
+/* 2.6 Cores Específicas dos Cartões */
 .cartao-voluntario:hover {
     border-color: #96ac3f66;
 }
@@ -214,14 +214,16 @@
     border-color: #e8840766;
 }
 
-/* Ícones dos cartões */
+
+
+/* 2.7 Ícones dos Cartões */
 .icone-cartao {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
     border-radius: 50%;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -231,7 +233,6 @@
     transition: all 0.4s;
 }
 
-/* Cartão Voluntário - cores e animações */
 .cartao-voluntario .icone-cartao {
     background: #96ac3f1a;
 }
@@ -249,17 +250,16 @@
     color: #fff;
 }
 
-/* Cartão Atendimento - cores e animações */
 .cartao-atendimento .icone-cartao {
     background: #3a506b1a;
 }
 
 .cartao-atendimento .icone-cartao i {
-    color: #3A506B;
+    color: #3a506b;
 }
 
 .cartao-atendimento:hover .icone-cartao {
-    background: #3A506B;
+    background: #3a506b;
     transform: scale(1.1) rotate(360deg);
 }
 
@@ -267,7 +267,6 @@
     color: #fff;
 }
 
-/* Cartão Doação - cores e animações */
 .cartao-doacao .icone-cartao {
     background: #ff9b711a;
 }
@@ -285,41 +284,43 @@
     color: #fff;
 }
 
-/* Títulos dos cartões */
+
+
+/* 2.8 Textos dos Cartões */
 .cartao-ajuda h3 {
+    margin-bottom: 1rem;
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.3rem;
-    color: #3A506B;
-    margin-bottom: 1rem;
     font-weight: 600;
 }
 
-/* Texto dos cartões */
 .cartao-ajuda p {
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
-    line-height: 1.6;
     margin-bottom: 2rem;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
     opacity: 0.8;
 }
 
-/* Botões dos cartões */
+
+
+/* 2.9 Botões dos Cartões */
 .botao-cartao {
+    position: relative;
     width: 100%;
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 12px;
     font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 600;
     font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+    font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Botão do cartão voluntário */
 .botao-voluntario {
     background: #96ac3f;
     color: #fff;
@@ -327,23 +328,21 @@
 
 .botao-voluntario:hover {
     background: #7a8f35;
-    transform: translateY(-2px);
     box-shadow: 0 6px 20px #96ac3f4d;
+    transform: translateY(-2px);
 }
 
-/* Botão do cartão atendimento */
 .botao-atendimento {
-    background: #3A506B;
+    background: #3a506b;
     color: #fff;
 }
 
 .botao-atendimento:hover {
     background: #2d3f54;
-    transform: translateY(-2px);
     box-shadow: 0 6px 20px #3a506b4d;
+    transform: translateY(-2px);
 }
 
-/* Botão do cartão doação */
 .botao-doacao {
     background: #e88407;
     color: #fff;
@@ -351,106 +350,108 @@
 
 .botao-doacao:hover {
     background: #e88407;
-    transform: translateY(-2px);
     box-shadow: 0 6px 20px #ff9b714d;
+    transform: translateY(-2px);
 }
 
-/* =========================
-   SEÇÃO: PORTAL DE BENEFÍCIOS
-   ========================= */
-/* Container principal da seção */
+
+
+/* ========================================================================
+   3. SEÇÃO PORTAL DE BENEFÍCIOS
+   ======================================================================== */
+
+/* 3.1 Container Principal */
 .secao-portal-beneficios {
-    background: #F4F4F9;
-    border-radius: 24px;
-    box-shadow: 0 2px 16px #3a506b14;
-    padding: 2.5rem 2rem;
-    margin: 1rem auto;
     max-width: 90%;
+    margin: 1rem auto;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    background: #f4f4f9;
+    box-shadow: 0 2px 16px #3a506b14;
     text-align: center;
 }
 
-/* Título da seção */
+
+/* 3.2 Títulos da Seção */
 .secao-portal-beneficios h2 {
+    margin: 0 0 1rem 0;
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 2.2rem;
-    color: #3A506B;
-    margin: 0 0 1rem 0;
 }
 
-/* Texto explicativo */
 .secao-portal-beneficios p {
+    margin-bottom: 2rem;
+    color: #3a506b;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 1.15rem;
-    color: #3A506B;
-    margin-bottom: 2rem;
     font-weight: 500;
 }
 
-/* Lista de benefícios */
+
+
+/* 3.3 Lista de Benefícios */
 .lista-beneficios {
-    list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     gap: 1.5rem;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
     flex-wrap: wrap;
 }
 
-/* Cada item de benefício */
 .lista-beneficios li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px #3a506b12;
-    padding: 1.2rem 1rem;
     min-width: 160px;
     width: 30%;
-    transition: transform 0.3s, box-shadow 0.3s;
     margin: auto;
+    padding: 1.2rem 1rem;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 8px #3a506b12;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Animação ao passar o mouse nos benefícios */
 .lista-beneficios li:hover {
-    transform: translateY(-6px) scale(1.05);
     box-shadow: 0 6px 24px #3a506b26;
+    transform: translateY(-6px) scale(1.05);
 }
 
-/* Ícones dos benefícios com cores específicas para cada um */
+
+
+/* 3.4 Ícones dos Benefícios */
 .lista-beneficios i {
-    font-size: 2.2rem;
     margin-bottom: 0.7rem;
+    font-size: 2.2rem;
     transition: all 0.3s;
 }
 
-/* Primeiro ícone (Rastreamento) - Verde */
 .lista-beneficios li:nth-child(1) i {
     color: #96ac3f;
 }
 
-/* Segundo ícone (Relatórios) - Azul */
 .lista-beneficios li:nth-child(2) i {
-    color: #3A506B;
+    color: #3a506b;
 }
 
-/* Terceiro ícone (Agilidade) - Laranja */
 .lista-beneficios li:nth-child(3) i {
     color: #e88407;
 }
 
-/* Texto dos benefícios com cores destacadas no hover */
+
+/* 3.5 Textos dos Benefícios */
 .lista-beneficios span {
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
-    color: #3A506B;
     font-size: 1.05rem;
     text-align: center;
     transition: color 0.3s;
 }
 
-/* Destaque das palavras em negrito com cores específicas */
 .lista-beneficios li:nth-child(1) span strong {
     color: #96ac3f;
 }
@@ -459,6 +460,12 @@
     color: #e88407;
 }
 
+
+/* ========================================================================
+   4. RESPONSIVIDADE
+   ======================================================================== */
+
+/* 4.1 Telas grandes (min-width: 1300px) */
 @media (min-width: 1300px) {
     .secao-hero-principal {
         gap: 1.5rem;
