@@ -271,7 +271,7 @@
 .mapa-wrapper {
     width: 100%;
     height: 400px;
-    margin-bottom: 2rem;
+    margin: 0 0 2rem 0;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(58, 80, 107, 0.15);
     overflow: hidden;
