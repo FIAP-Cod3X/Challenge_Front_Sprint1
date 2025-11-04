@@ -5,6 +5,9 @@
     <!-- Meta tags obrigatórias para responsividade e codificação -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesse o painel administrativo Cod3X da Turma do Bem. Login seguro com criptografia para gestão de atendimentos e voluntários.">
+    <meta name="keywords" content="login, autenticação, painel administrativo, Cod3X, acesso seguro, Turma do Bem">
+    <meta name="author" content="FIAP-Cod3X">
     <title>Login - Cod3X</title>
     
     <!-- Google Fonts: Carregamento otimizado com preconnect para melhor performance -->
@@ -27,15 +30,15 @@
     <!-- ========================================
          CABEÇALHO PRINCIPAL DA APLICAÇÃO
          ======================================== -->
-    <header class="cabecalho-principal">
-        <nav class="secao-navegacao" role="navigation" aria-label="Navegação principal">
+    <header class="cabecalho-principal" role="banner">
+        <nav class="secao-navegacao menu-navegacao" aria-label="Navegação principal">
             <!-- Logo: Sempre linkado para a página inicial -->
-            <a href="../../index.html" class="link-logo">
+            <a href="../../index.html" class="link-logo" aria-label="Página inicial do Cod3X">
                 <img src="../img/logo.png" alt="Logo do projeto Cod3X" class="imagem-logo">
             </a>
             
             <!-- Menu de navegação: Lista não ordenada para melhor semântica -->
-            <ul role="menubar">
+            <ul role="menubar" aria-label="Menu principal">
                 <li role="none">
                     <a href="../../index.html" class="links-navegacao" role="menuitem">Início</a>
                 </li>
@@ -54,8 +57,8 @@
             </ul>
 
             <!-- Formulário de busca: Importante usar form para acessibilidade -->
-            <form class="barra-pesquisa" role="search">
-                <input type="search" placeholder="Pesquisar" aria-label="Campo de pesquisa">
+            <form class="barra-pesquisa" role="search" aria-label="Busca no site">
+                <input type="search" id="campo-busca-login" placeholder="Pesquisar" aria-label="Campo de pesquisa">
                 <button type="submit" aria-label="Executar pesquisa">
                     <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 </button>
@@ -63,8 +66,8 @@
             
             <!-- Botões de autenticação: Separados em container próprio -->
             <div class="botoes-autenticacao">
-                <a href="#" class="botao-autenticacao botao-login">Login</a>
-                <a href="#" class="botao-autenticacao botao-cadastro">Cadastro</a>
+                <a href="#formulario-login" class="botao-autenticacao botao-login" aria-label="Ir para formulário de login">Login</a>
+                <a href="#" class="botao-autenticacao botao-cadastro" aria-label="Criar nova conta">Cadastro</a>
             </div>
         </nav>
     </header>
@@ -72,11 +75,11 @@
     <!-- ========================================
          SEÇÃO: FORMULÁRIO DE LOGIN
          ======================================== -->
-    <main class="container-login" role="main">
+    <main id="conteudo-principal" class="container-login">
         <section class="secao-login" aria-labelledby="titulo-login">
             <div class="formulario-login-wrapper">
                 <!-- Cabeçalho do Login -->
-                <div class="cabecalho-login">
+                <header class="cabecalho-login">
                     <!-- Ícone de login animado -->
                     <div class="icone-login" aria-hidden="true">
                         <i class="fa-solid fa-user-shield"></i>
@@ -86,10 +89,10 @@
                     <p class="subtitulo-login">
                         Faça login para acessar o painel administrativo da plataforma
                     </p>
-                </div>
+                </header>
 
                 <!-- Formulário de Login -->
-                <form class="formulario-login" action="#" method="POST" role="form" aria-labelledby="titulo-login">
+                <form id="formulario-login" class="formulario-login" action="./painel.html" method="POST" aria-labelledby="titulo-login">
                     <!-- Campo: E-mail/Usuário -->
                     <div class="grupo-campo-login">
                         <label for="email-login" class="label-campo-login">
@@ -104,11 +107,12 @@
                             placeholder="Digite seu e-mail ou usuário"
                             required
                             aria-describedby="email-login-desc"
+                            aria-required="true"
                             autocomplete="username"
                         >
-                        <span id="email-login-desc" class="texto-ajuda-login" aria-live="polite">
+                        <small id="email-login-desc" class="texto-ajuda-login">
                             Utilize o e-mail cadastrado na plataforma
-                        </span>
+                        </small>
                     </div>
 
                     <!-- Campo: Senha -->
@@ -125,68 +129,70 @@
                                 class="campo-input-login campo-senha" 
                                 placeholder="Digite sua senha"
                                 required
+                                minlength="8"
                                 aria-describedby="senha-login-desc"
+                                aria-required="true"
                                 autocomplete="current-password"
                             >
                             <!-- Botão para mostrar/ocultar senha -->
-                            <button type="button" class="botao-mostrar-senha" aria-label="Mostrar ou ocultar senha">
+                            <button type="button" class="botao-mostrar-senha" aria-label="Alternar visibilidade da senha" aria-pressed="false">
                                 <i class="fa-solid fa-eye" aria-hidden="true"></i>
                             </button>
                         </div>
-                        <span id="senha-login-desc" class="texto-ajuda-login" aria-live="polite">
+                        <small id="senha-login-desc" class="texto-ajuda-login">
                             Sua senha deve ter no mínimo 8 caracteres
-                        </span>
+                        </small>
                     </div>
 
                     <!-- Opções adicionais -->
                     <div class="opcoes-login">
                         <!-- Checkbox: Lembrar de mim -->
                         <div class="grupo-checkbox-login">
-                            <input type="checkbox" id="lembrar-login" name="lembrar-login" class="campo-checkbox-login">
+                            <input type="checkbox" id="lembrar-login" name="lembrar-login" class="campo-checkbox-login" aria-label="Manter login ativo por 24 horas">
                             <label for="lembrar-login" class="label-checkbox-login">
                                 Lembrar de mim
                             </label>
                         </div>
 
                         <!-- Link: Esqueci minha senha -->
-                        <a href="#" class="link-esqueci-senha">
+                        <a href="#" class="link-esqueci-senha" aria-label="Recuperar senha esquecida">
                             Esqueci minha senha
                         </a>
                     </div>
 
                     <!-- Botão de Login -->
-                    <button type="button" class="botao-login-principal">
+                    <button type="submit" class="botao-login-principal" aria-label="Fazer login no painel administrativo">
                         <i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i>
                         Entrar no Painel
                     </button>
 
                     <!-- Divisor visual -->
-                    <div class="divisor-login" role="separator">
+                    <div class="divisor-login" role="separator" aria-label="Divisor de opções">
                         <span>ou</span>
                     </div>
 
                     <!-- Botão de Cadastro -->
-                    <a href="#" class="botao-cadastro-novo">
+                    <a href="#" class="botao-cadastro-novo" aria-label="Criar nova conta na plataforma">
                         <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
                         Criar Nova Conta
                     </a>
                 </form>
 
                 <!-- Informações de Segurança -->
-                <div class="info-seguranca" role="region" aria-label="Informações de segurança">
-                    <div class="item-seguranca">
+                <footer class="info-seguranca" role="contentinfo" aria-label="Informações de segurança">
+                    <div class="item-seguranca" aria-label="Conexão criptografada">
                         <i class="fa-solid fa-shield-alt" aria-hidden="true"></i>
                         <span>Conexão Segura</span>
                     </div>
-                    <div class="item-seguranca">
+                    <div class="item-seguranca" aria-label="Sessão válida por 24 horas">
                         <i class="fa-solid fa-clock" aria-hidden="true"></i>
                         <span>Sessão de 24h</span>
                     </div>
-                    <div class="item-seguranca">
+                    <div class="item-seguranca" aria-label="Dados protegidos por criptografia">
                         <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
                         <span>Dados Protegidos</span>
                     </div>
-                </div>
+                </footer>
             </div>
         </section>
     </main>
@@ -196,15 +202,15 @@
          ======================================== -->
     <footer class="rodape-principal" role="contentinfo">
         <!-- Container principal: Organiza o layout do rodapé -->
-        <section class="container-rodape">
+        <div class="container-rodape">
             <!-- Logo e descrição da empresa -->
             <div class="logo-rodape">
-                <img src="../img/logo.png" alt="Logo Cod3X">
+                <img src="../img/logo.png" alt="Logo Cod3X" loading="lazy">
                 <p>Cod3X - Tecnologia com Propósito</p>
             </div>
             
             <!-- Navegação 1: Links principais -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links de navegação">
+            <nav class="informacoes-rodape" aria-label="Links de navegação">
                 <h3>Navegação</h3>
                 <ul>
                     <li><a href="../../index.html">Início</a></li>
@@ -214,66 +220,66 @@
             </nav>
             
             <!-- Navegação 2: Suporte ao usuário -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links de suporte">
+            <nav class="informacoes-rodape" aria-label="Links de suporte">
                 <h3>Suporte</h3>
                 <ul>
                     <li><a href="./faq.html">FAQ</a></li>
                     <li><a href="./contato.html">Contato</a></li>
-                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#" aria-label="Central de ajuda">Ajuda</a></li>
                 </ul>
             </nav>
             
             <!-- Navegação 3: Informações do projeto -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links do projeto">
+            <nav class="informacoes-rodape" aria-label="Links do projeto">
                 <h3>Projeto</h3>
                 <ul>
-                    <li><a href="#">FIAP Challenge</a></li>
-                    <li><a href="#">Turma do Bem</a></li>
-                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#" aria-label="Sobre o FIAP Challenge">FIAP Challenge</a></li>
+                    <li><a href="#" aria-label="Conheça a Turma do Bem">Turma do Bem</a></li>
+                    <li><a href="#" aria-label="Documentação técnica">Documentação</a></li>
                 </ul>
             </nav>
             
             <!-- Navegação 4: Aspectos legais -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links legais">
+            <nav class="informacoes-rodape" aria-label="Links legais">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Termos de Uso</a></li>
-                    <li><a href="#">Privacidade</a></li>
-                    <li><a href="#">Licenças</a></li>
+                    <li><a href="#" aria-label="Termos de uso do serviço">Termos de Uso</a></li>
+                    <li><a href="#" aria-label="Política de privacidade">Privacidade</a></li>
+                    <li><a href="#" aria-label="Licenças de software">Licenças</a></li>
                 </ul>
             </nav>
-        </section>
+        </div>
         
         <!-- Divisor visual entre seções do rodapé -->
-        <hr class="linha-divisoria-rodape" role="separator">
+        <hr class="linha-divisoria-rodape">
         
         <!-- Seção inferior: Redes sociais e copyright -->
-        <section class="inferior-rodape">
+        <div class="inferior-rodape">
             <!-- Navegação das redes sociais: aria-label para acessibilidade -->
-            <nav class="redes-sociais" role="navigation" aria-label="Redes sociais">
+            <nav class="redes-sociais" aria-label="Redes sociais">
                 <ul class="icones-sociais">
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="WhatsApp">
+                        <a href="#" class="link-icone" aria-label="Fale conosco pelo WhatsApp">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="Facebook">
+                        <a href="#" class="link-icone" aria-label="Siga-nos no Facebook">
                             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="LinkedIn">
+                        <a href="#" class="link-icone" aria-label="Conecte-se no LinkedIn">
                             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="GitHub">
+                        <a href="#" class="link-icone" aria-label="Veja nosso código no GitHub">
                             <i class="fa-brands fa-github" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="Instagram">
+                        <a href="#" class="link-icone" aria-label="Siga-nos no Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                     </li>
@@ -281,8 +287,8 @@
             </nav>
             
             <!-- Copyright: Informações legais obrigatórias -->
-            <p>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</p>
-        </section>
+            <p><small>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</small></p>
+        </div>
     </footer>
 </body>
 
