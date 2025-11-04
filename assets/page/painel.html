@@ -5,6 +5,9 @@
     <!-- Meta tags obrigatórias para responsividade e codificação -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Painel administrativo Cod3X para gestão de atendimentos da Turma do Bem. Visualize estatísticas, gerencie voluntários e acompanhe atendimentos em tempo real.">
+    <meta name="keywords" content="painel administrativo, dashboard, gestão de atendimentos, Turma do Bem, Cod3X, estatísticas, voluntários">
+    <meta name="author" content="FIAP-Cod3X">
     <title>Painel Administrativo - Cod3X</title>
     
     <!-- Google Fonts: Carregamento otimizado com preconnect para melhor performance -->
@@ -27,15 +30,15 @@
     <!-- ========================================
          CABEÇALHO PRINCIPAL DA APLICAÇÃO
          ======================================== -->
-    <header class="cabecalho-principal">
-        <nav class="secao-navegacao" role="navigation" aria-label="Navegação principal">
+    <header class="cabecalho-principal" role="banner">
+        <nav class="secao-navegacao menu-navegacao" aria-label="Navegação principal">
             <!-- Logo: Sempre linkado para a página inicial -->
-            <a href="../../index.html" class="link-logo">
+            <a href="../../index.html" class="link-logo" aria-label="Página inicial do Cod3X">
                 <img src="../img/logo.png" alt="Logo do projeto Cod3X" class="imagem-logo">
             </a>
             
             <!-- Menu de navegação: Lista não ordenada para melhor semântica -->
-            <ul role="menubar">
+            <ul role="menubar" aria-label="Menu principal">
                 <li role="none">
                     <a href="../../index.html" class="links-navegacao" role="menuitem">Início</a>
                 </li>
@@ -54,8 +57,8 @@
             </ul>
 
             <!-- Formulário de busca: Importante usar form para acessibilidade -->
-            <form class="barra-pesquisa" role="search">
-                <input type="search" placeholder="Pesquisar" aria-label="Campo de pesquisa">
+            <form class="barra-pesquisa" role="search" aria-label="Busca no sistema">
+                <input type="search" id="campo-busca-painel" placeholder="Pesquisar" aria-label="Campo de pesquisa">
                 <button type="submit" aria-label="Executar pesquisa">
                     <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 </button>
@@ -63,11 +66,11 @@
             
             <!-- Botões de autenticação: Alterados para mostrar usuário logado -->
             <div class="botoes-autenticacao">
-                <div class="usuario-logado">
+                <div class="usuario-logado" aria-label="Usuário logado: Alexandre Carlos">
                     <i class="fa-solid fa-user-circle" aria-hidden="true"></i>
                     <span>Alexandre Carlos</span>
                 </div>
-                <a href="../../index.html" class="botao-logout">Sair</a>
+                <a href="../../index.html" class="botao-logout" aria-label="Fazer logout do sistema">Sair</a>
             </div>
         </nav>
     </header>
@@ -75,18 +78,18 @@
     <!-- ========================================
          CONTEÚDO PRINCIPAL DO DASHBOARD
          ======================================== -->
-    <main class="container-dashboard" role="main">
+    <main id="conteudo-principal" class="container-dashboard">
         <!-- Cabeçalho do Dashboard -->
-        <section class="cabecalho-dashboard">
+        <header class="cabecalho-dashboard">
             <div class="boas-vindas">
-                <h1>Dashboard Administrativo</h1>
+                <h1 id="titulo-dashboard">Dashboard Administrativo</h1>
                 <p>Bem-vindo ao painel de controle da plataforma Turma do Bem</p>
             </div>
-            <div class="data-hora">
+            <div class="data-hora" aria-label="Data e hora atual">
                 <i class="fa-solid fa-calendar" aria-hidden="true"></i>
-                <span>10 de Outubro de 2025 - 14:30</span>
+                <time datetime="2025-10-10T14:30">10 de Outubro de 2025 - 14:30</time>
             </div>
-        </section>
+        </header>
 
         <!-- ========================================
              CARDS DE ESTATÍSTICAS PRINCIPAIS
@@ -96,49 +99,49 @@
             
             <div class="grid-estatisticas" role="region" aria-label="Estatísticas principais">
                 <!-- Card 1: Total de Atendimentos -->
-                <article class="card-estatistica atendimentos">
+                <article class="card-estatistica atendimentos" aria-labelledby="stat-atendimentos">
                     <div class="icone-estatistica" aria-hidden="true">
                         <i class="fa-solid fa-user-doctor"></i>
                     </div>
                     <div class="info-estatistica">
-                        <h3>Total de Atendimentos</h3>
-                        <span class="numero">1,247</span>
+                        <h3 id="stat-atendimentos">Total de Atendimentos</h3>
+                        <data class="numero" value="1247">1,247</data>
                         <span class="periodo">Este mês</span>
                     </div>
                 </article>
 
                 <!-- Card 2: Voluntários Ativos -->
-                <article class="card-estatistica voluntarios">
+                <article class="card-estatistica voluntarios" aria-labelledby="stat-voluntarios">
                     <div class="icone-estatistica" aria-hidden="true">
                         <i class="fa-solid fa-users"></i>
                     </div>
                     <div class="info-estatistica">
-                        <h3>Voluntários Ativos</h3>
-                        <span class="numero">89</span>
+                        <h3 id="stat-voluntarios">Voluntários Ativos</h3>
+                        <data class="numero" value="89">89</data>
                         <span class="periodo">Atualmente</span>
                     </div>
                 </article>
 
                 <!-- Card 3: Solicitações Pendentes -->
-                <article class="card-estatistica pendencias">
+                <article class="card-estatistica pendencias" aria-labelledby="stat-pendencias">
                     <div class="icone-estatistica" aria-hidden="true">
                         <i class="fa-solid fa-clock"></i>
                     </div>
                     <div class="info-estatistica">
-                        <h3>Pendentes</h3>
-                        <span class="numero">23</span>
+                        <h3 id="stat-pendencias">Pendentes</h3>
+                        <data class="numero" value="23">23</data>
                         <span class="periodo">Aguardando</span>
                     </div>
                 </article>
 
                 <!-- Card 4: Taxa de Sucesso -->
-                <article class="card-estatistica sucesso">
+                <article class="card-estatistica sucesso" aria-labelledby="stat-sucesso">
                     <div class="icone-estatistica" aria-hidden="true">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <div class="info-estatistica">
-                        <h3>Taxa de Sucesso</h3>
-                        <span class="numero">94%</span>
+                        <h3 id="stat-sucesso">Taxa de Sucesso</h3>
+                        <data class="numero" value="94">94%</data>
                         <span class="periodo">Últimos 30 dias</span>
                     </div>
                 </article>
@@ -152,7 +155,7 @@
             <h2 id="titulo-atendimentos" class="titulo-secao-dashboard">Atendimentos Recentes</h2>
             
             <div class="container-tabela">
-                <table class="tabela-dashboard" role="table">
+                <table class="tabela-dashboard" aria-label="Lista de atendimentos recentes">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -165,61 +168,61 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>#1001</td>
+                            <th scope="row">#1001</th>
                             <td>Maria Santos</td>
                             <td>Dr. Carlos Lima</td>
-                            <td>08/10/2025</td>
-                            <td><span class="status concluido">Concluído</span></td>
+                            <td><time datetime="2025-10-08">08/10/2025</time></td>
+                            <td><span class="status concluido" aria-label="Status: Concluído">Concluído</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar atendimento 1001">
+                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1001 de Maria Santos">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
                         </tr>
                         <tr>
-                            <td>#1002</td>
+                            <th scope="row">#1002</th>
                             <td>João Oliveira</td>
                             <td>Dra. Ana Costa</td>
-                            <td>09/10/2025</td>
-                            <td><span class="status andamento">Em Andamento</span></td>
+                            <td><time datetime="2025-10-09">09/10/2025</time></td>
+                            <td><span class="status andamento" aria-label="Status: Em Andamento">Em Andamento</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar atendimento 1002">
+                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1002 de João Oliveira">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
                         </tr>
                         <tr>
-                            <td>#1003</td>
+                            <th scope="row">#1003</th>
                             <td>Sofia Pereira</td>
                             <td>Dr. Roberto Silva</td>
-                            <td>10/10/2025</td>
-                            <td><span class="status pendente">Pendente</span></td>
+                            <td><time datetime="2025-10-10">10/10/2025</time></td>
+                            <td><span class="status pendente" aria-label="Status: Pendente">Pendente</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar atendimento 1003">
+                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1003 de Sofia Pereira">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
                         </tr>
                         <tr>
-                            <td>#1004</td>
+                            <th scope="row">#1004</th>
                             <td>Pedro Mendes</td>
                             <td>Dra. Lucia Rocha</td>
-                            <td>10/10/2025</td>
-                            <td><span class="status cancelado">Cancelado</span></td>
+                            <td><time datetime="2025-10-10">10/10/2025</time></td>
+                            <td><span class="status cancelado" aria-label="Status: Cancelado">Cancelado</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar atendimento 1004">
+                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1004 de Pedro Mendes">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
                         </tr>
                         <tr>
-                            <td>#1005</td>
+                            <th scope="row">#1005</th>
                             <td>Ana Miranda</td>
                             <td>Dr. Marcos Alves</td>
-                            <td>10/10/2025</td>
-                            <td><span class="status agendado">Agendado</span></td>
+                            <td><time datetime="2025-10-10">10/10/2025</time></td>
+                            <td><span class="status agendado" aria-label="Status: Agendado">Agendado</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar atendimento 1005">
+                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1005 de Ana Miranda">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -237,43 +240,43 @@
             
             <div class="grid-acoes" role="region" aria-label="Ações rápidas disponíveis">
                 <!-- Ação 1: Novo Atendimento -->
-                <article class="card-acao novo-atendimento">
+                <article class="card-acao novo-atendimento" aria-labelledby="acao-novo">
                     <div class="icone-acao" aria-hidden="true">
                         <i class="fa-solid fa-plus"></i>
                     </div>
-                    <h3>Novo Atendimento</h3>
+                    <h3 id="acao-novo">Novo Atendimento</h3>
                     <p>Registrar um novo atendimento no sistema</p>
-                    <button class="botao-acao-rapida">Criar</button>
+                    <button class="botao-acao-rapida" aria-label="Criar novo atendimento no sistema">Criar</button>
                 </article>
 
                 <!-- Ação 2: Relatórios -->
-                <article class="card-acao relatorios">
+                <article class="card-acao relatorios" aria-labelledby="acao-relatorio">
                     <div class="icone-acao" aria-hidden="true">
                         <i class="fa-solid fa-file-alt"></i>
                     </div>
-                    <h3>Gerar Relatório</h3>
+                    <h3 id="acao-relatorio">Gerar Relatório</h3>
                     <p>Criar relatório detalhado de atividades</p>
-                    <button class="botao-acao-rapida">Gerar</button>
+                    <button class="botao-acao-rapida" aria-label="Gerar relatório de atividades">Gerar</button>
                 </article>
 
                 <!-- Ação 3: Gerenciar Voluntários -->
-                <article class="card-acao voluntarios-acao">
+                <article class="card-acao voluntarios-acao" aria-labelledby="acao-voluntarios">
                     <div class="icone-acao" aria-hidden="true">
                         <i class="fa-solid fa-user-plus"></i>
                     </div>
-                    <h3>Gerenciar Voluntários</h3>
+                    <h3 id="acao-voluntarios">Gerenciar Voluntários</h3>
                     <p>Adicionar ou editar voluntários cadastrados</p>
-                    <button class="botao-acao-rapida">Gerenciar</button>
+                    <button class="botao-acao-rapida" aria-label="Acessar gestão de voluntários">Gerenciar</button>
                 </article>
 
                 <!-- Ação 4: Configurações -->
-                <article class="card-acao configuracoes">
+                <article class="card-acao configuracoes" aria-labelledby="acao-config">
                     <div class="icone-acao" aria-hidden="true">
                         <i class="fa-solid fa-cog"></i>
                     </div>
-                    <h3>Configurações</h3>
+                    <h3 id="acao-config">Configurações</h3>
                     <p>Ajustar configurações do sistema</p>
-                    <button class="botao-acao-rapida">Acessar</button>
+                    <button class="botao-acao-rapida" aria-label="Acessar configurações do sistema">Acessar</button>
                 </article>
             </div>
         </section>
@@ -284,15 +287,15 @@
          ======================================== -->
     <footer class="rodape-principal" role="contentinfo">
         <!-- Container principal: Organiza o layout do rodapé -->
-        <section class="container-rodape">
+        <div class="container-rodape">
             <!-- Logo e descrição da empresa -->
             <div class="logo-rodape">
-                <img src="../img/logo.png" alt="Logo Cod3X">
+                <img src="../img/logo.png" alt="Logo Cod3X" loading="lazy">
                 <p>Cod3X - Tecnologia com Propósito</p>
             </div>
             
             <!-- Navegação 1: Links principais -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links de navegação">
+            <nav class="informacoes-rodape" aria-label="Links de navegação">
                 <h3>Navegação</h3>
                 <ul>
                     <li><a href="../../index.html">Início</a></li>
@@ -302,66 +305,66 @@
             </nav>
             
             <!-- Navegação 2: Suporte ao usuário -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links de suporte">
+            <nav class="informacoes-rodape" aria-label="Links de suporte">
                 <h3>Suporte</h3>
                 <ul>
                     <li><a href="./faq.html">FAQ</a></li>
                     <li><a href="./contato.html">Contato</a></li>
-                    <li><a href="./painel.html">Painel</a></li>
+                    <li><a href="./painel.html" aria-current="page">Painel</a></li>
                 </ul>
             </nav>
             
             <!-- Navegação 3: Informações do projeto -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links do projeto">
+            <nav class="informacoes-rodape" aria-label="Links do projeto">
                 <h3>Projeto</h3>
                 <ul>
-                    <li><a href="#">FIAP Challenge</a></li>
-                    <li><a href="#">Turma do Bem</a></li>
-                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#" aria-label="Sobre o FIAP Challenge">FIAP Challenge</a></li>
+                    <li><a href="#" aria-label="Conheça a Turma do Bem">Turma do Bem</a></li>
+                    <li><a href="#" aria-label="Documentação técnica">Documentação</a></li>
                 </ul>
             </nav>
             
             <!-- Navegação 4: Aspectos legais -->
-            <nav class="informacoes-rodape" role="navigation" aria-label="Links legais">
+            <nav class="informacoes-rodape" aria-label="Links legais">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#">Termos de Uso</a></li>
-                    <li><a href="#">Privacidade</a></li>
-                    <li><a href="#">Licenças</a></li>
+                    <li><a href="#" aria-label="Termos de uso do serviço">Termos de Uso</a></li>
+                    <li><a href="#" aria-label="Política de privacidade">Privacidade</a></li>
+                    <li><a href="#" aria-label="Licenças de software">Licenças</a></li>
                 </ul>
             </nav>
-        </section>
+        </div>
         
         <!-- Divisor visual entre seções do rodapé -->
-        <hr class="linha-divisoria-rodape" role="separator">
+        <hr class="linha-divisoria-rodape">
         
         <!-- Seção inferior: Redes sociais e copyright -->
-        <section class="inferior-rodape">
+        <div class="inferior-rodape">
             <!-- Navegação das redes sociais: aria-label para acessibilidade -->
-            <nav class="redes-sociais" role="navigation" aria-label="Redes sociais">
+            <nav class="redes-sociais" aria-label="Redes sociais">
                 <ul class="icones-sociais">
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="WhatsApp">
+                        <a href="#" class="link-icone" aria-label="Fale conosco pelo WhatsApp">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="Facebook">
+                        <a href="#" class="link-icone" aria-label="Siga-nos no Facebook">
                             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="LinkedIn">
+                        <a href="#" class="link-icone" aria-label="Conecte-se no LinkedIn">
                             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="GitHub">
+                        <a href="#" class="link-icone" aria-label="Veja nosso código no GitHub">
                             <i class="fa-brands fa-github" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="item-social">
-                        <a href="#" class="link-icone" aria-label="Instagram">
+                        <a href="#" class="link-icone" aria-label="Siga-nos no Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                     </li>
@@ -369,8 +372,8 @@
             </nav>
             
             <!-- Copyright: Informações legais obrigatórias -->
-            <p>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</p>
-        </section>
+            <p><small>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</small></p>
+        </div>
     </footer>
 </body>
 
