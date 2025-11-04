@@ -1,9 +1,11 @@
-/* =========================
-   SEÇÃO FUNCIONALIDADES
-   ========================= */
+/* ========================================================================
+   1. SEÇÃO FUNCIONALIDADES
+   ======================================================================== */
+
+/* 1.1 Container das Funcionalidades */
 .secao-funcionalidades {
     padding: 3rem 2rem;
-    background: #F4F4F9;
+    background: #f4f4f9;
 }
 
 .container-funcionalidades {
@@ -11,55 +13,63 @@
     margin: 0 auto;
 }
 
+
+/* 1.2 Títulos da Seção */
 .titulo-secao-sobre {
+    position: relative;
+    margin-bottom: 2rem;
+    color: #3a506b;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 2.8rem;
-    color: #3A506B;
     text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
 }
 
 .subtitulo-funcionalidades {
+    margin-bottom: 4rem;
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 1.2rem;
-    color: #3A506B;
     text-align: center;
-    margin-bottom: 4rem;
     opacity: 0.8;
 }
 
+
+/* 1.3 Grid de Funcionalidades */
 .grid-funcionalidades {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
 }
 
+
+/* 1.4 Card de Funcionalidade */
 .card-funcionalidade {
-    background: #fff;
+    position: relative;
     padding: 2.5rem;
     border-radius: 20px;
+    background: #fff;
     box-shadow: 0 10px 30px #3a506b14;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
     text-align: center;
+    overflow: hidden;
+    transition: all 0.3s;
 }
 
 .card-funcionalidade:hover {
-    transform: translateY(-8px);
     box-shadow: 0 20px 50px #3a506b26;
+    transform: translateY(-8px);
 }
 
+
+/* 1.5 Ícone da Funcionalidade */
 .icone-funcionalidade {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s;
+    width: 70px;
+    height: 70px;
     margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    transition: all 0.3s;
 }
 
 .card-funcionalidade.centralizacao .icone-funcionalidade {
@@ -85,46 +95,69 @@
 .card-funcionalidade.acessibilidade .icone-funcionalidade {
     background: #96ac3f1a;
 }
+
 .icone-funcionalidade i {
     font-size: 1.8rem;
 }
 
-.card-funcionalidade.centralizacao .icone-funcionalidade i { color: #96ac3f; }
-.card-funcionalidade.roteamento .icone-funcionalidade i { color: #3A506B; }
-.card-funcionalidade.acompanhamento .icone-funcionalidade i { color: #e88407; }
-.card-funcionalidade.relatorios .icone-funcionalidade i { color: #e88407; }
-.card-funcionalidade.integracao .icone-funcionalidade i { color: #3A506B; }
-.card-funcionalidade.acessibilidade .icone-funcionalidade i { color: #96ac3f; }
+.card-funcionalidade.centralizacao .icone-funcionalidade i {
+    color: #96ac3f;
+}
 
+.card-funcionalidade.roteamento .icone-funcionalidade i {
+    color: #3a506b;
+}
+
+.card-funcionalidade.acompanhamento .icone-funcionalidade i {
+    color: #e88407;
+}
+
+.card-funcionalidade.relatorios .icone-funcionalidade i {
+    color: #e88407;
+}
+
+.card-funcionalidade.integracao .icone-funcionalidade i {
+    color: #3a506b;
+}
+
+.card-funcionalidade.acessibilidade .icone-funcionalidade i {
+    color: #96ac3f;
+}
+
+
+/* 1.6 Conteúdo do Card */
 .card-funcionalidade h3 {
+    margin-bottom: 1rem;
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.3rem;
-    color: #3A506B;
-    margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .card-funcionalidade p {
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
-    line-height: 1.6;
     margin-bottom: 2rem;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
     opacity: 0.8;
 }
 
-/* Detalhes Visuais das Funcionalidades */
+
+/* 1.7 Detalhes Visuais */
 .detalhe-visual {
     margin-top: 1.5rem;
     padding: 1rem;
-    background: #f8f9fa;
     border-radius: 10px;
+    background: #f8f9fa;
 }
 
+
+/* 1.8 Exemplo de Ticket */
 .exemplo-ticket {
-    background: #fff;
-    border-radius: 8px;
     padding: 1rem;
     border-left: 4px solid #96ac3f;
+    border-radius: 8px;
+    background: #fff;
 }
 
 .cabecalho-ticket {
@@ -134,8 +167,8 @@
 }
 
 .id-ticket {
+    color: #3a506b;
     font-weight: bold;
-    color: #3A506B;
 }
 
 .status-ticket {
@@ -146,17 +179,19 @@
 }
 
 .status-ticket.aberto {
-    font-family: 'Open Sans', Arial, sans-serif;
     background: #96ac3f33;
     color: #96ac3f;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
 .conteudo-ticket {
     color: #666;
-    font-size: 0.9rem;
     font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.9rem;
 }
 
+
+/* 1.9 Fluxo de Roteamento */
 .fluxo-roteamento {
     display: flex;
     align-items: center;
@@ -164,21 +199,22 @@
     font-size: 0.9rem;
 }
 
-.entrada-fluxo, .destino-fluxo {
-    background: #3A506B;
-    color: #fff;
-    font-family: 'Open Sans', Arial, sans-serif;
+.entrada-fluxo,
+.destino-fluxo {
     padding: 4px 8px;
     border-radius: 8px;
+    background: #3a506b;
+    color: #fff;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.8rem;
 }
 
 .analise-fluxo {
+    padding: 4px 8px;
+    border-radius: 8px;
     background: #e88407;
     color: #fff;
     font-family: 'Open Sans', Arial, sans-serif;
-    padding: 4px 8px;
-    border-radius: 8px;
     font-size: 0.8rem;
 }
 
@@ -187,6 +223,8 @@
     font-weight: bold;
 }
 
+
+/* 1.10 Status de Acompanhamento */
 .linha-status {
     display: flex;
     gap: 0.5rem;
@@ -197,10 +235,10 @@
     margin: auto;
     padding: 4px 8px;
     border-radius: 8px;
-    font-size: 0.8rem;
     font-family: 'Open Sans', Arial, sans-serif;
-    text-align: center;
+    font-size: 0.8rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .status-item.aberto {
@@ -218,6 +256,8 @@
     color: #27ae60;
 }
 
+
+/* 1.11 Mini Gráfico */
 .mini-grafico {
     display: flex;
     align-items: end;
@@ -227,9 +267,9 @@
 
 .barra-grafico {
     flex: 1;
-    background: linear-gradient(180deg, #96ac3f, #7a8f35);
-    border-radius: 2px 2px 0 0;
     min-height: 20%;
+    border-radius: 2px 2px 0 0;
+    background: linear-gradient(180deg, #96ac3f, #7a8f35);
 }
 
 /* Estilos para Integração Multi-canal */
@@ -288,10 +328,13 @@
 
 @keyframes rotateSync {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-/* Estilos para Acessibilidade */
+
+/* 1.13 Recursos de Acessibilidade */
 .recursos-acessibilidade {
     display: flex;
     flex-direction: column;
@@ -303,8 +346,8 @@
     align-items: center;
     gap: 0.8rem;
     padding: 0.5rem;
-    background: #96ac3f1a;
     border-radius: 8px;
+    background: #96ac3f1a;
     transition: all 0.3s;
 }
 
@@ -314,25 +357,29 @@
 }
 
 .recurso-item i {
+    width: 16px;
     color: #96ac3f;
     font-size: 1rem;
-    width: 16px;
     text-align: center;
 }
 
 .recurso-item span {
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.85rem;
-    color: #3A506B;
     font-weight: 600;
 }
 
-/* =========================
-   SEÇÃO TECNOLOGIAS
-   ========================= */
+
+
+/* ========================================================================
+   2. SEÇÃO TECNOLOGIAS
+   ======================================================================== */
+
+/* 2.1 Container das Tecnologias */
 .secao-tecnologias {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #F4F4F9 0%, #fff 100%);
+    background: linear-gradient(135deg, #f4f4f9 0%, #fff 100%);
 }
 
 .container-tecnologias {
@@ -341,17 +388,21 @@
     text-align: center;
 }
 
+
+/* 2.2 Subtítulo das Tecnologias */
 .subtitulo-tecnologias {
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 1.2rem;
-    color: #3A506B;
-    margin-bottom: 4rem;
-    opacity: 0.8;
     max-width: 700px;
+    margin-bottom: 4rem;
     margin-left: auto;
     margin-right: auto;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 
+
+/* 2.3 Grid de Tecnologias */
 .grid-tecnologias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -359,50 +410,68 @@
     margin-top: 3rem;
 }
 
+
+/* 2.4 Card de Tecnologia */
 .card-tecnologia {
-    background: #fff;
+    position: relative;
     padding: 2.5rem 1.5rem;
     border-radius: 16px;
+    background: #fff;
     box-shadow: 0 8px 25px #3a506b14;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
     overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-tecnologia::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     height: 3px;
     transform: scaleX(0);
     transition: transform 0.4s;
 }
 
-.card-tecnologia.html::before { background: #e34f26; }
-.card-tecnologia.css::before { background: #1572b6; }
-.card-tecnologia.javascript::before { background: #f7df1e; }
-.card-tecnologia.angular::before { background: #dd0031; }
-.card-tecnologia.mysql::before { background: #00758f; }
+.card-tecnologia.html::before {
+    background: #e34f26;
+}
+
+.card-tecnologia.css::before {
+    background: #1572b6;
+}
+
+.card-tecnologia.javascript::before {
+    background: #f7df1e;
+}
+
+.card-tecnologia.angular::before {
+    background: #dd0031;
+}
+
+.card-tecnologia.mysql::before {
+    background: #00758f;
+}
 
 .card-tecnologia:hover::before {
     transform: scaleX(1);
 }
 
 .card-tecnologia:hover {
-    transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 40px #3a506b26;
+    transform: translateY(-8px) scale(1.02);
 }
 
+
+/* 2.5 Ícone da Tecnologia */
 .icone-tecnologia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80px;
     height: 80px;
     margin: 0 auto 1.5rem;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.3s;
 }
 
@@ -430,48 +499,59 @@
     font-size: 2.5rem;
 }
 
-.card-tecnologia.html .icone-tecnologia i { color: #e34f26; }
-.card-tecnologia.css .icone-tecnologia i { color: #1572b6; }
-.card-tecnologia.javascript .icone-tecnologia i { color: #f7df1e; }
-.card-tecnologia.angular .icone-tecnologia i { color: #dd0031; }
-.card-tecnologia.mysql .icone-tecnologia i { color: #00758f; }
+.card-tecnologia.html .icone-tecnologia i {
+    color: #e34f26;
+}
+
+.card-tecnologia.css .icone-tecnologia i {
+    color: #1572b6;
+}
+
+.card-tecnologia.javascript .icone-tecnologia i {
+    color: #f7df1e;
+}
+
+.card-tecnologia.angular .icone-tecnologia i {
+    color: #dd0031;
+}
+
+.card-tecnologia.mysql .icone-tecnologia i {
+    color: #00758f;
+}
 
 .card-tecnologia:hover .icone-tecnologia {
     transform: scale(1.1) rotate(5deg);
 }
 
+
+/* 2.6 Conteúdo da Tecnologia */
 .card-tecnologia h3 {
+    margin-bottom: 1rem;
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.4rem;
-    color: #3A506B;
-    margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .card-tecnologia p {
+    margin: 0;
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
     line-height: 1.6;
     opacity: 0.8;
-    margin: 0;
 }
 
-/* =========================
-   SEÇÃO ROADMAP
-   ========================= */
+
+
+/* ========================================================================
+   3. SEÇÃO ROADMAP
+   ======================================================================== */
+
+/* 3.1 Container do Roadmap */
 .secao-roadmap {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #3A506B 40%, #96ac3f 100%);
-    color: #F4F4F9;
-}
-
-#titulo-roadmap {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 2.8rem;
-    color: #F4F4F9;
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
+    background: linear-gradient(135deg, #3a506b 40%, #96ac3f 100%);
+    color: #f4f4f9;
 }
 
 .container-roadmap {
@@ -480,17 +560,29 @@
     text-align: center;
 }
 
-.subtitulo-roadmap {
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 4rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+
+/* 3.2 Títulos do Roadmap */
+#titulo-roadmap {
+    position: relative;
+    margin-bottom: 2rem;
+    color: #f4f4f9;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.8rem;
+    text-align: center;
 }
 
-/* Grid das Sprints */
+.subtitulo-roadmap {
+    max-width: 600px;
+    margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+
+/* 3.3 Grid das Sprints */
 .grid-roadmap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -498,44 +590,46 @@
     margin-bottom: 4rem;
 }
 
-/* Card da Sprint */
+
+/* 3.4 Card da Sprint */
 .card-sprint {
-    background: #f4f4f91a;
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
     padding: 2rem;
     border: 1px solid #f4f4f933;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 20px;
+    background: #f4f4f91a;
     text-align: left;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-sprint:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-color: rgba(244, 244, 249, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
 }
 
-/* Header da Sprint */
+
+/* 3.5 Header da Sprint */
 .sprint-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 1.5rem;
 }
 
 .sprint-numero {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #F4F4F9;
-    color: #3A506B;
-    font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f4f4f9;
     box-shadow: 0 4px 15px rgba(244, 244, 249, 0.3);
+    color: #3a506b;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .sprint-status {
@@ -544,43 +638,45 @@
     gap: 0.5rem;
     padding: 0.4rem 1rem;
     border-radius: 20px;
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-    font-family: 'Poppins', Arial, sans-serif;
 }
 
 .sprint-status.concluida {
     background: #27ae60;
-    color: #F4F4F9;
+    color: #f4f4f9;
 }
 
 .sprint-status.futura {
     background: #96ac3f;
-    color: #F4F4F9;
+    color: #f4f4f9;
 }
 
-/* Conteúdo da Sprint */
+
+/* 3.6 Conteúdo da Sprint */
 .sprint-content h3 {
+    margin-bottom: 1rem;
+    color: #f4f4f9;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.3rem;
-    color: #F4F4F9;
-    margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .sprint-objetivo {
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: #F4F4F9;
-    line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: #f4f4f9;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
     opacity: 0.9;
 }
 
-/* Lista de Entregas */
+
+/* 3.7 Lista de Entregas */
 .sprint-entregas {
-    list-style: none;
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 .sprint-entregas li {
@@ -588,13 +684,12 @@
     align-items: center;
     gap: 0.8rem;
     margin-bottom: 0.8rem;
+    color: #f4f4f9;
     font-family: 'Open Sans', Arial, sans-serif;
-    color: #F4F4F9;
-    opacity: 0.9;
     font-size: 0.9rem;
+    opacity: 0.9;
 }
 
-/* Ícones das entregas */
 .sprint-concluida .sprint-entregas li i {
     color: #27ae60;
     font-size: 0.8rem;
@@ -602,46 +697,47 @@
 
 .sprint-futura .sprint-entregas li i {
     color: #96ac3f;
-    opacity: 0.6;
     font-size: 0.8rem;
+    opacity: 0.6;
 }
 
-/* Barra de Progresso */
+
+/* 3.8 Barra de Progresso */
 .progresso-roadmap {
-    background: #f4f4f91a;
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
     padding: 2rem;
     border: 1px solid #f4f4f933;
+    border-radius: 20px;
+    background: #f4f4f91a;
+    backdrop-filter: blur(10px);
 }
 
 .progresso-roadmap h4 {
-    font-family: 'Poppins', Arial, sans-serif;
-    color: #96ac3f;
-    font-size: 1.2rem;
     margin-bottom: 1.5rem;
+    color: #96ac3f;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
 .barra-progresso-roadmap {
     width: 100%;
     height: 10px;
-    background: #f4f4f933;
-    border-radius: 10px;
-    overflow: hidden;
     margin-bottom: 1rem;
+    border-radius: 10px;
+    background: #f4f4f933;
+    overflow: hidden;
 }
 
 .progresso-preenchido {
     height: 100%;
-    background: linear-gradient(90deg, #96ac3f, #e88407);
     border-radius: 10px;
+    background: linear-gradient(90deg, #96ac3f, #e88407);
     transition: width 2s ease-out;
 }
 
 .texto-progresso {
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: #F4F4F9;
-    opacity: 0.8;
     margin: 0;
+    color: #f4f4f9;
+    font-family: 'Open Sans', Arial, sans-serif;
+    opacity: 0.8;
 }
