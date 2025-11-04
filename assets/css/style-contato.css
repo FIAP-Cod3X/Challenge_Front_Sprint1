@@ -1,9 +1,16 @@
-/* =========================
-   SEÇÃO CONTATO
-   ========================= */
+/* ========================================================================
+   PÁGINA DE CONTATO - STYLE SHEET
+   ======================================================================== */
+
+
+/* ========================================================================
+   1. SEÇÃO CONTATO
+   ======================================================================== */
+
+/* 1.1 Container Principal */
 .secao-contato {
     padding: 3rem 2rem;
-    background: #F4F4F9;
+    background: #f4f4f9;
 }
 
 .container-contato {
@@ -11,32 +18,34 @@
     margin: 0 auto;
 }
 
-/* Cabeçalho da Seção */
+
+/* 1.2 Cabeçalho da Seção */
 .cabecalho-contato {
-    text-align: center;
     margin-bottom: 4rem;
+    text-align: center;
 }
 
 .titulo-secao-sobre {
+    position: relative;
+    margin-bottom: 2rem;
+    color: #3a506b;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 2.8rem;
-    color: #3A506B;
     text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
 }
 
 .subtitulo-contato {
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 1.2rem;
-    color: #3A506B;
-    text-align: center;
-    opacity: 0.8;
     max-width: 600px;
     margin: 0 auto;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0.8;
 }
 
-/* Grid de Contatos */
+
+/* 1.3 Grid de Contatos */
 .grid-contatos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -44,15 +53,17 @@
     margin-bottom: 4rem;
 }
 
+
+/* 1.4 Card de Contato */
 .card-contato {
-    background: #fff;
+    position: relative;
     padding: 2.5rem;
     border-radius: 20px;
+    background: #fff;
     box-shadow: 0 10px 30px #3a506b14;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
     text-align: center;
+    overflow: hidden;
+    transition: all 0.3s;
 }
 
 .card-contato:hover {
@@ -60,84 +71,105 @@
     box-shadow: 0 20px 50px #3a506b26;
 }
 
-/* Ícones dos Cartões */
+.card-contato:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px #3a506b26;
+}
+
+
+/* 1.5 Ícones dos Cartões */
 .icone-contato {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s;
+    width: 70px;
+    height: 70px;
     margin: 0 auto 1.5rem auto;
-}
-
-.card-contato.email .icone-contato {
-    background: #3a506b1a;
-}
-
-.card-contato.whatsapp .icone-contato {
-    background: #25d3661a;
-}
-
-.card-contato.localizacao .icone-contato {
-    background: #e884071a;
+    border-radius: 50%;
+    transition: all 0.3s;
 }
 
 .icone-contato i {
     font-size: 1.8rem;
 }
 
-.card-contato.email .icone-contato i { 
-    color: #3A506B; 
+.card-contato.email .icone-contato {
+    background: #3a506b1a;
 }
 
-.card-contato.whatsapp .icone-contato i { 
-    color: #25d366; 
+.card-contato.email .icone-contato i {
+    color: #3a506b;
 }
 
-.card-contato.localizacao .icone-contato i { 
-    color: #e88407; 
+.card-contato.whatsapp .icone-contato {
+    background: #25d3661a;
 }
 
-/* Títulos e Textos dos Cartões */
+.card-contato.whatsapp .icone-contato i {
+    color: #25d366;
+}
+
+.card-contato.localizacao .icone-contato {
+    background: #e884071a;
+}
+
+.card-contato.localizacao .icone-contato i {
+    color: #e88407;
+}
+
+
+/* 1.6 Títulos e Textos dos Cartões */
 .card-contato h3 {
+    margin-bottom: 1rem;
+    color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.3rem;
-    color: #3A506B;
-    margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .card-contato p {
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
-    line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
     opacity: 0.8;
 }
 
-/* Informações de Contato */
+
+/* 1.7 Informações de Contato */
 .info-contato {
     margin-bottom: 1.5rem;
 }
 
+.info-contato.endereco p {
+    margin: 0;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 .link-contato {
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #3A506B;
-    text-decoration: none;
-    transition: all 0.3s;
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     background: #f8f9fa;
+    color: #3a506b;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.link-contato:focus {
+    outline: 2px solid #96ac3f;
+    outline-offset: 2px;
 }
 
 .card-contato.email .link-contato:hover {
-    background: #3a506b1a;
-    color: #3A506B;
+    background: #3a506b5d;
+    color: #3a506b;
 }
 
 .card-contato.whatsapp .link-contato:hover {
@@ -145,24 +177,17 @@
     color: #25d366;
 }
 
-.info-contato.endereco p {
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #3A506B;
-    margin: 0;
-}
 
-/* Horário de Funcionamento */
+/* 1.8 Horário de Funcionamento */
 .horario-funcionamento {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.8rem 1rem;
-    background: #f8f9fa;
-    border-radius: 10px;
     margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    background: #f8f9fa;
 }
 
 .horario-funcionamento i {
@@ -170,134 +195,31 @@
 }
 
 .horario-funcionamento span {
+    color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.9rem;
-    color: #3A506B;
     font-weight: 500;
 }
 
-/* =========================
-   SEÇÃO MAPA
-   ========================= */
-.container-mapa {
-    background: #fff;
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px #3a506b14;
-    margin-top: 2rem;
-}
 
-.titulo-mapa {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 2.2rem;
-    color: #3A506B;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.subtitulo-mapa {
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 1.1rem;
-    color: #3A506B;
-    text-align: center;
-    opacity: 0.8;
-    margin-bottom: 3rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Wrapper do Mapa */
-.mapa-wrapper {
-    width: 100%;
-    height: 400px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(58, 80, 107, 0.15);
-    margin-bottom: 2rem;
-}
-
-.mapa-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Informações do Mapa */
-.info-mapa {
-    margin-top: 2rem;
-}
-
-.detalhe-endereco h4 {
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 1.2rem;
-    color: #3A506B;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.detalhe-endereco ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.detalhe-endereco li {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 10px;
-    font-family: 'Open Sans', Arial, sans-serif;
-    color: #3A506B;
-    transition: all 0.3s;
-}
-
-.detalhe-endereco li:hover {
-    background: #96ac3f1a;
-    transform: translateX(5px);
-}
-
-.detalhe-endereco li i {
-    color: #96ac3f;
-    font-size: 1.2rem;
-    width: 20px;
-    text-align: center;
-}
-
-/* =========================
-   ESTADOS DE FOCO (ACESSIBILIDADE)
-   ========================= */
-.link-contato:focus {
-    outline: 2px solid #96ac3f;
-    outline-offset: 2px;
-}
-
-.card-contato:focus-within {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px #3a506b26;
-}
-
-/* =========================
-   MELHORIAS VISUAIS
-   ========================= */
+/* 1.9 Melhorias Visuais */
 .card-contato::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     height: 4px;
     border-radius: 20px 20px 0 0;
     transition: all 0.3s;
 }
 
+.card-contato:hover::before {
+    height: 6px;
+}
+
 .card-contato.email::before {
-    background: linear-gradient(90deg, #3A506B, #5a7291);
+    background: linear-gradient(90deg, #3a506b, #5a7291);
 }
 
 .card-contato.whatsapp::before {
@@ -308,6 +230,103 @@
     background: linear-gradient(90deg, #e88407, #ff9500);
 }
 
-.card-contato:hover::before {
-    height: 6px;
+
+/* ========================================================================
+   2. SEÇÃO MAPA
+   ======================================================================== */
+
+/* 2.1 Container do Mapa */
+.container-mapa {
+    margin-top: 2rem;
+    padding: 3rem;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 30px #3a506b14;
 }
+
+
+/* 2.2 Títulos do Mapa */
+.titulo-mapa {
+    margin-bottom: 1rem;
+    color: #3a506b;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.subtitulo-mapa {
+    max-width: 500px;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+
+/* 2.3 Wrapper do Mapa */
+.mapa-wrapper {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(58, 80, 107, 0.15);
+    overflow: hidden;
+}
+
+.mapa-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* 2.4 Informações do Mapa */
+.info-mapa {
+    margin-top: 2rem;
+}
+
+.detalhe-endereco h4 {
+    margin-bottom: 1.5rem;
+    color: #3a506b;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.detalhe-endereco ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.detalhe-endereco li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: #f8f9fa;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    transition: all 0.3s;
+}
+
+.detalhe-endereco li:hover {
+    background: #96ac3f1a;
+    transform: translateX(5px);
+}
+
+.detalhe-endereco li i {
+    width: 20px;
+    color: #96ac3f;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
