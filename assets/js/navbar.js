@@ -35,6 +35,7 @@ function inicializarMenuHamburguer() {
 function criarBotaoHamburguer() {
     const cabecalho = document.querySelector('.secao-navegacao');
     const menuNavegacao = document.querySelector('.menu-navegacao');
+    const botoesAutenticacao = document.querySelector('.botoes-autenticacao');
     
     if (!cabecalho || !menuNavegacao) return;
     
@@ -59,8 +60,14 @@ function criarBotaoHamburguer() {
     // Adicionar ID ao menu para acessibilidade
     menuNavegacao.setAttribute('id', 'menu-principal');
     
-    // Inserir botão antes do menu de navegação
-    cabecalho.insertBefore(botao, menuNavegacao);
+    // Inserir botão DEPOIS dos botões de autenticação (no final do nav)
+    if (botoesAutenticacao) {
+        // Insere depois do elemento de autenticação
+        botoesAutenticacao.insertAdjacentElement('afterend', botao);
+    } else {
+        // Fallback: insere no final do nav
+        cabecalho.appendChild(botao);
+    }
 }
 
 
