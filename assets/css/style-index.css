@@ -583,7 +583,7 @@
     }
 
     .lista-beneficios li {
-        width: 100%;
+        width: 90%;
         min-width: auto;
         padding: 1rem 0.8rem;
     }
@@ -683,7 +683,7 @@
     }
 
     .lista-beneficios li {
-        width: 100%;
+        width: 90%;
         min-width: auto;
     }
 
