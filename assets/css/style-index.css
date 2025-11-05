@@ -782,7 +782,6 @@
     }
 
     .lista-beneficios li {
-        width: calc(50% - 0.75rem);
         min-width: 200px;
     }
 
