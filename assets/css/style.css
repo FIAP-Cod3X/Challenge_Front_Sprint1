@@ -54,10 +54,16 @@ body {
     justify-content: space-between;
     flex-wrap: nowrap;
     box-shadow: 0 2px 4px #0000001a;
+    gap: 0.5rem;
 }
 
 
 /* 2.3 Logo da Navegação */
+.link-logo {
+    order: 1;
+    flex-shrink: 0;
+}
+
 .imagem-logo {
     max-width: 110px;
     margin: 0.5rem 2rem;
@@ -75,6 +81,7 @@ body {
     padding: 0;
     margin: 0;
     list-style: none;
+    order: 2;
 }
 
 
@@ -126,6 +133,8 @@ body {
     align-items: center;
     gap: 0.8rem;
     margin: 0 1rem;
+    order: 2;
+    flex-shrink: 0;
 }
 
 
@@ -204,6 +213,7 @@ body {
     border: 2px solid #3a506b;
     border-radius: 20px;
     background: #f4f4f9;
+    order: 2;
 }
 
 
@@ -403,18 +413,496 @@ input[type="search"]::-webkit-search-cancel-button {
 
 
 /* ========================================================================
-   6. RESPONSIVIDADE
+   6. MENU HAMBURGUER (MOBILE)
    ======================================================================== */
 
-/* 6.1 Desktop Grande (≥1300px) */
-@media (min-width: 1300px) {
-    .secao-navegacao ul {
-        gap: 2rem;
-        margin: 0 2rem 0 0;
+/* 6.1 Botão Hamburguer */
+.botao-menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 28px;
+    margin: 0 1rem 0 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1001;
+    order: 3;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.botao-menu-hamburguer:focus {
+    outline: 2px solid #96ac3f;
+    outline-offset: 4px;
+}
+
+.linha-hamburguer {
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;
+    background: #3a506b;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/* Animação do Menu Aberto */
+.botao-menu-hamburguer.ativo .linha-hamburguer:nth-child(1) {
+    transform: translateY(12.5px) rotate(45deg);
+}
+
+.botao-menu-hamburguer.ativo .linha-hamburguer:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.botao-menu-hamburguer.ativo .linha-hamburguer:nth-child(3) {
+    transform: translateY(-12.5px) rotate(-45deg);
+}
+
+
+/* 6.2 Menu Mobile */
+.menu-navegacao {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-navegacao.mobile-ativo {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    padding: 80px 0 20px 0;
+    margin: 0;
+    background: linear-gradient(135deg, #3a506b 0%, #2d3f54 100%);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+    gap: 0;
+    overflow-y: auto;
+    animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.menu-navegacao.mobile-ativo li {
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-navegacao.mobile-ativo .links-navegacao {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    color: #f4f4f9;
+    font-size: 1.1rem;
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.menu-navegacao.mobile-ativo .links-navegacao:hover,
+.menu-navegacao.mobile-ativo .links-navegacao:focus {
+    background: rgba(150, 172, 63, 0.2);
+    padding-left: 2.5rem;
+    color: #96ac3f;
+}
+
+.menu-navegacao.mobile-ativo .links-navegacao::after {
+    display: none;
+}
+
+
+/* 6.3 Overlay de Fundo */
+.overlay-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.overlay-menu.ativo {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* 6.4 Classe para esconder visualmente mas manter acessível */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+
+/* ========================================================================
+   7. RESPONSIVIDADE
+   ======================================================================== */
+
+/* 7.0 Regra Geral - Menu Mobile (até 1299px) */
+@media (max-width: 1299px) {
+    /* Esconder menu desktop e mostrar hamburguer */
+    .menu-navegacao {
+        display: none !important;
+    }
+
+    .botao-menu-hamburguer {
+        display: flex !important;
+    }
+
+    /* Esconder barra de pesquisa em dispositivos móveis */
+    .barra-pesquisa {
+        display: none;
+    }
+}
+
+/* 7.0.1 Mobile S (320px - 375px) - Ajustes específicos */
+@media (max-width: 375px) {
+    .secao-navegacao {
+        padding: 0.4rem 0;
+        gap: 0.2rem;
+    }
+
+    .link-logo {
+        order: 1;
     }
 
     .imagem-logo {
-        margin: auto 0 0 0.5rem;
+        max-width: 60px;
+        margin: 0.2rem 0.4rem;
+    }
+
+    .botoes-autenticacao {
+        order: 2;
+        gap: 0.3rem;
+        margin: 0 0.2rem;
+    }
+
+    .botao-autenticacao {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .botao-menu-hamburguer {
+        order: 3;
+        width: 26px;
+        height: 22px;
+        margin: 0 0.4rem 0 0;
+        display: flex !important;
+        flex-shrink: 0;
+    }
+
+    .linha-hamburguer {
+        height: 2px;
+    }
+}
+
+/* 7.1 Extra Small Devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    /* Navegação */
+    .secao-navegacao {
+        padding: 0.5rem 0;
+        gap: 0.3rem;
+    }
+
+    .link-logo {
+        flex-shrink: 0;
+    }
+
+    .imagem-logo {
+        max-width: 70px;
+        margin: 0.3rem 0.5rem;
+    }
+
+    .botoes-autenticacao {
+        gap: 0.4rem;
+        margin: 0 0.3rem;
+    }
+
+    .botao-autenticacao {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .botao-menu-hamburguer {
+        width: 28px;
+        height: 24px;
+        margin: 0 0.5rem 0 0;
+        flex-shrink: 0;
+    }
+
+    .linha-hamburguer {
+        height: 2.5px;
+    }
+
+    /* Rodapé */
+    .container-rodape {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .logo-rodape {
+        margin-bottom: 1rem;
+    }
+
+    .logo-rodape img {
+        max-width: 70px;
+    }
+
+    .logo-rodape p {
+        font-size: 1rem;
+    }
+
+    .informacoes-rodape {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .informacoes-rodape h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .informacoes-rodape a {
+        font-size: 1rem;
+    }
+
+    .redes-sociais ul li {
+        margin-right: 1.2rem;
+    }
+
+    .redes-sociais a {
+        font-size: 1.3rem;
+    }
+
+    .inferior-rodape p {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* 7.2 Small Devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+    /* Navegação */
+    .imagem-logo {
+        max-width: 90px;
+        margin: 0.4rem 1.2rem;
+    }
+
+    .botoes-autenticacao {
+        gap: 0.6rem;
+        margin: 0 0.8rem;
+    }
+
+    .botao-autenticacao {
+        padding: 0.55rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Rodapé */
+    .container-rodape {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .logo-rodape img {
+        max-width: 75px;
+    }
+
+    .informacoes-rodape {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .informacoes-rodape h3 {
+        font-size: 1.2rem;
+    }
+
+    .informacoes-rodape a {
+        font-size: 1.05rem;
+    }
+
+    .redes-sociais a {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* 7.3 Medium Devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Navegação */
+    .imagem-logo {
+        max-width: 95px;
+        margin: 0.4rem 1.5rem;
+    }
+
+    .botoes-autenticacao {
+        gap: 0.7rem;
+        margin: 0 1rem;
+    }
+
+    .botao-autenticacao {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.875rem;
+    }
+
+    /* Menu Mobile (ajuste de largura) */
+    .menu-navegacao.mobile-ativo {
+        width: 320px;
+    }
+
+    /* Rodapé */
+    .container-rodape {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 2rem;
+        padding: 2.5rem 2rem;
+    }
+
+    .logo-rodape {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .informacoes-rodape {
+        width: auto;
+        flex: 1;
+        min-width: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .informacoes-rodape h3 {
+        font-size: 1.25rem;
+    }
+
+    .informacoes-rodape a {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* 7.4 Large Devices (tablets grandes e notebooks pequenos, 992px and up) */
+@media (min-width: 992px) {
+    /* Navegação */
+    .imagem-logo {
+        max-width: 100px;
+        margin: 0.5rem 1.8rem;
+    }
+
+    .botoes-autenticacao {
+        gap: 0.75rem;
+        margin: 0 1rem;
+    }
+
+    .botao-autenticacao {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Rodapé */
+    .container-rodape {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 2rem 2rem;
+    }
+
+    .logo-rodape {
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .logo-rodape img {
+        max-width: 80px;
+    }
+
+    .informacoes-rodape {
+        width: auto;
+        flex: 0 1 auto;
+        margin-bottom: 0;
+    }
+
+    .informacoes-rodape h3 {
+        font-size: 1.3rem;
+    }
+
+    .informacoes-rodape a {
+        font-size: 1.15rem;
+    }
+
+    .redes-sociais a {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* 7.5 Esconder barra de pesquisa até 1024px */
+@media (max-width: 1024px) {
+    .barra-pesquisa {
+        display: none;
+    }
+}
+
+
+/* 7.6 Extra-Large Devices (large laptops and desktops, 1300px and up) */
+@media (min-width: 1300px) {
+    /* Navegação */
+    .imagem-logo {
+        max-width: 110px;
+        margin: 0.5rem 2rem;
+    }
+
+    /* Menu desktop aparece apenas em telas grandes */
+    .menu-navegacao {
+        display: flex !important;
+        gap: 4rem;
+        margin: 0 2rem 0 0;
+    }
+
+    .botao-menu-hamburguer {
+        display: none !important;
+    }
+
+    .barra-pesquisa {
+        display: flex;
+    }
+
+    .links-navegacao {
+        font-size: 1.5rem;
     }
 
     .secao-navegacao li {
@@ -423,11 +911,20 @@ input[type="search"]::-webkit-search-cancel-button {
         text-align: center;
     }
 
-    .links-navegacao {
-        margin: 0 auto;
+    .botoes-autenticacao {
+        gap: 0.8rem;
+        margin: 0 1rem;
     }
 
+    .botao-autenticacao {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Rodapé */
     .container-rodape {
+        flex-wrap: nowrap;
+        justify-content: space-around;
         gap: 0.5rem;
         padding: 2rem 1rem;
         align-items: stretch;
@@ -439,12 +936,16 @@ input[type="search"]::-webkit-search-cancel-button {
         margin-bottom: 1rem;
         align-items: center;
     }
-}
 
+    .informacoes-rodape h3 {
+        font-size: 1.5rem;
+    }
 
-/* 6.2 Tablet e Mobile (<1300px) */
-@media (max-width: 1299px) {
-    .barra-pesquisa {
-        display: none;
+    .informacoes-rodape a {
+        font-size: 1.2rem;
+    }
+
+    .logo-rodape p {
+        font-size: 1.2rem;
     }
 }
