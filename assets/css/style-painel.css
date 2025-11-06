@@ -1471,6 +1471,7 @@
     /* Cabeçalho Dashboard */
     .cabecalho-dashboard {
         padding: 1.5rem 1.8rem;
+        gap: 1rem;
     }
 
     .boas-vindas h1 {
