@@ -489,7 +489,7 @@
 
     .conteudo-texto-hero p {
         font-size: 1rem;
-        text-align: justify;
+        text-align: center;
     }
 
     .conteudo-texto-hero a {
@@ -574,7 +574,7 @@
     .secao-portal-beneficios p {
         font-size: 0.95rem;
         margin-bottom: 1.5rem;
-        text-align: justify;
+        text-align: center;
     }
 
     .lista-beneficios {
