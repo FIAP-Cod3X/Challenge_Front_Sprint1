@@ -300,6 +300,7 @@ input[type="search"]::-webkit-search-cancel-button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     font-family: "Poppins", Arial, sans-serif;
     font-size: 1.2rem;
@@ -997,10 +998,6 @@ input[type="search"]::-webkit-search-cancel-button {
         padding: 2rem 1rem;
     }
 
-    .logo-rodape {
-        margin-bottom: 1rem;
-    }
-
     .logo-rodape img {
         max-width: 70px;
     }
@@ -1150,7 +1147,6 @@ input[type="search"]::-webkit-search-cancel-button {
 
     .logo-rodape {
         width: 100%;
-        margin-bottom: 1rem;
     }
 
     .informacoes-rodape {
@@ -1290,14 +1286,13 @@ input[type="search"]::-webkit-search-cancel-button {
         flex-wrap: nowrap;
         justify-content: space-around;
         gap: 0.5rem;
-        padding: 2rem 1rem;
+        padding: 2rem 7rem;
         align-items: stretch;
     }
 
     .informacoes-rodape,
     .logo-rodape {
         width: 100%;
-        margin-bottom: 1rem;
         align-items: center;
     }
 
