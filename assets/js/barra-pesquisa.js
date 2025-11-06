@@ -6,7 +6,7 @@
  * Exibe popup responsivo com animações suaves e identidade visual do site
  */
 
-(function() {
+(function () {
     'use strict';
 
     /**
@@ -125,7 +125,7 @@
         // Clique no overlay (fora do popup)
         const overlay = document.getElementById('popup-pesquisa');
         if (overlay) {
-            overlay.addEventListener('click', function(e) {
+            overlay.addEventListener('click', function (e) {
                 if (e.target === overlay) {
                     fecharPopup();
                 }
@@ -143,7 +143,7 @@
         const popup = document.getElementById('popup-pesquisa');
         if (!popup) return;
 
-        popup.addEventListener('keydown', function(e) {
+        popup.addEventListener('keydown', function (e) {
             if (e.key !== 'Tab') return;
 
             const focusableElements = popup.querySelectorAll(
@@ -185,13 +185,13 @@
         configurarEventListeners();
 
         // Evento de submit do formulário
-        formularioPesquisa.addEventListener('submit', function(e) {
+        formularioPesquisa.addEventListener('submit', function (e) {
             e.preventDefault(); // Previne o envio do formulário
             abrirPopup();
         });
 
         // Evento adicional: Enter no input de pesquisa
-        inputPesquisa.addEventListener('keypress', function(e) {
+        inputPesquisa.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 abrirPopup();
@@ -201,7 +201,7 @@
         // Evento do botão de lupa (clique direto)
         const botaoPesquisa = formularioPesquisa.querySelector('button[type="submit"]');
         if (botaoPesquisa) {
-            botaoPesquisa.addEventListener('click', function(e) {
+            botaoPesquisa.addEventListener('click', function (e) {
                 e.preventDefault();
                 abrirPopup();
             });
