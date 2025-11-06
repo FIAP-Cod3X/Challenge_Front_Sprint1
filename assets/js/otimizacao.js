@@ -359,21 +359,23 @@
      */
     function inicializarPrevencaoCliquesDuplos() {
         document.querySelectorAll('button[type="submit"], input[type="submit"]').forEach(botao => {
-            botao.addEventListener('click', function(e) {
-                if (this.classList.contains('submitting')) {
-                    e.preventDefault();
-                    return false;
-                }
-                
-                this.classList.add('submitting');
-                this.disabled = true;
-                
-                // Reabilita após 3 segundos como fallback
-                setTimeout(() => {
-                    this.classList.remove('submitting');
-                    this.disabled = false;
-                }, 3000);
-            });
+            const form = botao.closest('form');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    if (this.classList.contains('submitting')) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    
+                    this.classList.add('submitting');
+                    
+                    // Reabilita após 3 segundos como fallback
+                    setTimeout(() => {
+                        this.classList.remove('submitting');
+                    }, 3000);
+                }, { once: false });
+            }
         });
     }
 
