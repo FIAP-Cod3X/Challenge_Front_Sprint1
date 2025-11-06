@@ -315,9 +315,21 @@
 }
 
 .card-info:hover {
-    border-color: #96ac3f4d;
     box-shadow: 0 10px 30px #3a506b26;
     transform: translateY(-5px);
+}
+
+/* Hover específico para cada card */
+.card-info:nth-child(1):hover {
+    border-color: #96ac3f4d;
+}
+
+.card-info:nth-child(2):hover {
+    border-color: #3a506b4d;
+}
+
+.card-info:nth-child(3):hover {
+    border-color: #e884074d;
 }
 
 
