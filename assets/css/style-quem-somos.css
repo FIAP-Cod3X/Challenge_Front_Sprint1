@@ -615,3 +615,779 @@
     box-shadow: 0 8px 25px #f4f4f94d;
     color: #3a506b;
 }
+
+
+
+/* ========================================================================
+   6. RESPONSIVIDADE
+   ======================================================================== */
+
+/* 6.1 Extra Small Devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    /* Hero Quem Somos */
+    .secao-hero-quem-somos {
+        flex-direction: column;
+        min-height: auto;
+        padding: 2rem 1rem;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .conteudo-hero-quem-somos {
+        max-width: 100%;
+    }
+
+    .titulo-principal-quem-somos {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitulo-quem-somos {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .botao-hero-quem-somos {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.8rem;
+    }
+
+    .container-imagem-hero-quem-somos img {
+        width: 100%;
+        max-width: 350px;
+        margin: 1rem 0;
+    }
+
+    /* Nossa História */
+    .secao-nossa-historia {
+        padding: 2rem 1rem;
+    }
+
+    .titulo-secao-quem-somos {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .titulo-secao-quem-somos::after {
+        width: 60px;
+        bottom: -10px;
+    }
+
+    .bloco-historia {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+    }
+
+    .bloco-historia.solucao {
+        flex-direction: column;
+    }
+
+    .icone-historia {
+        width: 70px;
+        height: 70px;
+    }
+
+    .icone-historia i {
+        font-size: 2rem;
+    }
+
+    .conteudo-historia h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .conteudo-historia p {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    /* Filosofia MVV */
+    .secao-filosofia {
+        padding: 2rem 1rem;
+    }
+
+    .container-mvv {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cartao-mvv {
+        padding: 2rem 1.5rem;
+    }
+
+    .icone-mvv {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .icone-mvv i {
+        font-size: 1.6rem;
+    }
+
+    .cartao-mvv h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .cartao-mvv p {
+        font-size: 0.95rem;
+    }
+
+    .lista-valores li {
+        font-size: 0.9rem;
+        gap: 0.8rem;
+    }
+
+    /* Equipe */
+    .secao-equipe {
+        padding: 2rem 1rem;
+    }
+
+    .subtitulo-equipe {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .container-cartoes-equipe {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cartao-integrante {
+        padding: 2rem 1.5rem;
+    }
+
+    .foto-integrante {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nome-integrante {
+        font-size: 1.2rem;
+    }
+
+    .rm-integrante,
+    .funcao-integrante {
+        font-size: 0.9rem;
+    }
+
+    .link-social {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* CTA Final */
+    .secao-cta-final {
+        padding: 3rem 1rem;
+    }
+
+    .titulo-cta-final {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .texto-cta-final {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .botoes-cta-final {
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .botao-cta {
+        width: 75%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 1rem 2rem;
+    }
+}
+
+
+/* 6.2 Small Devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+    /* Hero Quem Somos */
+    .secao-hero-quem-somos {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .titulo-principal-quem-somos {
+        font-size: 2.5rem;
+    }
+
+    .subtitulo-quem-somos {
+        font-size: 1.1rem;
+    }
+
+    .botao-hero-quem-somos {
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
+    }
+
+    .container-imagem-hero-quem-somos img {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    /* Nossa História */
+    .secao-nossa-historia {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .titulo-secao-quem-somos {
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .titulo-secao-quem-somos::after {
+        width: 80px;
+    }
+
+    .bloco-historia {
+        padding: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .icone-historia {
+        width: 80px;
+        height: 80px;
+    }
+
+    .icone-historia i {
+        font-size: 2.2rem;
+    }
+
+    .conteudo-historia h3 {
+        font-size: 1.5rem;
+    }
+
+    .conteudo-historia p {
+        font-size: 1rem;
+    }
+
+    /* Filosofia MVV */
+    .secao-filosofia {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .container-mvv {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .cartao-mvv {
+        padding: 2.5rem 1.8rem;
+    }
+
+    .icone-mvv {
+        width: 70px;
+        height: 70px;
+    }
+
+    .icone-mvv i {
+        font-size: 1.8rem;
+    }
+
+    .cartao-mvv h3 {
+        font-size: 1.4rem;
+    }
+
+    .cartao-mvv p {
+        font-size: 1rem;
+    }
+
+    /* Equipe */
+    .secao-equipe {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .subtitulo-equipe {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+
+    .container-cartoes-equipe {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .cartao-integrante {
+        padding: 2.2rem 1.8rem;
+    }
+
+    .foto-integrante {
+        width: 110px;
+        height: 110px;
+    }
+
+    .nome-integrante {
+        font-size: 1.25rem;
+    }
+
+    /* CTA Final */
+    .secao-cta-final {
+        padding: 4rem 1.5rem;
+    }
+
+    .titulo-cta-final {
+        font-size: 2rem;
+    }
+
+    .texto-cta-final {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .botoes-cta-final {
+        gap: 1.5rem;
+    }
+
+    .botao-cta {
+        font-size: 1rem;
+        padding: 1.1rem 2.2rem;
+    }
+}
+
+
+/* 6.3 Medium Devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Hero Quem Somos */
+    .secao-hero-quem-somos {
+        flex-direction: row;
+        padding: 3rem 2rem;
+        text-align: left;
+    }
+
+    .conteudo-hero-quem-somos {
+        max-width: 70%;
+    }
+
+    .titulo-principal-quem-somos {
+        font-size: 3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .subtitulo-quem-somos {
+        text-align: justify;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .botao-hero-quem-somos {
+        font-size: 1.05rem;
+        padding: 0.95rem 2.3rem;
+    }
+
+    .container-imagem-hero-quem-somos img {
+        width: 550px;
+        max-width: none;
+    }
+
+    /* Nossa História */
+    .secao-nossa-historia {
+        padding: 3rem 2rem;
+    }
+
+    .titulo-secao-quem-somos {
+        font-size: 2.5rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .titulo-secao-quem-somos::after {
+        width: 90px;
+    }
+
+    .bloco-historia {
+        flex-direction: row;
+        gap: 2.5rem;
+        padding: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .bloco-historia.solucao {
+        flex-direction: row-reverse;
+    }
+
+    .icone-historia {
+        width: 90px;
+        height: 90px;
+    }
+
+    .icone-historia i {
+        font-size: 2.3rem;
+    }
+
+    .conteudo-historia h3 {
+        font-size: 1.6rem;
+        text-align: left;
+    }
+
+    .conteudo-historia p {
+        font-size: 1.05rem;
+    }
+
+    /* Filosofia MVV */
+    .secao-filosofia {
+        padding: 3rem 2rem;
+    }
+
+    .container-mvv {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.2rem;
+    }
+
+    .cartao-mvv {
+        padding: 2.8rem 2rem;
+    }
+
+    .icone-mvv {
+        width: 75px;
+        height: 75px;
+    }
+
+    .icone-mvv i {
+        font-size: 1.9rem;
+    }
+
+    .cartao-mvv h3 {
+        font-size: 1.45rem;
+    }
+
+    /* Equipe */
+    .secao-equipe {
+        padding: 3rem 2rem;
+    }
+
+    .subtitulo-equipe {
+        font-size: 1.15rem;
+    }
+
+    .container-cartoes-equipe {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2.2rem;
+    }
+
+    .cartao-integrante {
+        padding: 2.3rem 2rem;
+    }
+
+    .foto-integrante {
+        width: 115px;
+        height: 115px;
+    }
+
+    .nome-integrante {
+        font-size: 1.28rem;
+    }
+
+    /* CTA Final */
+    .secao-cta-final {
+        padding: 5rem 2rem;
+    }
+
+    .titulo-cta-final {
+        font-size: 2.2rem;
+    }
+
+    .texto-cta-final {
+        font-size: 1.15rem;
+    }
+
+    .botao-cta {
+        font-size: 1.05rem;
+        padding: 1.15rem 2.3rem;
+    }
+}
+
+
+/* 6.4 Large Devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Hero Quem Somos */
+    .titulo-principal-quem-somos {
+        font-size: 3.2rem;
+    }
+
+    .subtitulo-quem-somos {
+        font-size: 1.25rem;
+        margin-bottom: 2.2rem;
+    }
+
+    .botao-hero-quem-somos {
+        font-size: 1.08rem;
+        padding: 1rem 2.4rem;
+    }
+
+    .container-imagem-hero-quem-somos img {
+        width: 750px;
+    }
+
+    /* Nossa História */
+    .titulo-secao-quem-somos {
+        font-size: 2.6rem;
+    }
+
+    .bloco-historia {
+        gap: 2.8rem;
+        padding: 2.8rem;
+    }
+
+    .icone-historia {
+        width: 95px;
+        height: 95px;
+    }
+
+    .icone-historia i {
+        font-size: 2.4rem;
+    }
+
+    .conteudo-historia h3 {
+        font-size: 1.7rem;
+    }
+
+    .conteudo-historia p {
+        font-size: 1.08rem;
+    }
+
+    /* Filosofia MVV */
+    .container-mvv {
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2.3rem;
+    }
+
+    .cartao-mvv {
+        padding: 2.9rem 2rem;
+    }
+
+    .icone-mvv {
+        width: 78px;
+        height: 78px;
+    }
+
+    .icone-mvv i {
+        font-size: 1.95rem;
+    }
+
+    .cartao-mvv h3 {
+        font-size: 1.48rem;
+    }
+
+    /* Equipe */
+    .container-cartoes-equipe {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 2.3rem;
+    }
+
+    .cartao-integrante {
+        padding: 2.4rem 2rem;
+    }
+
+    .foto-integrante {
+        width: 118px;
+        height: 118px;
+    }
+
+    .nome-integrante {
+        font-size: 1.29rem;
+    }
+
+    /* CTA Final */
+    .secao-cta-final {
+        padding: 5.5rem 2rem;
+    }
+
+    .titulo-cta-final {
+        font-size: 2.3rem;
+    }
+
+    .texto-cta-final {
+        font-size: 1.18rem;
+    }
+
+    .botao-cta {
+        font-size: 1.08rem;
+        padding: 1.18rem 2.4rem;
+    }
+}
+
+
+/* 6.5 Extra-Large Devices (large laptops and desktops, 1300px and up) */
+@media (min-width: 1300px) {
+    /* Hero Quem Somos */
+    .secao-hero-quem-somos {
+        padding: 4rem 3rem;
+    }
+
+    .conteudo-hero-quem-somos {
+        max-width: 50%;
+    }
+
+    .titulo-principal-quem-somos {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .subtitulo-quem-somos {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .botao-hero-quem-somos {
+        font-size: 1.1rem;
+        padding: 1rem 2.5rem;
+    }
+
+    .container-imagem-hero-quem-somos img {
+        width: 700px;
+    }
+
+    /* Nossa História */
+    .secao-nossa-historia {
+        padding: 3rem 2rem;
+    }
+
+    .titulo-secao-quem-somos {
+        font-size: 2.8rem;
+        margin-bottom: 4rem;
+    }
+
+    .titulo-secao-quem-somos::after {
+        width: 100px;
+        bottom: -15px;
+    }
+
+    .bloco-historia {
+        gap: 3rem;
+        padding: 3rem;
+        margin-bottom: 4rem;
+    }
+
+    .icone-historia {
+        width: 100px;
+        height: 100px;
+    }
+
+    .icone-historia i {
+        font-size: 2.5rem;
+    }
+
+    .conteudo-historia h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .conteudo-historia p {
+        font-size: 1.1rem;
+    }
+
+    /* Filosofia MVV */
+    .secao-filosofia {
+        padding: 3rem 2rem;
+    }
+
+    .container-mvv {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .cartao-mvv {
+        padding: 3rem 2rem;
+    }
+
+    .icone-mvv {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1.5rem;
+    }
+
+    .icone-mvv i {
+        font-size: 2rem;
+    }
+
+    .cartao-mvv h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cartao-mvv p {
+        font-size: 1rem;
+    }
+
+    .lista-valores li {
+        font-size: 1rem;
+    }
+
+    /* Equipe */
+    .secao-equipe {
+        padding: 3rem 2rem;
+    }
+
+    .subtitulo-equipe {
+        font-size: 1.2rem;
+        margin-bottom: 4rem;
+    }
+
+    .container-cartoes-equipe {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .cartao-integrante {
+        padding: 2.5rem 2rem;
+    }
+
+    .foto-integrante {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5rem;
+    }
+
+    .nome-integrante {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .rm-integrante,
+    .funcao-integrante {
+        font-size: 1rem;
+    }
+
+    .funcao-integrante {
+        margin-bottom: 1.5rem;
+    }
+
+    .link-social {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* CTA Final */
+    .secao-cta-final {
+        padding: 6rem 2rem;
+    }
+
+    .titulo-cta-final {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .texto-cta-final {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .botoes-cta-final {
+        gap: 2rem;
+    }
+
+    .botao-cta {
+        font-size: 1.1rem;
+        padding: 1.2rem 2.5rem;
+    }
+}
