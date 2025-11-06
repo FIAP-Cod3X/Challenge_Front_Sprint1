@@ -748,6 +748,8 @@
 /* 8.2 Container do Modal */
 .modal-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 90%;
     max-width: 700px;
     max-height: 90vh;
@@ -766,12 +768,14 @@
 
 /* 8.3 Header do Modal */
 .modal-header {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     border-bottom: 2px solid #f0f0f0;
     background: linear-gradient(135deg, #3a506b 0%, #96ac3f 100%);
+    flex-shrink: 0;
 }
 
 .modal-header-content {
@@ -798,12 +802,64 @@
     font-weight: 600;
 }
 
+/* Botão de fechar no header - Animado */
+.modal-botao-fechar-header {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-botao-fechar-header:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-botao-fechar-header:active {
+    transform: translateY(-50%) rotate(90deg) scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animação de pulso ao carregar */
+@keyframes pulseButton {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(255, 255, 255, 0.3), 0 0 0 8px rgba(255, 255, 255, 0.1);
+    }
+}
+
+.modal-botao-fechar-header {
+    animation: pulseButton 2s ease-in-out 3;
+}
+
 
 /* 8.4 Body do Modal */
 .modal-body {
+    flex: 1;
+    min-height: 0;
     padding: 2rem;
-    max-height: calc(90vh - 200px);
+    padding-bottom: 2.5rem;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Estilização da barra de rolagem */
@@ -919,7 +975,8 @@
 }
 
 
-/* 8.8 Footer do Modal */
+/* 8.8 Footer do Modal - REMOVIDO (agora usa botão no header) */
+/*
 .modal-footer {
     display: flex;
     align-items: center;
@@ -951,6 +1008,7 @@
 .modal-botao-fechar:active {
     transform: translateY(0);
 }
+*/
 
 
 /* ========================================================================
@@ -964,6 +1022,9 @@
         width: 95%;
         max-height: 95vh;
         border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
 
     .modal-header {
@@ -971,6 +1032,7 @@
         align-items: flex-start;
         gap: 1rem;
         padding: 1.5rem;
+        flex-shrink: 0;
     }
 
     .modal-header-content {
@@ -984,17 +1046,43 @@
         font-size: 1.2rem;
     }
 
-    .modal-fechar {
+    /* Botão de fechar no header - Mobile otimizado */
+    .modal-botao-fechar-header {
+        top: 1.2rem;
+        right: 1.2rem;
+        transform: none;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        background: rgba(255, 255, 255, 0.25);
+        border: 3px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-botao-fechar-header:hover,
+    .modal-botao-fechar-header:active {
+        transform: rotate(90deg) scale(1.05);
+        background: rgba(255, 255, 255, 0.35);
+        border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Aumenta a área de toque para mobile */
+    .modal-botao-fechar-header::before {
+        content: '';
         position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        width: 35px;
-        height: 35px;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
     }
 
     .modal-body {
         padding: 1.5rem;
-        max-height: calc(95vh - 180px);
+        padding-bottom: 2rem;
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .modal-info-grid {
@@ -1016,16 +1104,6 @@
 
     .modal-aviso-dev {
         padding: 1.2rem;
-    }
-
-    .modal-footer {
-        padding: 1.2rem 1.5rem;
-    }
-
-    .modal-botao-fechar {
-        width: 100%;
-        justify-content: center;
-        padding: 1rem;
     }
 
     /* Toasts responsivos para mobile */
@@ -1255,6 +1333,8 @@
         gap: 1.3rem;
     }
 
+    /* Modal footer removido - agora usa botão no header */
+    /*
     .modal-footer {
         padding: 1.3rem 1.8rem;
     }
@@ -1262,6 +1342,7 @@
     .modal-botao-fechar {
         width: auto;
     }
+    */
 
     /* Toasts para tablets pequenos */
     .toast-container {
@@ -1447,9 +1528,12 @@
         padding: 1.5rem;
     }
 
+    /* Modal footer removido - agora usa botão no header */
+    /*
     .modal-footer {
         padding: 1rem 1rem;
     }
+    */
 
     /* Toasts para tablets médios e desktops */
     .toast-container {
