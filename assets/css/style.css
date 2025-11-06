@@ -414,7 +414,240 @@ input[type="search"]::-webkit-search-cancel-button {
 
 
 /* ========================================================================
-   6. MENU HAMBURGUER (MOBILE)
+   6. POPUP DE PESQUISA EM DESENVOLVIMENTO
+   ======================================================================== */
+
+/* 6.1 Overlay do Popup */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(58, 80, 107, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup-overlay.ativo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    opacity: 1;
+    animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* 6.2 Container do Popup */
+.popup-container {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f4f4f9 0%, #ffffff 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(150, 172, 63, 0.2);
+    text-align: center;
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    animation: popupSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes popupSlideIn {
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* 6.3 Botão de Fechar */
+.popup-fechar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 2px solid #3a506b;
+    border-radius: 50%;
+    background: transparent;
+    color: #3a506b;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-fechar:hover,
+.popup-fechar:focus {
+    background: #3a506b;
+    color: #f4f4f9;
+    transform: rotate(90deg);
+    box-shadow: 0 4px 12px rgba(58, 80, 107, 0.3);
+}
+
+.popup-fechar:focus {
+    outline: 3px solid #96ac3f;
+    outline-offset: 2px;
+}
+
+
+/* 6.4 Ícone Principal */
+.popup-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #96ac3f 0%, #7a8e33 100%);
+    box-shadow: 0 8px 20px rgba(150, 172, 63, 0.4);
+    animation: pulseIcon 2s ease-in-out infinite;
+}
+
+@keyframes pulseIcon {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(150, 172, 63, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(150, 172, 63, 0.6);
+    }
+}
+
+.popup-icone i {
+    color: #f4f4f9;
+    font-size: 2.5rem;
+}
+
+
+/* 6.5 Título do Popup */
+.popup-titulo {
+    margin: 0 0 1rem 0;
+    color: #3a506b;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+/* 6.6 Texto do Popup */
+.popup-texto {
+    margin: 0 0 1.5rem 0;
+    color: #3a506b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+
+/* 6.7 Detalhes/Features */
+.popup-detalhes {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 2rem 0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(150, 172, 63, 0.08);
+}
+
+.detalhe-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 100px;
+}
+
+.detalhe-item i {
+    color: #96ac3f;
+    font-size: 1.8rem;
+}
+
+.detalhe-item span {
+    color: #3a506b;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/* 6.8 Botão de Ação */
+.popup-botao {
+    position: relative;
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #3a506b 0%, #2d3f54 100%);
+    color: #f4f4f9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(58, 80, 107, 0.3);
+}
+
+.popup-botao::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #d5e2f015;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.popup-botao:hover {
+    background: linear-gradient(135deg, #2d3f54 0%, #3a506b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(58, 80, 107, 0.5);
+}
+
+.popup-botao:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.popup-botao:active {
+    transform: translateY(0);
+}
+
+.popup-botao:focus {
+    outline: 3px solid #96ac3f;
+    outline-offset: 3px;
+}
+
+
+/* ========================================================================
+   7. MENU HAMBURGUER (MOBILE)
    ======================================================================== */
 
 /* 6.1 Botão Hamburguer */
@@ -590,6 +823,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 /* 7.0.1 Mobile S (320px - 375px) - Ajustes específicos */
 @media (max-width: 375px) {
+    /* Navegação */
     .secao-navegacao {
         padding: 0.4rem 0;
         gap: 0.2rem;
@@ -613,6 +847,54 @@ input[type="search"]::-webkit-search-cancel-button {
     .botao-autenticacao {
         padding: 0.35rem 0.5rem;
         font-size: 0.7rem;
+    }
+
+    /* Popup Responsivo */
+    .popup-container {
+        padding: 2rem 1.2rem;
+        border-radius: 16px;
+    }
+
+    .popup-titulo {
+        font-size: 1.3rem;
+    }
+
+    .popup-texto {
+        font-size: 0.9rem;
+    }
+
+    .popup-icone {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .popup-icone i {
+        font-size: 1.8rem;
+    }
+
+    .popup-detalhes {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .detalhe-item i {
+        font-size: 1.4rem;
+    }
+
+    .detalhe-item span {
+        font-size: 0.8rem;
+    }
+
+    .popup-botao {
+        padding: 0.75rem 1.8rem;
+        font-size: 0.9rem;
+    }
+
+    .popup-fechar {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
 
     .botao-menu-hamburguer {
@@ -665,6 +947,47 @@ input[type="search"]::-webkit-search-cancel-button {
 
     .linha-hamburguer {
         height: 2.5px;
+    }
+
+    /* Popup Responsivo */
+    .popup-container {
+        padding: 2rem 1.5rem;
+        border-radius: 18px;
+    }
+
+    .popup-titulo {
+        font-size: 1.5rem;
+    }
+
+    .popup-texto {
+        font-size: 0.95rem;
+    }
+
+    .popup-icone {
+        width: 70px;
+        height: 70px;
+    }
+
+    .popup-icone i {
+        font-size: 2rem;
+    }
+
+    .popup-detalhes {
+        gap: 1.2rem;
+        padding: 1.2rem;
+    }
+
+    .detalhe-item i {
+        font-size: 1.5rem;
+    }
+
+    .detalhe-item span {
+        font-size: 0.85rem;
+    }
+
+    .popup-botao {
+        padding: 0.8rem 2rem;
+        font-size: 0.95rem;
     }
 
     /* Rodapé */
@@ -734,6 +1057,29 @@ input[type="search"]::-webkit-search-cancel-button {
 
     .botao-menu-hamburguer {
         margin: 0 0.8rem 0 0.4rem;
+    }
+
+    /* Popup Responsivo */
+    .popup-container {
+        max-width: 500px;
+        padding: 2.2rem 1.8rem;
+    }
+
+    .popup-titulo {
+        font-size: 1.6rem;
+    }
+
+    .popup-texto {
+        font-size: 1rem;
+    }
+
+    .popup-icone {
+        width: 75px;
+        height: 75px;
+    }
+
+    .popup-icone i {
+        font-size: 2.2rem;
     }
 
     /* Rodapé */
