@@ -213,7 +213,6 @@
     display: grid;
     gap: 1.5rem;
     max-width: 100%;
-    overflow-x: hidden;
 }
 
 .card-pergunta {
