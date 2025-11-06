@@ -154,6 +154,7 @@ function abrirMenu() {
     botao.classList.add('ativo');
     menu.classList.add('mobile-ativo');
     overlay.classList.add('ativo');
+    document.body.classList.add('menu-aberto');
     
     // Atualizar atributos de acessibilidade
     botao.setAttribute('aria-expanded', 'true');
@@ -186,6 +187,7 @@ function fecharMenu() {
     botao.classList.remove('ativo');
     menu.classList.remove('mobile-ativo');
     overlay.classList.remove('ativo');
+    document.body.classList.remove('menu-aberto');
     
     // Atualizar atributos de acessibilidade
     botao.setAttribute('aria-expanded', 'false');
