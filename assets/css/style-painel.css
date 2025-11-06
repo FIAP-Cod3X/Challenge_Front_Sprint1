@@ -421,6 +421,8 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .botao-acao-rapida:hover {
@@ -428,14 +430,639 @@
     transform: translateY(-2px);
 }
 
+.botao-acao-rapida:active {
+    transform: translateY(0);
+}
+
+/* Estado de loading do botão */
+.botao-acao-rapida.carregando {
+    background: #96ac3f;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.botao-acao-rapida.carregando:hover {
+    transform: none;
+}
+
+/* Spinner de loading */
+.botao-acao-rapida .spinner {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.botao-acao-rapida .spinner i {
+    animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estado de sucesso temporário */
+.botao-acao-rapida.sucesso-temporario {
+    background: #28a745;
+    animation: pulsoSucessoBotao 0.6s ease;
+}
+
+@keyframes pulsoSucessoBotao {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Estado de erro temporário */
+.botao-acao-rapida.erro-temporario {
+    background: #dc3545;
+    animation: tremerErro 0.5s ease;
+}
+
+@keyframes tremerErro {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Estado de aviso temporário */
+.botao-acao-rapida.aviso-temporario {
+    background: #e88407;
+    animation: pulsoAviso 0.6s ease;
+}
+
+@keyframes pulsoAviso {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Estado de info temporário */
+.botao-acao-rapida.info-temporario {
+    background: #96ac3f;
+    animation: pulsoInfo 0.6s ease;
+}
+
+@keyframes pulsoInfo {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
 
 
 /* ========================================================================
-   7. RESPONSIVIDADE
+   7. SISTEMA DE TOASTS DE NOTIFICAÇÃO
    ======================================================================== */
 
-/* 7.1 Extra Small Devices (phones, 600px and down) */
+/* 7.1 Container dos Toasts */
+.toast-container {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    pointer-events: none;
+}
+
+.toast-container > * {
+    pointer-events: all;
+}
+
+
+/* 7.2 Estrutura do Toast */
+.toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(58, 80, 107, 0.2);
+    border-left: 4px solid;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+/* 7.3 Animações de Entrada e Saída */
+.toast.toast-entrando {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.toast.toast-saindo {
+    opacity: 0;
+    transform: translateX(100%);
+    margin-top: -80px;
+}
+
+
+/* 7.4 Tipos de Toast (Cores) */
+.toast-sucesso {
+    border-left-color: #28a745;
+}
+
+.toast-erro {
+    border-left-color: #dc3545;
+}
+
+.toast-aviso {
+    border-left-color: #e88407;
+}
+
+.toast-info {
+    border-left-color: #96ac3f;
+}
+
+
+/* 7.5 Ícone do Toast */
+.toast-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.toast-icone i {
+    font-size: 1.3rem;
+}
+
+.toast-sucesso .toast-icone {
+    background: #28a7451a;
+    color: #28a745;
+}
+
+.toast-erro .toast-icone {
+    background: #dc35451a;
+    color: #dc3545;
+}
+
+.toast-aviso .toast-icone {
+    background: #e884071a;
+    color: #e88407;
+}
+
+.toast-info .toast-icone {
+    background: #96ac3f1a;
+    color: #96ac3f;
+}
+
+
+/* 7.6 Conteúdo do Toast */
+.toast-conteudo {
+    flex: 1;
+    min-width: 0;
+}
+
+.toast-titulo {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #3a506b;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.toast-mensagem {
+    margin: 0;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+
+/* 7.7 Botão de Fechar */
+.toast-fechar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #3a506b;
+    cursor: pointer;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: all 0.2s;
+}
+
+.toast-fechar:hover {
+    background: #3a506b1a;
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.toast-fechar i {
+    font-size: 0.9rem;
+}
+
+
+/* 7.8 Barra de Progresso (Opcional) */
+.toast-progresso {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+}
+
+.toast-progresso-barra {
+    height: 100%;
+    background: currentColor;
+    animation: progressoToast 4s linear;
+}
+
+@keyframes progressoToast {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+
+/* ========================================================================
+   8. MODAL DE DETALHES DO ATENDIMENTO
+   ======================================================================== */
+
+/* 8.1 Overlay do Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(58, 80, 107, 0.85);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.modal-ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* 8.2 Container do Modal */
+.modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(58, 80, 107, 0.3);
+    overflow: hidden;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modal-overlay.modal-ativo .modal-container {
+    transform: scale(1) translateY(0);
+}
+
+
+/* 8.3 Header do Modal */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+    background: linear-gradient(135deg, #3a506b 0%, #96ac3f 100%);
+}
+
+.modal-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #fff;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.modal-id {
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* 8.4 Body do Modal */
+.modal-body {
+    padding: 2rem;
+    max-height: calc(90vh - 200px);
+    overflow-y: auto;
+}
+
+/* Estilização da barra de rolagem */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #96ac3f;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #7a8f35;
+}
+
+
+/* 8.5 Badge de Status no Modal */
+.modal-status-badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.modal-status-badge .status {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+
+/* 8.6 Grid de Informações */
+.modal-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.modal-info-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.2rem;
+    border-radius: 12px;
+    background: #f8f9fa;
+    transition: all 0.3s;
+}
+
+.modal-info-item:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.modal-info-item-full {
+    grid-column: 1 / -1;
+}
+
+.modal-info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.modal-info-label {
+    color: #999;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-info-value {
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* 8.7 Aviso de Desenvolvimento */
+.modal-aviso-dev {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #96ac3f;
+    background: #96ac3f0d;
+    text-align: center;
+}
+
+.modal-aviso-dev strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #3a506b;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.modal-aviso-dev p {
+    margin: 0;
+    color: #3a506b;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+
+/* 8.8 Footer do Modal */
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1.5rem 2rem;
+    border-top: 2px solid #f0f0f0;
+    background: #f8f9fa;
+}
+
+.modal-botao-fechar {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: #3a506b;
+    color: #fff;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal-botao-fechar:hover {
+    background: #2a3f54;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(58, 80, 107, 0.3);
+}
+
+.modal-botao-fechar:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================================================
+   9. RESPONSIVIDADE
+   ======================================================================== */
+
+/* 9.1 Extra Small Devices (phones, 600px and down) */
 @media (max-width: 600px) {
+    /* Modal responsivo para mobile */
+    .modal-container {
+        width: 95%;
+        max-height: 95vh;
+        border-radius: 15px;
+    }
+
+    .modal-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .modal-header-content {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .modal-fechar {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+        max-height: calc(95vh - 180px);
+    }
+
+    .modal-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .modal-info-item {
+        padding: 1rem;
+    }
+
+    .modal-info-label {
+        font-size: 0.7rem;
+    }
+
+    .modal-info-value {
+        font-size: 0.9rem;
+    }
+
+    .modal-aviso-dev {
+        padding: 1.2rem;
+    }
+
+    .modal-footer {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .modal-botao-fechar {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    /* Toasts responsivos para mobile */
+    .toast-container {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+
+    .toast {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+
+    .toast-icone {
+        width: 35px;
+        height: 35px;
+    }
+
+    .toast-icone i {
+        font-size: 1.1rem;
+    }
+
+    .toast-titulo {
+        font-size: 0.9rem;
+    }
+
+    .toast-mensagem {
+        font-size: 0.8rem;
+    }
+
+    .toast-fechar {
+        width: 22px;
+        height: 22px;
+    }
+
     /* Container Dashboard */
     .container-dashboard {
         padding: 1rem;
@@ -599,6 +1226,55 @@
 
 /* 7.2 Small Devices (portrait tablets and large phones, 600px and up) */
 @media (min-width: 600px) {
+    /* Modal para tablets pequenos */
+    .modal-container {
+        width: 85%;
+        max-width: 650px;
+    }
+
+    .modal-header {
+        flex-direction: row;
+        align-items: center;
+        padding: 1.8rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal-fechar {
+        position: static;
+    }
+
+    .modal-body {
+        padding: 1.8rem;
+    }
+
+    .modal-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.3rem;
+    }
+
+    .modal-footer {
+        padding: 1.3rem 1.8rem;
+    }
+
+    .modal-botao-fechar {
+        width: auto;
+    }
+
+    /* Toasts para tablets pequenos */
+    .toast-container {
+        top: 1.5rem;
+        right: 1.5rem;
+        left: auto;
+        max-width: 380px;
+    }
+
+    .toast {
+        padding: 1.1rem;
+    }
+
     /* Container Dashboard */
     .container-dashboard {
         padding: 1.5rem;
@@ -741,6 +1417,52 @@
 
 /* 7.3 Medium Devices (landscape tablets, 768px and up) */
 @media (min-width: 768px) {
+    /* Modal para tablets médios e desktops */
+    .modal-container {
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .modal-header {
+        padding: 2rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-body {
+        padding: 2rem;
+    }
+
+    .modal-info-grid {
+        gap: 1.5rem;
+    }
+
+    .modal-info-item {
+        padding: 1.2rem;
+    }
+
+    .modal-aviso-dev {
+        padding: 1.5rem;
+    }
+
+    .modal-footer {
+        padding: 1rem 1rem;
+    }
+
+    /* Toasts para tablets médios e desktops */
+    .toast-container {
+        top: 2rem;
+        right: 2rem;
+        max-width: 400px;
+    }
+
+    .toast {
+        padding: 1.2rem;
+        gap: 1rem;
+    }
+
     /* Container Dashboard */
     .container-dashboard {
         padding: 1.8rem;
