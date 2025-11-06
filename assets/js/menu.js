@@ -234,14 +234,3 @@ function configurarAcessibilidade() {
 function isMobile() {
     return window.innerWidth < 1300;
 }
-
-
-// Exportar funções para uso externo (opcional)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        inicializarMenuHamburguer,
-        abrirMenu,
-        fecharMenu,
-        toggleMenu
-    };
-}
