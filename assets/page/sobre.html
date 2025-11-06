@@ -33,14 +33,14 @@
          CABEÇALHO PRINCIPAL DA APLICAÇÃO
          ======================================== -->
     <header class="cabecalho-principal" role="banner">
-        <nav class="secao-navegacao menu-navegacao" aria-label="Navegação principal">
+        <nav class="secao-navegacao" aria-label="Navegação principal">
             <!-- Logo: Sempre linkado para a página inicial -->
             <a href="../../index.html" class="link-logo" aria-label="Página inicial do Cod3X">
                 <img src="../img/logo.png" alt="Logo do projeto Cod3X" class="imagem-logo">
             </a>
 
             <!-- Menu de navegação: Lista não ordenada para melhor semântica -->
-            <ul role="menubar" aria-label="Menu principal">
+            <ul class="menu-navegacao" role="menubar" aria-label="Menu principal">
                 <li role="none">
                     <a href="../../index.html" class="links-navegacao" role="menuitem">Início</a>
                 </li>
@@ -60,7 +60,7 @@
 
             <!-- Formulário de busca: Importante usar form para acessibilidade -->
             <form class="barra-pesquisa" role="search" aria-label="Busca no site">
-                <input type="search" id="campo-busca-sobre" placeholder="Pesquisar" aria-label="Campo de pesquisa">
+                <input type="search" id="input-busca" placeholder="Pesquisar" aria-label="Campo de pesquisa">
                 <button type="submit" aria-label="Executar pesquisa">
                     <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 </button>
@@ -502,6 +502,11 @@
             <p><small>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</small></p>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/barra-pesquisa.js"></script>
+
 </body>
 
 </html>
