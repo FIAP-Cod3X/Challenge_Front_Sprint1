@@ -330,3 +330,684 @@
     text-align: center;
 }
 
+
+/* ========================================================================
+   3. RESPONSIVIDADE
+   ======================================================================== */
+
+/* ========================================================================
+   3.1 Extra Small Devices (Phones, 600px and down)
+   ======================================================================== */
+@media (max-width: 600px) {
+    /* Seção Contato */
+    .secao-contato {
+        padding: 2rem 1rem;
+    }
+
+    .container-contato {
+        max-width: 100%;
+    }
+
+    /* Cabeçalho */
+    .cabecalho-contato {
+        margin-bottom: 2.5rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .subtitulo-contato {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+
+    /* Grid de Contatos */
+    .grid-contatos {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Cards de Contato */
+    .card-contato {
+        padding: 1.8rem;
+        border-radius: 16px;
+    }
+
+    .icone-contato {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.2rem;
+    }
+
+    .icone-contato i {
+        font-size: 1.5rem;
+    }
+
+    .card-contato h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .card-contato p {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .link-contato {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .horario-funcionamento {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .horario-funcionamento span {
+        font-size: 0.85rem;
+    }
+
+    /* Seção Mapa */
+    .container-mapa {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .titulo-mapa {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .subtitulo-mapa {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .mapa-wrapper {
+        height: 280px;
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+    }
+
+    /* Informações do Mapa */
+    .info-mapa {
+        margin-top: 1.5rem;
+    }
+
+    .detalhe-endereco h4 {
+        font-size: 1.05rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .detalhe-endereco ul {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .detalhe-endereco li {
+        padding: 0.9rem;
+        font-size: 0.9rem;
+    }
+
+    .detalhe-endereco li i {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* ========================================================================
+   3.2 Small Devices (Portrait Tablets and Large Phones, 600px and up)
+   ======================================================================== */
+@media (min-width: 600px) {
+    /* Seção Contato */
+    .secao-contato {
+        padding: 2.5rem 1.5rem;
+    }
+
+    /* Cabeçalho */
+    .cabecalho-contato {
+        margin-bottom: 3rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 2.2rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .subtitulo-contato {
+        font-size: 1.05rem;
+    }
+
+    /* Grid de Contatos */
+    .grid-contatos {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Cards de Contato */
+    .card-contato {
+        padding: 2rem;
+    }
+
+    .icone-contato {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 1.3rem;
+    }
+
+    .icone-contato i {
+        font-size: 1.6rem;
+    }
+
+    .card-contato h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-contato p {
+        font-size: 0.95rem;
+    }
+
+    .link-contato {
+        font-size: 1rem;
+        padding: 0.45rem 0.9rem;
+    }
+
+    /* Seção Mapa */
+    .container-mapa {
+        padding: 2rem;
+        margin-top: 2rem;
+        border-radius: 18px;
+    }
+
+    .titulo-mapa {
+        font-size: 1.9rem;
+    }
+
+    .subtitulo-mapa {
+        font-size: 1.05rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .mapa-wrapper {
+        height: 320px;
+    }
+
+    /* Informações do Mapa */
+    .detalhe-endereco h4 {
+        font-size: 1.1rem;
+    }
+
+    .detalhe-endereco ul {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+    }
+
+    .detalhe-endereco li {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ========================================================================
+   3.3 Medium Devices (Landscape Tablets, 768px and up)
+   ======================================================================== */
+@media (min-width: 768px) {
+    /* Seção Contato */
+    .secao-contato {
+        padding: 3rem 2rem;
+    }
+
+    .container-contato {
+        max-width: 1100px;
+    }
+
+    /* Cabeçalho */
+    .cabecalho-contato {
+        margin-bottom: 3.5rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 2.5rem;
+        margin-bottom: 1.9rem;
+    }
+
+    .subtitulo-contato {
+        font-size: 1.15rem;
+    }
+
+    /* Grid de Contatos */
+    .grid-contatos {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    /* Cards de Contato */
+    .card-contato {
+        padding: 2.2rem;
+    }
+
+    .icone-contato {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 1.4rem;
+    }
+
+    .icone-contato i {
+        font-size: 1.7rem;
+    }
+
+    .card-contato h3 {
+        font-size: 1.25rem;
+    }
+
+    .link-contato {
+        font-size: 1.05rem;
+    }
+
+    /* Seção Mapa */
+    .container-mapa {
+        padding: 2.5rem;
+        border-radius: 20px;
+    }
+
+    .titulo-mapa {
+        font-size: 2rem;
+    }
+
+    .subtitulo-mapa {
+        font-size: 1.1rem;
+        margin-bottom: 2.8rem;
+    }
+
+    .mapa-wrapper {
+        height: 360px;
+    }
+
+    /* Informações do Mapa */
+    .detalhe-endereco ul {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
+
+
+/* ========================================================================
+   3.4 Large Devices (Laptops/Desktops, 992px and up)
+   ======================================================================== */
+@media (min-width: 992px) {
+    /* Seção Contato */
+    .secao-contato {
+        padding: 3rem 2rem;
+    }
+
+    .container-contato {
+        max-width: 1200px;
+    }
+
+    /* Cabeçalho */
+    .cabecalho-contato {
+        margin-bottom: 4rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .subtitulo-contato {
+        font-size: 1.2rem;
+    }
+
+    /* Grid de Contatos */
+    .grid-contatos {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+
+    /* Cards de Contato */
+    .card-contato {
+        padding: 2.5rem;
+        border-radius: 20px;
+    }
+
+    .card-contato:hover {
+        transform: translateY(-8px);
+    }
+
+    .icone-contato {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.5rem;
+    }
+
+    .icone-contato i {
+        font-size: 1.8rem;
+    }
+
+    .card-contato h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-contato p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .link-contato {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .horario-funcionamento {
+        padding: 0.8rem 1rem;
+    }
+
+    .horario-funcionamento span {
+        font-size: 0.9rem;
+    }
+
+    /* Seção Mapa */
+    .container-mapa {
+        padding: 3rem;
+        border-radius: 20px;
+        margin-top: 2rem;
+    }
+
+    .titulo-mapa {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitulo-mapa {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+
+    .mapa-wrapper {
+        height: 400px;
+        margin-bottom: 2rem;
+        border-radius: 15px;
+    }
+
+    /* Informações do Mapa */
+    .info-mapa {
+        margin-top: 2rem;
+    }
+
+    .detalhe-endereco h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .detalhe-endereco ul {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .detalhe-endereco li {
+        padding: 1rem;
+    }
+
+    .detalhe-endereco li:hover {
+        transform: translateX(5px);
+    }
+
+    .detalhe-endereco li i {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ========================================================================
+   3.5 Extra-Large Devices (Large Laptops and Desktops, 1300px and up)
+   ======================================================================== */
+@media (min-width: 1300px) {
+    /* Seção Contato */
+    .secao-contato {
+        padding: 4rem 2rem;
+    }
+
+    .container-contato {
+        max-width: 1400px;
+    }
+
+    /* Cabeçalho */
+    .cabecalho-contato {
+        margin-bottom: 4.5rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 3.2rem;
+        margin-bottom: 2.2rem;
+    }
+
+    .subtitulo-contato {
+        max-width: 700px;
+        font-size: 1.3rem;
+        line-height: 1.7;
+    }
+
+    /* Grid de Contatos */
+    .grid-contatos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin-bottom: 4.5rem;
+    }
+
+    /* Cards de Contato */
+    .card-contato {
+        padding: 3rem;
+        border-radius: 24px;
+    }
+
+    .card-contato:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(58, 80, 107, 0.2);
+    }
+
+    .card-contato::before {
+        height: 5px;
+    }
+
+    .card-contato:hover::before {
+        height: 7px;
+    }
+
+    .icone-contato {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1.8rem;
+    }
+
+    .icone-contato i {
+        font-size: 2rem;
+    }
+
+    .card-contato:hover .icone-contato {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .card-contato h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .card-contato p {
+        font-size: 1.05rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .link-contato {
+        font-size: 1.15rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 10px;
+    }
+
+    .horario-funcionamento {
+        padding: 1rem 1.2rem;
+        border-radius: 12px;
+    }
+
+    .horario-funcionamento i {
+        font-size: 1.1rem;
+    }
+
+    .horario-funcionamento span {
+        font-size: 0.95rem;
+    }
+
+    /* Seção Mapa */
+    .container-mapa {
+        padding: 3.5rem;
+        border-radius: 24px;
+        margin-top: 2.5rem;
+    }
+
+    .titulo-mapa {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .subtitulo-mapa {
+        max-width: 600px;
+        font-size: 1.2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .mapa-wrapper {
+        height: 450px;
+        margin-bottom: 2.5rem;
+        border-radius: 18px;
+    }
+
+    /* Informações do Mapa */
+    .info-mapa {
+        margin-top: 2.5rem;
+    }
+
+    .detalhe-endereco h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .detalhe-endereco ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .detalhe-endereco li {
+        padding: 1.2rem;
+        border-radius: 12px;
+        font-size: 1rem;
+    }
+
+    .detalhe-endereco li:hover {
+        transform: translateX(8px);
+        box-shadow: 0 4px 15px rgba(150, 172, 63, 0.15);
+    }
+
+    .detalhe-endereco li i {
+        width: 24px;
+        font-size: 1.3rem;
+    }
+}
+
+
+/* ========================================================================
+   3.6 Ajustes para Landscape em Dispositivos Móveis
+   ======================================================================== */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    .secao-contato {
+        padding: 1.5rem 1rem;
+    }
+
+    .cabecalho-contato {
+        margin-bottom: 1.5rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitulo-contato {
+        font-size: 0.85rem;
+    }
+
+    .grid-contatos {
+        gap: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-contato {
+        padding: 1.2rem;
+    }
+
+    .icone-contato {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.8rem;
+    }
+
+    .icone-contato i {
+        font-size: 1.3rem;
+    }
+
+    .card-contato h3 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .card-contato p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .link-contato {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .horario-funcionamento {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .container-mapa {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .titulo-mapa {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .subtitulo-mapa {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .mapa-wrapper {
+        height: 240px;
+        margin-bottom: 1.2rem;
+    }
+
+    .detalhe-endereco h4 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .detalhe-endereco li {
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+}
+
