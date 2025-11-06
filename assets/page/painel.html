@@ -174,7 +174,17 @@
                             <td><time datetime="2025-10-08">08/10/2025</time></td>
                             <td><span class="status concluido" aria-label="Status: Concluído">Concluído</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1001 de Maria Santos">
+                                <button class="botao-acao visualizar" 
+                                    data-id="1001"
+                                    data-paciente="Maria Santos"
+                                    data-voluntario="Dr. Carlos Lima"
+                                    data-especialidade="Odontologia"
+                                    data-data="08/10/2025"
+                                    data-horario="14:30"
+                                    data-status="Concluído"
+                                    data-tipo-status="concluido"
+                                    data-observacoes="Atendimento realizado com sucesso."
+                                    aria-label="Visualizar detalhes do atendimento 1001 de Maria Santos">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -186,7 +196,17 @@
                             <td><time datetime="2025-10-09">09/10/2025</time></td>
                             <td><span class="status andamento" aria-label="Status: Em Andamento">Em Andamento</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1002 de João Oliveira">
+                                <button class="botao-acao visualizar"
+                                    data-id="1002"
+                                    data-paciente="João Oliveira"
+                                    data-voluntario="Dra. Ana Costa"
+                                    data-especialidade="Odontologia"
+                                    data-data="09/10/2025"
+                                    data-horario="10:15"
+                                    data-status="Em Andamento"
+                                    data-tipo-status="andamento"
+                                    data-observacoes="Atendimento em progresso. Aguardando resultados de exames."
+                                    aria-label="Visualizar detalhes do atendimento 1002 de João Oliveira">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -198,7 +218,17 @@
                             <td><time datetime="2025-10-10">10/10/2025</time></td>
                             <td><span class="status pendente" aria-label="Status: Pendente">Pendente</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1003 de Sofia Pereira">
+                                <button class="botao-acao visualizar"
+                                    data-id="1003"
+                                    data-paciente="Sofia Pereira"
+                                    data-voluntario="Dr. Roberto Silva"
+                                    data-especialidade="Odontologia"
+                                    data-data="10/10/2025"
+                                    data-horario="16:00"
+                                    data-status="Pendente"
+                                    data-tipo-status="pendente"
+                                    data-observacoes="Aguardando confirmação do paciente para início do atendimento."
+                                    aria-label="Visualizar detalhes do atendimento 1003 de Sofia Pereira">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -210,7 +240,17 @@
                             <td><time datetime="2025-10-10">10/10/2025</time></td>
                             <td><span class="status cancelado" aria-label="Status: Cancelado">Cancelado</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1004 de Pedro Mendes">
+                                <button class="botao-acao visualizar"
+                                    data-id="1004"
+                                    data-paciente="Pedro Mendes"
+                                    data-voluntario="Dra. Lucia Rocha"
+                                    data-especialidade="Odontologia"
+                                    data-data="10/10/2025"
+                                    data-horario="09:00"
+                                    data-status="Cancelado"
+                                    data-tipo-status="cancelado"
+                                    data-observacoes="Atendimento cancelado por solicitação do paciente."
+                                    aria-label="Visualizar detalhes do atendimento 1004 de Pedro Mendes">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -222,7 +262,17 @@
                             <td><time datetime="2025-10-10">10/10/2025</time></td>
                             <td><span class="status agendado" aria-label="Status: Agendado">Agendado</span></td>
                             <td>
-                                <button class="botao-acao visualizar" aria-label="Visualizar detalhes do atendimento 1005 de Ana Miranda">
+                                <button class="botao-acao visualizar"
+                                    data-id="1005"
+                                    data-paciente="Ana Miranda"
+                                    data-voluntario="Dr. Marcos Alves"
+                                    data-especialidade="Odontologia"
+                                    data-data="10/10/2025"
+                                    data-horario="11:30"
+                                    data-status="Agendado"
+                                    data-tipo-status="agendado"
+                                    data-observacoes="Consulta agendada. Paciente confirmou presença."
+                                    aria-label="Visualizar detalhes do atendimento 1005 de Ana Miranda">
                                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -239,44 +289,44 @@
             <h2 id="titulo-acoes" class="titulo-secao-dashboard">Ações Rápidas</h2>
             
             <div class="grid-acoes" role="region" aria-label="Ações rápidas disponíveis">
-                <!-- Ação 1: Novo Atendimento -->
+                <!-- Ação 1: Novo Atendimento (Pode ter erro) -->
                 <article class="card-acao novo-atendimento" aria-labelledby="acao-novo">
                     <div class="icone-acao" aria-hidden="true">
                         <i class="fa-solid fa-plus"></i>
                     </div>
                     <h3 id="acao-novo">Novo Atendimento</h3>
                     <p>Registrar um novo atendimento no sistema</p>
-                    <button class="botao-acao-rapida" aria-label="Criar novo atendimento no sistema">Criar</button>
+                    <button class="botao-acao-rapida" data-acao="novo-atendimento" aria-label="Criar novo atendimento no sistema">Criar</button>
                 </article>
 
-                <!-- Ação 2: Relatórios -->
+                <!-- Ação 2: Relatórios (Pode ter aviso) -->
                 <article class="card-acao relatorios" aria-labelledby="acao-relatorio">
                     <div class="icone-acao" aria-hidden="true">
                         <i class="fa-solid fa-file-alt"></i>
                     </div>
                     <h3 id="acao-relatorio">Gerar Relatório</h3>
                     <p>Criar relatório detalhado de atividades</p>
-                    <button class="botao-acao-rapida" aria-label="Gerar relatório de atividades">Gerar</button>
+                    <button class="botao-acao-rapida" data-acao="gerar-relatorio" aria-label="Gerar relatório de atividades">Gerar</button>
                 </article>
 
-                <!-- Ação 3: Gerenciar Voluntários -->
+                <!-- Ação 3: Gerenciar Voluntários (Sempre informativo) -->
                 <article class="card-acao voluntarios-acao" aria-labelledby="acao-voluntarios">
                     <div class="icone-acao" aria-hidden="true">
                         <i class="fa-solid fa-user-plus"></i>
                     </div>
                     <h3 id="acao-voluntarios">Gerenciar Voluntários</h3>
                     <p>Adicionar ou editar voluntários cadastrados</p>
-                    <button class="botao-acao-rapida" aria-label="Acessar gestão de voluntários">Gerenciar</button>
+                    <button class="botao-acao-rapida" data-acao="gerenciar-voluntarios" aria-label="Acessar gestão de voluntários">Gerenciar</button>
                 </article>
 
-                <!-- Ação 4: Configurações -->
+                <!-- Ação 4: Configurações (Sempre sucesso) -->
                 <article class="card-acao configuracoes" aria-labelledby="acao-config">
                     <div class="icone-acao" aria-hidden="true">
                         <i class="fa-solid fa-cog"></i>
                     </div>
                     <h3 id="acao-config">Configurações</h3>
                     <p>Ajustar configurações do sistema</p>
-                    <button class="botao-acao-rapida" aria-label="Acessar configurações do sistema">Acessar</button>
+                    <button class="botao-acao-rapida" data-acao="configuracoes" aria-label="Acessar configurações do sistema">Acessar</button>
                 </article>
             </div>
         </section>
