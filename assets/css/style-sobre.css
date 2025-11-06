@@ -556,7 +556,7 @@
 /* 3.1 Container do Roadmap */
 .secao-roadmap {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #3a506b 40%, #96ac3f 100%);
+    background: linear-gradient(135deg, #3a506b 40%, #516112 100%);
     color: #f4f4f9;
 }
 
@@ -702,7 +702,7 @@
 }
 
 .sprint-futura .sprint-entregas li i {
-    color: #96ac3f;
+    color: #ffffff;
     font-size: 0.8rem;
     opacity: 0.6;
 }
@@ -746,4 +746,753 @@
     color: #f4f4f9;
     font-family: 'Open Sans', Arial, sans-serif;
     opacity: 0.8;
+}
+
+
+
+/* ========================================================================
+   4. RESPONSIVIDADE
+   ======================================================================== */
+
+/* 4.1 Extra Small Devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    /* Seção Funcionalidades */
+    .secao-funcionalidades {
+        padding: 2rem 1rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitulo-funcionalidades {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid-funcionalidades {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card-funcionalidade {
+        padding: 1.5rem;
+    }
+
+    .icone-funcionalidade {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 1rem;
+    }
+
+    .icone-funcionalidade i {
+        font-size: 1.4rem;
+    }
+
+    .card-funcionalidade h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .card-funcionalidade p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .detalhe-visual {
+        padding: 0.8rem;
+    }
+
+    /* Ajustes específicos dos elementos visuais */
+    .fluxo-roteamento {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .entrada-fluxo,
+    .analise-fluxo,
+    .destino-fluxo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .seta-fluxo {
+        transform: rotate(90deg);
+    }
+
+    .linha-status {
+        flex-direction: column;
+    }
+
+    .mini-grafico {
+        height: 50px;
+    }
+
+    .canais-integracao {
+        flex-direction: column;
+    }
+
+    .sincronizacao-icon {
+        transform: rotate(90deg);
+    }
+
+    /* Seção Tecnologias */
+    .secao-tecnologias {
+        padding: 2.5rem 1rem;
+    }
+
+    .subtitulo-tecnologias {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid-tecnologias {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card-tecnologia {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .icone-tecnologia {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .icone-tecnologia i {
+        font-size: 2rem;
+    }
+
+    .card-tecnologia h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-tecnologia p {
+        font-size: 0.9rem;
+    }
+
+    /* Seção Roadmap */
+    .secao-roadmap {
+        padding: 2.5rem 1rem;
+    }
+
+    #titulo-roadmap {
+        font-size: 1.8rem;
+    }
+
+    .subtitulo-roadmap {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid-roadmap {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .card-sprint {
+        padding: 1.5rem;
+    }
+
+    .sprint-numero {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .sprint-status {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .sprint-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .sprint-objetivo {
+        font-size: 0.9rem;
+    }
+
+    .sprint-entregas li {
+        font-size: 0.85rem;
+    }
+
+    .progresso-roadmap {
+        padding: 1.5rem;
+    }
+
+    .progresso-roadmap h4 {
+        font-size: 1rem;
+    }
+}
+
+
+/* 4.2 Small Devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+    /* Seção Funcionalidades */
+    .secao-funcionalidades {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 2.2rem;
+    }
+
+    .subtitulo-funcionalidades {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .grid-funcionalidades {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .card-funcionalidade {
+        padding: 2rem;
+    }
+
+    .icone-funcionalidade {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icone-funcionalidade i {
+        font-size: 1.6rem;
+    }
+
+    .card-funcionalidade h3 {
+        font-size: 1.15rem;
+    }
+
+    .card-funcionalidade p {
+        font-size: 0.95rem;
+    }
+
+    /* Seção Tecnologias */
+    .secao-tecnologias {
+        padding: 3rem 1.5rem;
+    }
+
+    .subtitulo-tecnologias {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .grid-tecnologias {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.8rem;
+    }
+
+    .card-tecnologia {
+        padding: 2rem 1.3rem;
+    }
+
+    .icone-tecnologia {
+        width: 70px;
+        height: 70px;
+    }
+
+    .icone-tecnologia i {
+        font-size: 2.2rem;
+    }
+
+    .card-tecnologia h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-tecnologia p {
+        font-size: 0.95rem;
+    }
+
+    /* Seção Roadmap */
+    .secao-roadmap {
+        padding: 3rem 1.5rem;
+    }
+
+    #titulo-roadmap {
+        font-size: 2.2rem;
+    }
+
+    .subtitulo-roadmap {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .grid-roadmap {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .card-sprint {
+        padding: 1.8rem;
+    }
+
+    .sprint-numero {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .sprint-status {
+        font-size: 0.85rem;
+    }
+
+    .sprint-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .sprint-objetivo {
+        font-size: 0.95rem;
+    }
+
+    .sprint-entregas li {
+        font-size: 0.88rem;
+    }
+
+    .progresso-roadmap {
+        padding: 1.8rem;
+    }
+
+    .progresso-roadmap h4 {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* 4.3 Medium Devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Seção Funcionalidades */
+    .secao-funcionalidades {
+        padding: 3rem 2rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 2.5rem;
+    }
+
+    .subtitulo-funcionalidades {
+        font-size: 1.1rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .grid-funcionalidades {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.2rem;
+    }
+
+    .card-funcionalidade {
+        padding: 2.2rem;
+    }
+
+    .icone-funcionalidade {
+        width: 65px;
+        height: 65px;
+    }
+
+    .icone-funcionalidade i {
+        font-size: 1.7rem;
+    }
+
+    .card-funcionalidade h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-funcionalidade p {
+        font-size: 0.98rem;
+    }
+
+    /* Ajustes dos elementos visuais */
+    .fluxo-roteamento {
+        flex-direction: row;
+    }
+
+    .seta-fluxo {
+        transform: rotate(0deg);
+    }
+
+    .linha-status {
+        flex-direction: row;
+    }
+
+    .canais-integracao {
+        flex-direction: row;
+    }
+
+    .sincronizacao-icon {
+        transform: rotate(0deg);
+    }
+
+    /* Seção Tecnologias */
+    .secao-tecnologias {
+        padding: 3.5rem 2rem;
+    }
+
+    .subtitulo-tecnologias {
+        font-size: 1.1rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .grid-tecnologias {
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 2rem;
+    }
+
+    .card-tecnologia {
+        padding: 2.2rem 1.4rem;
+    }
+
+    .icone-tecnologia {
+        width: 75px;
+        height: 75px;
+    }
+
+    .icone-tecnologia i {
+        font-size: 2.3rem;
+    }
+
+    .card-tecnologia h3 {
+        font-size: 1.3rem;
+    }
+
+    .card-tecnologia p {
+        font-size: 0.98rem;
+    }
+
+    /* Seção Roadmap */
+    .secao-roadmap {
+        padding: 3.5rem 2rem;
+    }
+
+    #titulo-roadmap {
+        font-size: 2.5rem;
+    }
+
+    .subtitulo-roadmap {
+        font-size: 1.1rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .grid-roadmap {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .card-sprint {
+        padding: 2rem;
+    }
+
+    .sprint-numero {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+    }
+
+    .sprint-status {
+        font-size: 0.88rem;
+    }
+
+    .sprint-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .sprint-objetivo {
+        font-size: 0.98rem;
+    }
+
+    .sprint-entregas li {
+        font-size: 0.9rem;
+    }
+
+    .progresso-roadmap {
+        padding: 2rem;
+    }
+
+    .progresso-roadmap h4 {
+        font-size: 1.15rem;
+    }
+}
+
+
+/* 4.4 Large Devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Seção Funcionalidades */
+    .secao-funcionalidades {
+        padding: 3.5rem 2rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 2.6rem;
+    }
+
+    .subtitulo-funcionalidades {
+        font-size: 1.15rem;
+        margin-bottom: 3.8rem;
+    }
+
+    .grid-funcionalidades {
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 2.3rem;
+    }
+
+    .card-funcionalidade {
+        padding: 2.3rem;
+    }
+
+    .icone-funcionalidade {
+        width: 68px;
+        height: 68px;
+    }
+
+    .icone-funcionalidade i {
+        font-size: 1.75rem;
+    }
+
+    .card-funcionalidade h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-funcionalidade p {
+        font-size: 1rem;
+    }
+
+    /* Seção Tecnologias */
+    .secao-tecnologias {
+        padding: 3.8rem 2rem;
+    }
+
+    .subtitulo-tecnologias {
+        font-size: 1.15rem;
+        margin-bottom: 3.8rem;
+    }
+
+    .grid-tecnologias {
+        grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+        gap: 2rem;
+    }
+
+    .card-tecnologia {
+        padding: 2.3rem 1.4rem;
+    }
+
+    .icone-tecnologia {
+        width: 78px;
+        height: 78px;
+    }
+
+    .icone-tecnologia i {
+        font-size: 2.4rem;
+    }
+
+    .card-tecnologia h3 {
+        font-size: 1.35rem;
+    }
+
+    .card-tecnologia p {
+        font-size: 1rem;
+    }
+
+    /* Seção Roadmap */
+    .secao-roadmap {
+        padding: 3.8rem 2rem;
+    }
+
+    #titulo-roadmap {
+        font-size: 2.6rem;
+    }
+
+    .subtitulo-roadmap {
+        font-size: 1.15rem;
+        margin-bottom: 3.8rem;
+    }
+
+    .grid-roadmap {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3.8rem;
+    }
+
+    .card-sprint {
+        padding: 2rem;
+    }
+
+    .sprint-numero {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .sprint-status {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .sprint-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .sprint-objetivo {
+        font-size: 1rem;
+    }
+
+    .sprint-entregas li {
+        font-size: 0.9rem;
+    }
+
+    .progresso-roadmap {
+        padding: 2rem;
+    }
+
+    .progresso-roadmap h4 {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* 4.5 Extra-Large Devices (large laptops and desktops, 1300px and up) */
+@media (min-width: 1300px) {
+    /* Seção Funcionalidades */
+    .secao-funcionalidades {
+        padding: 4rem 2rem;
+    }
+
+    .titulo-secao-sobre {
+        font-size: 2.8rem;
+    }
+
+    .subtitulo-funcionalidades {
+        font-size: 1.2rem;
+        margin-bottom: 4rem;
+    }
+
+    .grid-funcionalidades {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .card-funcionalidade {
+        padding: 2.5rem;
+    }
+
+    .icone-funcionalidade {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.5rem;
+    }
+
+    .icone-funcionalidade i {
+        font-size: 1.8rem;
+    }
+
+    .card-funcionalidade h3 {
+        font-size: 1.3rem;
+    }
+
+    .card-funcionalidade p {
+        font-size: 1rem;
+    }
+
+    /* Seção Tecnologias */
+    .secao-tecnologias {
+        padding: 4rem 2rem;
+    }
+
+    .subtitulo-tecnologias {
+        font-size: 1.2rem;
+        margin-bottom: 4rem;
+    }
+
+    .grid-tecnologias {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+    }
+
+    .card-tecnologia {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .icone-tecnologia {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1.5rem;
+    }
+
+    .icone-tecnologia i {
+        font-size: 2.5rem;
+    }
+
+    .card-tecnologia h3 {
+        font-size: 1.4rem;
+    }
+
+    .card-tecnologia p {
+        font-size: 1rem;
+    }
+
+    /* Seção Roadmap */
+    .secao-roadmap {
+        padding: 4rem 2rem;
+    }
+
+    #titulo-roadmap {
+        font-size: 2.8rem;
+    }
+
+    .subtitulo-roadmap {
+        font-size: 1.2rem;
+        margin-bottom: 4rem;
+    }
+
+    .grid-roadmap {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .card-sprint {
+        padding: 2rem;
+    }
+
+    .sprint-numero {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .sprint-status {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .sprint-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .sprint-objetivo {
+        font-size: 1rem;
+    }
+
+    .sprint-entregas li {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .progresso-roadmap {
+        padding: 2rem;
+    }
+
+    .progresso-roadmap h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .barra-progresso-roadmap {
+        height: 10px;
+    }
 }
