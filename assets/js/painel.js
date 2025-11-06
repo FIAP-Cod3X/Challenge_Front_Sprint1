@@ -605,6 +605,9 @@
                         <h2 id="modal-titulo">Detalhes do Atendimento</h2>
                         <span class="modal-id">#${dados.id}</span>
                     </div>
+                    <button class="modal-botao-fechar-header" aria-label="Fechar modal">
+                        <i class="fa-solid fa-times" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="modal-body">
@@ -664,12 +667,6 @@
                         <p>Recursos adicionais de edição e gerenciamento completo estarão disponíveis em breve.</p>
                     </div>
                 </div>
-
-                <div class="modal-footer">
-                    <button class="modal-botao-fechar" aria-label="Fechar modal de detalhes">
-                        Fechar
-                    </button>
-                </div>
             </div>
         `;
 
@@ -681,7 +678,7 @@
      * @param {HTMLElement} modal - Elemento do modal
      */
     function configurarFechamentoModal(modal) {
-        const botaoFecharFooter = modal.querySelector('.modal-botao-fechar');
+        const botaoFecharHeader = modal.querySelector('.modal-botao-fechar-header');
         const overlay = modal;
 
         // Função para fechar o modal
@@ -694,8 +691,10 @@
             }, 300); // Duração da animação
         };
 
-        // Evento no botão Fechar do footer
-        botaoFecharFooter.addEventListener('click', fecharModal);
+        // Evento no botão Fechar do header
+        if (botaoFecharHeader) {
+            botaoFecharHeader.addEventListener('click', fecharModal);
+        }
 
         // Evento ao clicar no overlay (fora do modal)
         overlay.addEventListener('click', function(e) {
