@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Meta tags obrigatórias para responsividade e codificação -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Relatório de perguntas frequentes enviadas. Visualize, exporte e gerencie todas as dúvidas registradas no sistema Cod3X.">
+    <meta name="keywords" content="relatório, FAQ, perguntas, dúvidas, histórico, Cod3X">
+    <meta name="author" content="FIAP-Cod3X">
+    <title>Relatório de Perguntas - Cod3X</title>
+    
+    <!-- Google Fonts: Carregamento otimizado com preconnect para melhor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Arquivos CSS: Ordem de carregamento (geral -> específico) -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-relatorio-faq.css">
+    
+    <!-- Font Awesome: Biblioteca de ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Favicon: Ícone da aba do navegador -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+</head>
+
+<body>
+    <!-- ========================================
+         CABEÇALHO PRINCIPAL DA APLICAÇÃO
+         ======================================== -->
+    <header class="cabecalho-principal" role="banner">
+        <nav class="secao-navegacao" aria-label="Navegação principal">
+            <!-- Logo: Sempre linkado para a página inicial -->
+            <a href="../../index.html" class="link-logo" aria-label="Página inicial do Cod3X">
+                <img src="../img/logo.png" alt="Logo do projeto Cod3X" class="imagem-logo">
+            </a>
+            
+            <!-- Menu de navegação: Lista não ordenada para melhor semântica -->
+            <ul class="menu-navegacao" role="menubar" aria-label="Menu principal">
+                <li role="none">
+                    <a href="../../index.html" class="links-navegacao" role="menuitem">Início</a>
+                </li>
+                <li role="none">
+                    <a href="./quem-somos.html" class="links-navegacao" role="menuitem">Integrantes</a>
+                </li>
+                <li role="none">
+                    <a href="./sobre.html" class="links-navegacao" role="menuitem">Sobre</a>
+                </li>
+                <li role="none">
+                    <a href="./painel.html" class="links-navegacao" role="menuitem">Painel</a>
+                </li>
+                <li role="none">
+                    <a href="./faq.html" class="links-navegacao" role="menuitem">FAQ</a>
+                </li>
+            </ul>
+
+            <!-- Formulário de busca: Importante usar form para acessibilidade -->
+            <form class="barra-pesquisa" role="search" aria-label="Busca no site">
+                <input type="search" id="input-busca" placeholder="Pesquisar" aria-label="Campo de pesquisa">
+                <button type="submit" aria-label="Executar pesquisa">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </button>
+            </form>
+            
+            <!-- Botões de autenticação: Separados em container próprio -->
+            <div class="botoes-autenticacao">
+                <a href="./login-cadastro.html" class="botao-autenticacao botao-login" aria-label="Acessar página de login">Login</a>
+                <a href="./login-cadastro.html" class="botao-autenticacao botao-cadastro" aria-label="Criar nova conta">Cadastro</a>
+            </div>
+
+            <!-- Botão Menu Hamburguer (Mobile): Aparece apenas em telas menores -->
+            <button class="botao-menu-hamburguer" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span class="linha-hamburguer"></span>
+                <span class="linha-hamburguer"></span>
+                <span class="linha-hamburguer"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         CONTEÚDO PRINCIPAL DA PÁGINA
+         ======================================== -->
+    <main id="conteudo-principal" class="container-relatorio">
+        <!-- ========================================
+             CABEÇALHO DO RELATÓRIO
+             ======================================== -->
+        <header class="cabecalho-relatorio">
+            <div class="titulo-wrapper">
+                <i class="fa-solid fa-file-lines icone-titulo" aria-hidden="true"></i>
+                <h1 class="titulo-relatorio">Relatório de Perguntas FAQ</h1>
+            </div>
+            <p class="subtitulo-relatorio">
+                Visualize e gerencie todas as perguntas enviadas através do formulário FAQ
+            </p>
+        </header>
+
+        <!-- ========================================
+             BARRA DE AÇÕES
+             ======================================== -->
+        <section class="barra-acoes" aria-label="Ações do relatório">
+            <div class="info-total">
+                <i class="fa-solid fa-chart-bar" aria-hidden="true"></i>
+                <span class="total-perguntas">0 perguntas registradas</span>
+            </div>
+            
+            <div class="grupo-botoes-acoes">
+                <button id="btn-exportar" class="botao-acao botao-exportar" aria-label="Exportar perguntas para JSON">
+                    <i class="fa-solid fa-download" aria-hidden="true"></i>
+                    Exportar JSON
+                </button>
+                
+                <button id="btn-limpar" class="botao-acao botao-limpar" aria-label="Limpar todas as perguntas">
+                    <i class="fa-solid fa-trash-alt" aria-hidden="true"></i>
+                    Limpar Tudo
+                </button>
+                
+                <a href="./faq.html" class="botao-acao botao-voltar" aria-label="Voltar para página FAQ">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    Voltar ao FAQ
+                </a>
+            </div>
+        </section>
+
+        <!-- ========================================
+             FILTROS
+             ======================================== -->
+        <section class="secao-filtros" aria-label="Filtros de busca">
+            <div class="filtro-grupo">
+                <label for="filtro-categoria" class="label-filtro">
+                    <i class="fa-solid fa-filter" aria-hidden="true"></i>
+                    Categoria:
+                </label>
+                <select id="filtro-categoria" class="select-filtro">
+                    <option value="">Todas</option>
+                    <option value="funcionalidades">Funcionalidades</option>
+                    <option value="tecnologia">Tecnologias</option>
+                    <option value="projeto">Sobre o Projeto</option>
+                    <option value="equipe">Sobre a Equipe</option>
+                    <option value="turma-bem">Turma do Bem</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="filtro-grupo">
+                <label for="filtro-busca" class="label-filtro">
+                    <i class="fa-solid fa-search" aria-hidden="true"></i>
+                    Buscar:
+                </label>
+                <input type="search" id="filtro-busca" class="input-busca-filtro" placeholder="Nome, e-mail ou assunto...">
+            </div>
+        </section>
+
+        <!-- ========================================
+             LISTA DE PERGUNTAS
+             ======================================== -->
+        <section id="lista-perguntas" class="lista-perguntas" aria-label="Lista de perguntas">
+            <!-- As perguntas serão inseridas aqui via JavaScript -->
+        </section>
+
+        <!-- ========================================
+             MENSAGEM VAZIA
+             ======================================== -->
+        <div id="mensagem-vazia" class="mensagem-vazia" style="display: none;">
+            <i class="fa-solid fa-inbox" aria-hidden="true"></i>
+            <h2>Nenhuma Pergunta Registrada</h2>
+            <p>Não há perguntas salvas no momento. Envie uma dúvida através do formulário FAQ.</p>
+            <a href="./faq.html" class="botao-ir-faq">
+                Voltar para o FAQ
+            </a>
+        </div>
+    </main>
+
+    <!-- ========================================
+         RODAPÉ COM INFORMAÇÕES E REDES SOCIAIS
+         ======================================== -->
+    <footer class="rodape-principal" role="contentinfo">
+        <!-- Container principal: Organiza o layout do rodapé -->
+        <div class="container-rodape">
+            <!-- Logo e descrição da empresa -->
+            <div class="logo-rodape">
+                <img src="../img/logo.png" alt="Logo Cod3X" loading="lazy">
+                <p>Cod3X - Tecnologia com Propósito</p>
+            </div>
+            
+            <!-- Navegação 1: Links principais -->
+            <nav class="informacoes-rodape" aria-label="Links de navegação">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="./quem-somos.html">Quem Somos</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Navegação 2: Suporte ao usuário -->
+            <nav class="informacoes-rodape" aria-label="Links de suporte">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                    <li><a href="#" aria-label="Central de ajuda">Ajuda</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Navegação 3: Informações do projeto -->
+            <nav class="informacoes-rodape" aria-label="Links do projeto">
+                <h3>Projeto</h3>
+                <ul>
+                    <li><a href="#" aria-label="Sobre o FIAP Challenge">FIAP Challenge</a></li>
+                    <li><a href="#" aria-label="Conheça a Turma do Bem">Turma do Bem</a></li>
+                    <li><a href="#" aria-label="Documentação técnica">Documentação</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Navegação 4: Aspectos legais -->
+            <nav class="informacoes-rodape" aria-label="Links legais">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#" aria-label="Termos de uso do serviço">Termos de Uso</a></li>
+                    <li><a href="#" aria-label="Política de privacidade">Privacidade</a></li>
+                    <li><a href="#" aria-label="Licenças de software">Licenças</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Divisor visual entre seções do rodapé -->
+        <hr class="linha-divisoria-rodape">
+        
+        <!-- Seção inferior: Redes sociais e copyright -->
+        <div class="inferior-rodape">
+            <!-- Navegação das redes sociais: aria-label para acessibilidade -->
+            <nav class="redes-sociais" aria-label="Redes sociais">
+                <ul class="icones-sociais">
+                    <li class="item-social">
+                        <a href="#" class="link-icone" aria-label="Fale conosco pelo WhatsApp">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="item-social">
+                        <a href="#" class="link-icone" aria-label="Siga-nos no Facebook">
+                            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="item-social">
+                        <a href="#" class="link-icone" aria-label="Conecte-se no LinkedIn">
+                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="item-social">
+                        <a href="#" class="link-icone" aria-label="Veja nosso código no GitHub">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="item-social">
+                        <a href="#" class="link-icone" aria-label="Siga-nos no Instagram">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Copyright: Informações legais obrigatórias -->
+            <p><small>&copy; Todos os direitos reservados, 2025 - Cod3X FIAP.</small></p>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript: Carregados antes do fechamento do body -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/barra-pesquisa.js"></script>
+    <script src="../js/faq-storage.js"></script>
+    <script src="../js/relatorio-faq.js"></script>
+</body>
+
+</html>
