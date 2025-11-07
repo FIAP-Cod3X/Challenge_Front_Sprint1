@@ -14,6 +14,7 @@
     let intervaloAtualizacao = null;
     let toastsAtivos = []; // Array para gerenciar múltiplos toasts
     let containerToasts = null; // Container dos toasts
+    let usuarioLogado = null; // Dados do usuário logado
 
     // ========================================
     // INICIALIZAÇÃO
@@ -32,9 +33,82 @@
     }
 
     /**
+     * Verifica autenticação do usuário
+     */
+    function verificarAutenticacao() {
+        // Tentar obter sessão do localStorage ou sessionStorage
+        const sessaoLocal = localStorage.getItem('sessao-cod3x');
+        const sessaoSession = sessionStorage.getItem('sessao-cod3x');
+        
+        const sessao = sessaoLocal || sessaoSession;
+        
+        if (!sessao) {
+            // Sem sessão - redirecionar para login
+            window.location.href = './login-cadastro.html';
+            return null;
+        }
+        
+        try {
+            usuarioLogado = JSON.parse(sessao);
+            return usuarioLogado;
+        } catch (e) {
+            console.error('Erro ao recuperar sessão:', e);
+            window.location.href = './login-cadastro.html';
+            return null;
+        }
+    }
+
+    /**
+     * Atualiza interface com dados do usuário
+     */
+    function atualizarInterfaceUsuario() {
+        if (!usuarioLogado) return;
+        
+        // Atualizar nome do usuário no cabeçalho
+        const spanUsuario = document.querySelector('.usuario-logado span');
+        if (spanUsuario) {
+            spanUsuario.textContent = usuarioLogado.nome;
+        }
+        
+        // Atualizar título de boas-vindas
+        const tituloDashboard = document.getElementById('titulo-dashboard');
+        if (tituloDashboard) {
+            tituloDashboard.textContent = `Bem-vindo, ${usuarioLogado.nome.split(' ')[0]}!`;
+        }
+        
+        // Configurar botão de logout
+        const botaoLogout = document.querySelector('.botao-logout');
+        if (botaoLogout) {
+            botaoLogout.addEventListener('click', fazerLogout);
+        }
+    }
+
+    /**
+     * Faz logout do usuário
+     */
+    function fazerLogout(event) {
+        event.preventDefault();
+        
+        // Remover sessões
+        localStorage.removeItem('sessao-cod3x');
+        sessionStorage.removeItem('sessao-cod3x');
+        
+        // Redirecionar para página inicial
+        window.location.href = '../../index.html';
+    }
+
+    /**
      * Configura todas as funcionalidades do painel
      */
     function configurarPainel() {
+        // Verificar autenticação primeiro
+        if (!verificarAutenticacao()) {
+            return; // Redireciona para login se não autenticado
+        }
+        
+        // Atualizar interface com dados do usuário
+        atualizarInterfaceUsuario();
+        
         // Busca elemento de data/hora
         elementoDataHora = document.getElementById('data-hora-sistema');
 
