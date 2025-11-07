@@ -738,6 +738,19 @@ input[type="search"]::-webkit-search-cancel-button {
     }
 }
 
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.menu-navegacao.mobile-fechando {
+    animation: slideOutRight 0.3s ease-out;
+}
+
 .menu-navegacao.mobile-ativo li {
     width: 100%;
     padding: 0;
