@@ -183,21 +183,26 @@ function fecharMenu() {
     
     if (!botao || !menu || !overlay) return;
     
-    // Remover classes ativas
+    // Adiciona animação de saída
+    menu.classList.add('mobile-fechando');
     botao.classList.remove('ativo');
-    menu.classList.remove('mobile-ativo');
     overlay.classList.remove('ativo');
-    document.body.classList.remove('menu-aberto');
     
-    // Atualizar atributos de acessibilidade
-    botao.setAttribute('aria-expanded', 'false');
-    botao.setAttribute('aria-label', 'Abrir menu de navegação');
-    
-    // Restaurar scroll do body
-    document.body.style.overflow = '';
-    
-    // Retornar foco ao botão
-    botao.focus();
+    // Aguarda animação terminar antes de remover
+    setTimeout(() => {
+        menu.classList.remove('mobile-ativo', 'mobile-fechando');
+        document.body.classList.remove('menu-aberto');
+        
+        // Atualizar atributos de acessibilidade
+        botao.setAttribute('aria-expanded', 'false');
+        botao.setAttribute('aria-label', 'Abrir menu de navegação');
+        
+        // Restaurar scroll do body
+        document.body.style.overflow = '';
+        
+        // Retornar foco ao botão
+        botao.focus();
+    }, 300); // Tempo da animação
 }
 
 
