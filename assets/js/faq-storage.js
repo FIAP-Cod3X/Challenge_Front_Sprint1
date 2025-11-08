@@ -181,6 +181,9 @@
                 // Limpa o formulário
                 formulario.reset();
                 
+                // Atualiza o badge de contador imediatamente
+                atualizarContadorPerguntas();
+                
                 // Opcional: Redireciona para página de relatório após 2 segundos
                 setTimeout(() => {
                     if (confirm('Deseja visualizar o relatório de perguntas agora?')) {
@@ -265,6 +268,7 @@
         // Cria badge de contador
         const badge = document.createElement('div');
         badge.className = 'badge-contador-faq';
+        badge.id = 'badge-contador-faq'; // Adiciona ID para fácil referência
         badge.innerHTML = `
             <i class="fa-solid fa-question-circle"></i>
             <span>${contador} pergunta${contador !== 1 ? 's' : ''} salva${contador !== 1 ? 's' : ''}</span>
@@ -288,6 +292,7 @@
             gap: 0.8rem;
             flex-wrap: wrap;
             max-width: 90vw;
+            animation: slideInUp 0.4s ease;
         `;
         
         // Ajuste responsivo para mobile
@@ -324,6 +329,41 @@
         }
         
         document.body.appendChild(badge);
+    }
+
+
+    /**
+     * Atualiza o contador de perguntas dinamicamente
+     */
+    function atualizarContadorPerguntas() {
+        console.log('FAQ Storage: Atualizando contador de perguntas...');
+        const perguntas = obterPerguntas();
+        const contador = perguntas.length;
+        console.log(`FAQ Storage: Total de perguntas: ${contador}`);
+        
+        // Remove badge antigo se existir
+        const badgeAntigo = document.getElementById('badge-contador-faq');
+        if (badgeAntigo) {
+            console.log('FAQ Storage: Removendo badge antigo...');
+            // Animação de saída suave
+            badgeAntigo.style.animation = 'slideOutDown 0.3s ease';
+            setTimeout(() => badgeAntigo.remove(), 300);
+        }
+        
+        // Se não há perguntas, não mostra o badge
+        if (contador === 0) return;
+        
+        // Aguarda a animação de saída antes de criar novo badge
+        setTimeout(() => {
+            // Cria novo badge com contador atualizado
+            exibirContadorPerguntas();
+            
+            // Adiciona efeito de destaque no novo badge
+            const novoBadge = document.getElementById('badge-contador-faq');
+            if (novoBadge) {
+                novoBadge.style.animation = 'slideInUp 0.4s ease, pulseAttention 0.6s ease 0.5s';
+            }
+        }, badgeAntigo ? 300 : 0);
     }
 
 
