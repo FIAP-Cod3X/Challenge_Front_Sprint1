@@ -622,9 +622,10 @@
    6. RESPONSIVIDADE
    ======================================================================== */
 
-/* 6.1 Extra Small Devices (phones, 600px and down) */
+/* ========================================
+   6.1 Mobile (max 600px)
+   ======================================== */
 @media (max-width: 600px) {
-    /* Hero Quem Somos */
     .secao-hero-quem-somos {
         flex-direction: column;
         min-height: auto;
@@ -658,7 +659,6 @@
         margin: 1rem 0;
     }
 
-    /* Nossa História */
     .secao-nossa-historia {
         padding: 2rem 1rem;
     }
@@ -703,7 +703,6 @@
         text-align: center;
     }
 
-    /* Filosofia MVV */
     .secao-filosofia {
         padding: 2rem 1rem;
     }
@@ -741,7 +740,6 @@
         gap: 0.8rem;
     }
 
-    /* Equipe */
     .secao-equipe {
         padding: 2rem 1rem;
     }
@@ -779,7 +777,6 @@
         height: 40px;
     }
 
-    /* CTA Final */
     .secao-cta-final {
         padding: 3rem 1rem;
     }
@@ -808,10 +805,10 @@
     }
 }
 
-
-/* 6.2 Small Devices (portrait tablets and large phones, 600px and up) */
+/* ========================================
+   6.2 Small Tablets (600px+)
+   ======================================== */
 @media (min-width: 600px) {
-    /* Hero Quem Somos */
     .secao-hero-quem-somos {
         padding: 2.5rem 1.5rem;
     }
@@ -834,7 +831,6 @@
         max-width: 450px;
     }
 
-    /* Nossa História */
     .secao-nossa-historia {
         padding: 2.5rem 1.5rem;
     }
@@ -870,7 +866,6 @@
         font-size: 1rem;
     }
 
-    /* Filosofia MVV */
     .secao-filosofia {
         padding: 2.5rem 1.5rem;
     }
@@ -901,7 +896,6 @@
         font-size: 1rem;
     }
 
-    /* Equipe */
     .secao-equipe {
         padding: 2.5rem 1.5rem;
     }
@@ -929,7 +923,6 @@
         font-size: 1.25rem;
     }
 
-    /* CTA Final */
     .secao-cta-final {
         padding: 4rem 1.5rem;
     }
@@ -953,10 +946,10 @@
     }
 }
 
-
-/* 6.3 Medium Devices (landscape tablets, 768px and up) */
+/* ========================================
+   6.3 Medium Tablets (768px+)
+   ======================================== */
 @media (min-width: 768px) {
-    /* Hero Quem Somos */
     .secao-hero-quem-somos {
         flex-direction: row;
         padding: 3rem 2rem;
@@ -988,7 +981,6 @@
         max-width: none;
     }
 
-    /* Nossa História */
     .secao-nossa-historia {
         padding: 3rem 2rem;
     }
@@ -1031,7 +1023,6 @@
         font-size: 1.05rem;
     }
 
-    /* Filosofia MVV */
     .secao-filosofia {
         padding: 3rem 2rem;
     }
@@ -1058,7 +1049,6 @@
         font-size: 1.45rem;
     }
 
-    /* Equipe */
     .secao-equipe {
         padding: 3rem 2rem;
     }
@@ -1085,7 +1075,6 @@
         font-size: 1.28rem;
     }
 
-    /* CTA Final */
     .secao-cta-final {
         padding: 5rem 2rem;
     }
@@ -1104,10 +1093,10 @@
     }
 }
 
-
-/* 6.4 Large Devices (laptops/desktops, 992px and up) */
+/* ========================================
+   6.4 Large Desktops (992px+)
+   ======================================== */
 @media (min-width: 992px) {
-    /* Hero Quem Somos */
     .titulo-principal-quem-somos {
         font-size: 3.2rem;
     }
@@ -1126,7 +1115,6 @@
         width: 750px;
     }
 
-    /* Nossa História */
     .titulo-secao-quem-somos {
         font-size: 2.6rem;
     }
@@ -1153,7 +1141,6 @@
         font-size: 1.08rem;
     }
 
-    /* Filosofia MVV */
     .container-mvv {
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         gap: 2.3rem;
@@ -1176,7 +1163,6 @@
         font-size: 1.48rem;
     }
 
-    /* Equipe */
     .container-cartoes-equipe {
         grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
         gap: 2.3rem;
@@ -1195,7 +1181,6 @@
         font-size: 1.29rem;
     }
 
-    /* CTA Final */
     .secao-cta-final {
         padding: 5.5rem 2rem;
     }
@@ -1214,10 +1199,10 @@
     }
 }
 
-
-/* 6.5 Extra-Large Devices (large laptops and desktops, 1300px and up) */
+/* ========================================
+   6.5 Extra-Large Desktops (1300px+)
+   ======================================== */
 @media (min-width: 1300px) {
-    /* Hero Quem Somos */
     .secao-hero-quem-somos {
         padding: 4rem 3rem;
     }
@@ -1245,7 +1230,6 @@
         width: 700px;
     }
 
-    /* Nossa História */
     .secao-nossa-historia {
         padding: 3rem 2rem;
     }
@@ -1284,7 +1268,6 @@
         font-size: 1.1rem;
     }
 
-    /* Filosofia MVV */
     .secao-filosofia {
         padding: 3rem 2rem;
     }
@@ -1322,7 +1305,6 @@
         font-size: 1rem;
     }
 
-    /* Equipe */
     .secao-equipe {
         padding: 3rem 2rem;
     }
@@ -1367,7 +1349,6 @@
         height: 45px;
     }
 
-    /* CTA Final */
     .secao-cta-final {
         padding: 6rem 2rem;
     }
