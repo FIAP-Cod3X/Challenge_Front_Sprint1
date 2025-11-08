@@ -754,9 +754,10 @@
    4. RESPONSIVIDADE
    ======================================================================== */
 
-/* 4.1 Extra Small Devices (phones, 600px and down) */
+/* ========================================
+   4.1 Mobile (max 600px)
+   ======================================== */
 @media (max-width: 600px) {
-    /* Seção Funcionalidades */
     .secao-funcionalidades {
         padding: 2rem 1rem;
     }
@@ -837,7 +838,6 @@
         transform: rotate(90deg);
     }
 
-    /* Seção Tecnologias */
     .secao-tecnologias {
         padding: 2.5rem 1rem;
     }
@@ -874,7 +874,6 @@
         font-size: 0.9rem;
     }
 
-    /* Seção Roadmap */
     .secao-roadmap {
         padding: 2.5rem 1rem;
     }
@@ -930,10 +929,10 @@
     }
 }
 
-
-/* 4.2 Small Devices (portrait tablets and large phones, 600px and up) */
+/* ========================================
+   4.2 Small Tablets (600px+)
+   ======================================== */
 @media (min-width: 600px) {
-    /* Seção Funcionalidades */
     .secao-funcionalidades {
         padding: 2.5rem 1.5rem;
     }
@@ -973,7 +972,6 @@
         font-size: 0.95rem;
     }
 
-    /* Seção Tecnologias */
     .secao-tecnologias {
         padding: 3rem 1.5rem;
     }
@@ -1009,7 +1007,6 @@
         font-size: 0.95rem;
     }
 
-    /* Seção Roadmap */
     .secao-roadmap {
         padding: 3rem 1.5rem;
     }
@@ -1064,10 +1061,10 @@
     }
 }
 
-
-/* 4.3 Medium Devices (landscape tablets, 768px and up) */
+/* ========================================
+   4.3 Medium Tablets (768px+)
+   ======================================== */
 @media (min-width: 768px) {
-    /* Seção Funcionalidades */
     .secao-funcionalidades {
         padding: 3rem 2rem;
     }
@@ -1107,7 +1104,6 @@
         font-size: 0.98rem;
     }
 
-    /* Ajustes dos elementos visuais */
     .fluxo-roteamento {
         flex-direction: row;
     }
@@ -1128,7 +1124,6 @@
         transform: rotate(0deg);
     }
 
-    /* Seção Tecnologias */
     .secao-tecnologias {
         padding: 3.5rem 2rem;
     }
@@ -1164,7 +1159,6 @@
         font-size: 0.98rem;
     }
 
-    /* Seção Roadmap */
     .secao-roadmap {
         padding: 3.5rem 2rem;
     }
@@ -1219,10 +1213,10 @@
     }
 }
 
-
-/* 4.4 Large Devices (laptops/desktops, 992px and up) */
+/* ========================================
+   4.4 Large Desktops (992px+)
+   ======================================== */
 @media (min-width: 992px) {
-    /* Seção Funcionalidades */
     .secao-funcionalidades {
         padding: 3.5rem 2rem;
     }
@@ -1262,7 +1256,6 @@
         font-size: 1rem;
     }
 
-    /* Seção Tecnologias */
     .secao-tecnologias {
         padding: 3.8rem 2rem;
     }
@@ -1298,7 +1291,6 @@
         font-size: 1rem;
     }
 
-    /* Seção Roadmap */
     .secao-roadmap {
         padding: 3.8rem 2rem;
     }
@@ -1354,10 +1346,10 @@
     }
 }
 
-
-/* 4.5 Extra-Large Devices (large laptops and desktops, 1300px and up) */
+/* ========================================
+   4.5 Extra-Large Desktops (1300px+)
+   ======================================== */
 @media (min-width: 1300px) {
-    /* Seção Funcionalidades */
     .secao-funcionalidades {
         padding: 4rem 2rem;
     }
@@ -1398,7 +1390,6 @@
         font-size: 1rem;
     }
 
-    /* Seção Tecnologias */
     .secao-tecnologias {
         padding: 4rem 2rem;
     }
@@ -1435,7 +1426,6 @@
         font-size: 1rem;
     }
 
-    /* Seção Roadmap */
     .secao-roadmap {
         padding: 4rem 2rem;
     }
