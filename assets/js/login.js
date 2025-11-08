@@ -240,7 +240,7 @@ function abrirModalCadastro(event) {
 /**
  * Fechar modal de cadastro
  */
-function fecharModalCadastro() {
+async function fecharModalCadastro() {
     const modal = document.getElementById('modal-cadastro');
     modal.style.display = 'none';
     document.body.style.overflow = '';
@@ -253,7 +253,7 @@ function fecharModalCadastro() {
 /**
  * Handle do Cadastro
  */
-function handleCadastro(event) {
+async function handleCadastro(event) {
     event.preventDefault();
     
     const nome = document.getElementById('nome-cadastro').value.trim();
@@ -306,14 +306,11 @@ function handleCadastro(event) {
     
     mostrarMensagem('Cadastro realizado com sucesso! Você já pode fazer login.', 'sucesso');
     
-    // Fechar modal após 2 segundos
-    setTimeout(() => {
-        fecharModalCadastro();
+        await fecharModalCadastro();
         
         // Preencher o campo de email automaticamente
         document.getElementById('email-login').value = email;
         document.getElementById('senha-login').focus();
-    }, 2000);
 }
 
 
