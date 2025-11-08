@@ -4,7 +4,7 @@
 
 
 /* ========================================================================
-   1. SEÇÃO FAQ
+   1. LAYOUT BASE
    ======================================================================== */
 
 /* 1.1 Container Principal */
@@ -20,8 +20,7 @@
 }
 
 
-
-/* 1.2 Cabeçalho da Seção FAQ */
+/* 1.2 Cabeçalho da Seção */
 .cabecalho-faq {
     margin-bottom: 4rem;
     text-align: center;
@@ -53,6 +52,61 @@
     }
 }
 
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+@keyframes slideOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+@keyframes pulseAttention {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(150, 172, 63, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(150, 172, 63, 0.5);
+    }
+}
+
 .titulo-faq {
     margin-bottom: 1.5rem;
     color: #3a506b;
@@ -72,8 +126,11 @@
 }
 
 
+/* ========================================================================
+   2. FORMULÁRIO DE DÚVIDAS
+   ======================================================================== */
 
-/* 1.3 Container do Formulário */
+/* 2.1 Container do Formulário */
 .container-formulario-faq {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -82,7 +139,7 @@
 }
 
 
-/* 1.4 Formulário de Dúvidas */
+/* 2.2 Formulário Base */
 .formulario-duvidas {
     padding: 3rem;
     border-radius: 20px;
@@ -96,8 +153,7 @@
 }
 
 
-
-/* 1.5 Grupos de Campos */
+/* 2.3 Grupos de Campos */
 .grupo-campo {
     margin-bottom: 2rem;
 }
@@ -110,8 +166,7 @@
 }
 
 
-
-/* 1.6 Labels dos Campos */
+/* 2.4 Labels */
 .label-campo {
     display: flex;
     align-items: center;
@@ -136,8 +191,7 @@
 }
 
 
-
-/* 1.7 Campos de Input */
+/* 2.5 Campos de Input */
 .campo-input,
 .campo-select,
 .campo-textarea {
@@ -181,8 +235,7 @@
 }
 
 
-
-/* 1.8 Checkbox Customizado */
+/* 2.6 Checkbox Customizado */
 .campo-checkbox {
     position: relative;
     width: 20px;
@@ -212,8 +265,7 @@
 }
 
 
-
-/* 1.9 Grupo de Botões */
+/* 2.7 Botões */
 .grupo-botoes {
     display: flex;
     justify-content: center;
@@ -221,8 +273,6 @@
     margin-top: 2rem;
 }
 
-
-/* 1.10 Botões do Formulário */
 .botao-enviar,
 .botao-limpar {
     display: inline-flex;
@@ -266,8 +316,7 @@
 }
 
 
-
-/* 1.11 Estados de Validação */
+/* 2.8 Estados de Validação */
 .campo-input:invalid:not(:placeholder-shown),
 .campo-select:invalid,
 .campo-textarea:invalid:not(:placeholder-shown) {
@@ -292,10 +341,10 @@
 
 
 /* ========================================================================
-   2. INFORMAÇÕES ADICIONAIS
+   3. CARDS DE INFORMAÇÕES
    ======================================================================== */
 
-/* 2.1 Container de Informações */
+/* 3.1 Container */
 .informacoes-adicionais {
     display: flex;
     flex-direction: column;
@@ -303,7 +352,7 @@
 }
 
 
-/* 2.2 Cards de Informação */
+/* 3.2 Cards Base */
 .card-info {
     padding: 2rem;
     border: 2px solid transparent;
@@ -319,7 +368,6 @@
     transform: translateY(-5px);
 }
 
-/* Hover específico para cada card */
 .card-info:nth-child(1):hover {
     border-color: #96ac3f4d;
 }
@@ -333,7 +381,7 @@
 }
 
 
-/* 2.3 Ícones dos Cards */
+/* 3.3 Ícones */
 .icone-info {
     display: flex;
     align-items: center;
@@ -378,7 +426,7 @@
 }
 
 
-/* 2.4 Textos dos Cards */
+/* 3.4 Textos */
 .card-info h3 {
     margin-bottom: 0.5rem;
     color: #3a506b;
@@ -396,16 +444,12 @@
 }
 
 
-
 /* ========================================================================
-   3. RESPONSIVIDADE
+   4. RESPONSIVIDADE
    ======================================================================== */
 
-/* ========================================================================
-   3.1 Extra Small Devices (Phones, 600px and down)
-   ======================================================================== */
+/* 4.1 Mobile (max 600px) */
 @media (max-width: 600px) {
-    /* Seção FAQ */
     .secao-faq {
         padding: 2rem 1rem;
         min-height: auto;
@@ -414,8 +458,6 @@
     .container-faq {
         max-width: 100%;
     }
-
-    /* Cabeçalho */
     .cabecalho-faq {
         margin-bottom: 2rem;
     }
@@ -440,13 +482,10 @@
         padding: 0 1rem;
     }
 
-    /* Container do Formulário */
     .container-formulario-faq {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
-    /* Formulário */
     .formulario-duvidas {
         padding: 1.5rem;
         border-radius: 16px;
@@ -466,7 +505,6 @@
         font-size: 1rem;
     }
 
-    /* Campos */
     .campo-input,
     .campo-select,
     .campo-textarea {
@@ -478,8 +516,6 @@
     .campo-textarea {
         min-height: 100px;
     }
-
-    /* Checkbox */
     .grupo-campo-checkbox {
         gap: 0.6rem;
         margin-bottom: 2rem;
@@ -494,7 +530,6 @@
         font-size: 0.85rem;
     }
 
-    /* Botões */
     .grupo-botoes {
         flex-direction: column;
         gap: 1rem;
@@ -508,8 +543,6 @@
         padding: 0.9rem 1.5rem;
         font-size: 0.9rem;
     }
-
-    /* Informações Adicionais */
     .informacoes-adicionais {
         display: flex;
         flex-direction: column;
@@ -539,23 +572,17 @@
         font-size: 0.85rem;
     }
 
-    /* Texto de ajuda */
     .texto-ajuda {
         font-size: 0.75rem;
     }
 }
 
 
-/* ========================================================================
-   3.2 Small Devices (Portrait Tablets and Large Phones, 600px and up)
-   ======================================================================== */
+/* 4.2 Small Tablets (600px - 767px) */
 @media (min-width: 600px) {
-    /* Seção FAQ */
     .secao-faq {
         padding: 3rem 1.5rem;
     }
-
-    /* Cabeçalho */
     .cabecalho-faq {
         margin-bottom: 3rem;
     }
@@ -579,26 +606,21 @@
         font-size: 1.05rem;
     }
 
-    /* Container do Formulário */
     .container-formulario-faq {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
 
-    /* Formulário */
     .formulario-duvidas {
         padding: 2rem;
         border-radius: 18px;
     }
-
-    /* Campos */
     .campo-input,
     .campo-select,
     .campo-textarea {
         padding: 0.95rem 1.1rem;
     }
 
-    /* Botões */
     .grupo-botoes {
         flex-direction: row;
         justify-content: space-around;
@@ -611,8 +633,6 @@
         padding: 0.95rem 1.8rem;
         font-size: 0.95rem;
     }
-
-    /* Informações Adicionais */
     .informacoes-adicionais {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -625,11 +645,8 @@
 }
 
 
-/* ========================================================================
-   3.3 Medium Devices (Landscape Tablets, 768px and up)
-   ======================================================================== */
+/* 4.3 Medium Tablets (768px - 991px) */
 @media (min-width: 768px) {
-    /* Seção FAQ */
     .secao-faq {
         padding: 3.5rem 2rem;
     }
@@ -637,8 +654,6 @@
     .container-faq {
         max-width: 900px;
     }
-
-    /* Cabeçalho */
     .cabecalho-faq {
         margin-bottom: 3.5rem;
     }
@@ -661,13 +676,11 @@
         font-size: 1.1rem;
     }
 
-    /* Container do Formulário */
     .container-formulario-faq {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
-    /* Formulário */
     .formulario-duvidas {
         padding: 2.5rem;
         border-radius: 20px;
@@ -676,8 +689,6 @@
     .grupo-campo {
         margin-bottom: 1.8rem;
     }
-
-    /* Campos */
     .campo-input,
     .campo-select,
     .campo-textarea {
@@ -689,14 +700,12 @@
         min-height: 110px;
     }
 
-    /* Botões */
     .botao-enviar,
     .botao-limpar {
         padding: 1rem 1.9rem;
         font-size: 0.98rem;
     }
 
-    /* Informações Adicionais */
     .card-info {
         padding: 1.9rem;
     }
@@ -712,11 +721,8 @@
 }
 
 
-/* ========================================================================
-   3.4 Large Devices (Laptops/Desktops, 992px and up)
-   ======================================================================== */
+/* 4.4 Large Desktops (992px - 1299px) */
 @media (min-width: 992px) {
-    /* Seção FAQ */
     .secao-faq {
         padding: 4rem 2rem;
         min-height: 80vh;
@@ -725,8 +731,6 @@
     .container-faq {
         max-width: 1000px;
     }
-
-    /* Cabeçalho */
     .cabecalho-faq {
         margin-bottom: 4rem;
     }
@@ -750,13 +754,11 @@
         font-size: 1.2rem;
     }
 
-    /* Container do Formulário */
     .container-formulario-faq {
         grid-template-columns: 2fr 1fr;
         gap: 4rem;
     }
 
-    /* Formulário */
     .formulario-duvidas {
         padding: 3rem;
         border-radius: 20px;
@@ -765,8 +767,6 @@
     .grupo-campo {
         margin-bottom: 2rem;
     }
-
-    /* Campos */
     .campo-input,
     .campo-select,
     .campo-textarea {
@@ -777,7 +777,6 @@
         min-height: 120px;
     }
 
-    /* Botões */
     .grupo-botoes {
         margin-top: 2rem;
         gap: 1.5rem;
@@ -789,7 +788,6 @@
         font-size: 1rem;
     }
 
-    /* Hover effects restaurados */
     .formulario-duvidas:hover {
         box-shadow: 0 15px 40px rgba(58, 80, 107, 0.12);
     }
@@ -797,8 +795,6 @@
     .card-info:hover {
         transform: translateY(-5px);
     }
-
-    /* Informações Adicionais */
     .informacoes-adicionais {
         display: flex;
         flex-direction: column;
@@ -829,11 +825,8 @@
 }
 
 
-/* ========================================================================
-   3.5 Extra-Large Devices (Large Laptops and Desktops, 1300px and up)
-   ======================================================================== */
+/* 4.5 Extra-Large Desktops (1300px+) */
 @media (min-width: 1300px) {
-    /* Seção FAQ */
     .secao-faq {
         padding: 5rem 2rem;
     }
@@ -841,8 +834,6 @@
     .container-faq {
         max-width: 1200px;
     }
-
-    /* Cabeçalho */
     .cabecalho-faq {
         margin-bottom: 4.5rem;
     }
@@ -868,13 +859,11 @@
         line-height: 1.7;
     }
 
-    /* Container do Formulário */
     .container-formulario-faq {
         grid-template-columns: 2fr 1fr;
         gap: 4.5rem;
     }
 
-    /* Formulário */
     .formulario-duvidas {
         padding: 3.5rem;
         border-radius: 24px;
@@ -892,8 +881,6 @@
     .label-campo i {
         font-size: 1.15rem;
     }
-
-    /* Campos */
     .campo-input,
     .campo-select,
     .campo-textarea {
@@ -906,7 +893,6 @@
         min-height: 140px;
     }
 
-    /* Checkbox */
     .grupo-campo-checkbox {
         margin-bottom: 2.8rem;
     }
@@ -920,7 +906,6 @@
         font-size: 1rem;
     }
 
-    /* Botões */
     .grupo-botoes {
         margin-top: 2.5rem;
         gap: 1.8rem;
@@ -937,8 +922,6 @@
     .botao-limpar:hover {
         transform: translateY(-4px);
     }
-
-    /* Informações Adicionais */
     .card-info {
         padding: 2.5rem;
         border-radius: 18px;
@@ -968,7 +951,6 @@
         box-shadow: 0 15px 40px rgba(58, 80, 107, 0.18);
     }
 
-    /* Texto de ajuda */
     .texto-ajuda {
         font-size: 0.9rem;
         margin-top: 0.4rem;
@@ -976,9 +958,7 @@
 }
 
 
-/* ========================================================================
-   3.6 Ajustes para Landscape em Dispositivos Móveis
-   ======================================================================== */
+/* 4.6 Landscape Mobile (max 900px width, 500px height) */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
     .secao-faq {
         padding: 2rem 1rem;
