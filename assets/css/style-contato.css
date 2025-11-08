@@ -4,10 +4,10 @@
 
 
 /* ========================================================================
-   1. SEÇÃO CONTATO
+   1. LAYOUT BASE
    ======================================================================== */
 
-/* 1.1 Container Principal */
+/* 1.1 Containers */
 .secao-contato {
     padding: 3rem 2rem;
     background: #f4f4f9;
@@ -18,8 +18,16 @@
     margin: 0 auto;
 }
 
+.container-mapa {
+    margin-top: 2rem;
+    padding: 3rem;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 30px #3a506b14;
+}
 
-/* 1.2 Cabeçalho da Seção */
+
+/* 1.2 Cabeçalhos */
 .cabecalho-contato {
     margin-bottom: 4rem;
     text-align: center;
@@ -45,7 +53,11 @@
 }
 
 
-/* 1.3 Grid de Contatos */
+/* ========================================================================
+   2. CARDS DE CONTATO
+   ======================================================================== */
+
+/* 2.1 Grid */
 .grid-contatos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -54,7 +66,7 @@
 }
 
 
-/* 1.4 Card de Contato */
+/* 2.2 Card Base */
 .card-contato {
     position: relative;
     padding: 2.5rem;
@@ -66,18 +78,41 @@
     transition: all 0.3s;
 }
 
-.card-contato:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px #3a506b26;
-}
-
+.card-contato:hover,
 .card-contato:focus-within {
     transform: translateY(-8px);
     box-shadow: 0 20px 50px #3a506b26;
 }
 
+.card-contato::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    border-radius: 20px 20px 0 0;
+    transition: all 0.3s;
+}
 
-/* 1.5 Ícones dos Cartões */
+.card-contato:hover::before {
+    height: 6px;
+}
+
+.card-contato.email::before {
+    background: linear-gradient(90deg, #3a506b, #5a7291);
+}
+
+.card-contato.whatsapp::before {
+    background: linear-gradient(90deg, #25d366, #128c7e);
+}
+
+.card-contato.localizacao::before {
+    background: linear-gradient(90deg, #e88407, #ff9500);
+}
+
+
+/* 2.3 Ícones */
 .icone-contato {
     display: flex;
     align-items: center;
@@ -118,7 +153,7 @@
 }
 
 
-/* 1.6 Títulos e Textos dos Cartões */
+/* 2.4 Conteúdo */
 .card-contato h3 {
     margin-bottom: 1rem;
     color: #3a506b;
@@ -135,8 +170,6 @@
     opacity: 0.8;
 }
 
-
-/* 1.7 Informações de Contato */
 .info-contato {
     margin-bottom: 1.5rem;
 }
@@ -148,6 +181,9 @@
     font-size: 0.95rem;
     line-height: 1.6;
 }
+
+
+/* 2.5 Links */
 
 .link-contato {
     display: inline-block;
@@ -178,7 +214,7 @@
 }
 
 
-/* 1.8 Horário de Funcionamento */
+/* 2.6 Horário */
 .horario-funcionamento {
     display: flex;
     align-items: center;
@@ -202,50 +238,11 @@
 }
 
 
-/* 1.9 Melhorias Visuais */
-.card-contato::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 4px;
-    border-radius: 20px 20px 0 0;
-    transition: all 0.3s;
-}
-
-.card-contato:hover::before {
-    height: 6px;
-}
-
-.card-contato.email::before {
-    background: linear-gradient(90deg, #3a506b, #5a7291);
-}
-
-.card-contato.whatsapp::before {
-    background: linear-gradient(90deg, #25d366, #128c7e);
-}
-
-.card-contato.localizacao::before {
-    background: linear-gradient(90deg, #e88407, #ff9500);
-}
-
-
 /* ========================================================================
-   2. SEÇÃO MAPA
+   3. SEÇÃO MAPA
    ======================================================================== */
 
-/* 2.1 Container do Mapa */
-.container-mapa {
-    margin-top: 2rem;
-    padding: 3rem;
-    border-radius: 20px;
-    background: #fff;
-    box-shadow: 0 10px 30px #3a506b14;
-}
-
-
-/* 2.2 Títulos do Mapa */
+/* 3.1 Títulos */
 .titulo-mapa {
     margin-bottom: 1rem;
     color: #3a506b;
@@ -256,9 +253,7 @@
 
 .subtitulo-mapa {
     max-width: 500px;
-    margin-right: auto;
-    margin-bottom: 3rem;
-    margin-left: auto;
+    margin: 0 auto 3rem;
     color: #3a506b;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 1.1rem;
@@ -267,7 +262,7 @@
 }
 
 
-/* 2.3 Wrapper do Mapa */
+/* 3.2 Mapa */
 .mapa-wrapper {
     width: 100%;
     height: 400px;
@@ -284,7 +279,7 @@
 }
 
 
-/* 2.4 Informações do Mapa */
+/* 3.3 Detalhes de Endereço */
 .info-mapa {
     margin-top: 2rem;
 }
@@ -332,14 +327,11 @@
 
 
 /* ========================================================================
-   3. RESPONSIVIDADE
+   4. RESPONSIVIDADE
    ======================================================================== */
 
-/* ========================================================================
-   3.1 Extra Small Devices (Phones, 600px and down)
-   ======================================================================== */
+/* 4.1 Mobile (max 600px) */
 @media (max-width: 600px) {
-    /* Seção Contato */
     .secao-contato {
         padding: 2rem 1rem;
     }
@@ -348,7 +340,6 @@
         max-width: 100%;
     }
 
-    /* Cabeçalho */
     .cabecalho-contato {
         margin-bottom: 2.5rem;
     }
@@ -363,14 +354,11 @@
         padding: 0 1rem;
     }
 
-    /* Grid de Contatos */
     .grid-contatos {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         margin-bottom: 2.5rem;
     }
-
-    /* Cards de Contato */
     .card-contato {
         padding: 1.8rem;
         border-radius: 16px;
@@ -410,7 +398,6 @@
         font-size: 0.85rem;
     }
 
-    /* Seção Mapa */
     .container-mapa {
         padding: 1.5rem;
         margin-top: 1.5rem;
@@ -433,8 +420,6 @@
         margin-bottom: 1.5rem;
         border-radius: 12px;
     }
-
-    /* Informações do Mapa */
     .info-mapa {
         margin-top: 1.5rem;
     }
@@ -460,16 +445,12 @@
 }
 
 
-/* ========================================================================
-   3.2 Small Devices (Portrait Tablets and Large Phones, 600px and up)
-   ======================================================================== */
+/* 4.2 Small Tablets (600px - 767px) */
 @media (min-width: 600px) {
-    /* Seção Contato */
     .secao-contato {
         padding: 2.5rem 1.5rem;
     }
 
-    /* Cabeçalho */
     .cabecalho-contato {
         margin-bottom: 3rem;
     }
@@ -483,14 +464,11 @@
         font-size: 1.05rem;
     }
 
-    /* Grid de Contatos */
     .grid-contatos {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
         margin-bottom: 3rem;
     }
-
-    /* Cards de Contato */
     .card-contato {
         padding: 2rem;
     }
@@ -518,7 +496,6 @@
         padding: 0.45rem 0.9rem;
     }
 
-    /* Seção Mapa */
     .container-mapa {
         padding: 2rem;
         margin-top: 2rem;
@@ -537,8 +514,6 @@
     .mapa-wrapper {
         height: 320px;
     }
-
-    /* Informações do Mapa */
     .detalhe-endereco h4 {
         font-size: 1.1rem;
     }
@@ -554,11 +529,8 @@
 }
 
 
-/* ========================================================================
-   3.3 Medium Devices (Landscape Tablets, 768px and up)
-   ======================================================================== */
+/* 4.3 Medium Tablets (768px - 991px) */
 @media (min-width: 768px) {
-    /* Seção Contato */
     .secao-contato {
         padding: 3rem 2rem;
     }
@@ -567,7 +539,6 @@
         max-width: 1100px;
     }
 
-    /* Cabeçalho */
     .cabecalho-contato {
         margin-bottom: 3.5rem;
     }
@@ -581,14 +552,11 @@
         font-size: 1.15rem;
     }
 
-    /* Grid de Contatos */
     .grid-contatos {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2.2rem;
         margin-bottom: 3.5rem;
     }
-
-    /* Cards de Contato */
     .card-contato {
         padding: 2.2rem;
     }
@@ -611,7 +579,6 @@
         font-size: 1.05rem;
     }
 
-    /* Seção Mapa */
     .container-mapa {
         padding: 2.5rem;
         border-radius: 20px;
@@ -629,19 +596,14 @@
     .mapa-wrapper {
         height: 360px;
     }
-
-    /* Informações do Mapa */
     .detalhe-endereco ul {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
 
 
-/* ========================================================================
-   3.4 Large Devices (Laptops/Desktops, 992px and up)
-   ======================================================================== */
+/* 4.4 Large Desktops (992px - 1299px) */
 @media (min-width: 992px) {
-    /* Seção Contato */
     .secao-contato {
         padding: 3rem 2rem;
     }
@@ -650,7 +612,6 @@
         max-width: 1200px;
     }
 
-    /* Cabeçalho */
     .cabecalho-contato {
         margin-bottom: 4rem;
     }
@@ -664,14 +625,11 @@
         font-size: 1.2rem;
     }
 
-    /* Grid de Contatos */
     .grid-contatos {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2.5rem;
         margin-bottom: 4rem;
     }
-
-    /* Cards de Contato */
     .card-contato {
         padding: 2.5rem;
         border-radius: 20px;
@@ -714,7 +672,6 @@
         font-size: 0.9rem;
     }
 
-    /* Seção Mapa */
     .container-mapa {
         padding: 3rem;
         border-radius: 20px;
@@ -736,8 +693,6 @@
         margin-bottom: 2rem;
         border-radius: 15px;
     }
-
-    /* Informações do Mapa */
     .info-mapa {
         margin-top: 2rem;
     }
@@ -766,11 +721,8 @@
 }
 
 
-/* ========================================================================
-   3.5 Extra-Large Devices (Large Laptops and Desktops, 1300px and up)
-   ======================================================================== */
+/* 4.5 Extra-Large Desktops (1300px+) */
 @media (min-width: 1300px) {
-    /* Seção Contato */
     .secao-contato {
         padding: 4rem 2rem;
     }
@@ -779,7 +731,6 @@
         max-width: 1400px;
     }
 
-    /* Cabeçalho */
     .cabecalho-contato {
         margin-bottom: 4.5rem;
     }
@@ -795,14 +746,11 @@
         line-height: 1.7;
     }
 
-    /* Grid de Contatos */
     .grid-contatos {
         grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
         margin-bottom: 4.5rem;
     }
-
-    /* Cards de Contato */
     .card-contato {
         padding: 3rem;
         border-radius: 24px;
@@ -864,7 +812,6 @@
         font-size: 0.95rem;
     }
 
-    /* Seção Mapa */
     .container-mapa {
         padding: 3.5rem;
         border-radius: 24px;
@@ -887,8 +834,6 @@
         margin-bottom: 2.5rem;
         border-radius: 18px;
     }
-
-    /* Informações do Mapa */
     .info-mapa {
         margin-top: 2.5rem;
     }
@@ -921,9 +866,7 @@
 }
 
 
-/* ========================================================================
-   3.6 Ajustes para Landscape em Dispositivos Móveis
-   ======================================================================== */
+/* 4.6 Landscape Mobile (max 900px width, 500px height) */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
     .secao-contato {
         padding: 1.5rem 1rem;
