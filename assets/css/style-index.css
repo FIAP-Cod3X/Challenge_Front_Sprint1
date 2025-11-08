@@ -4,10 +4,10 @@
 
 
 /* ========================================================================
-   1. SEÇÃO HERO PRINCIPAL
+   1. SEÇÃO HERO
    ======================================================================== */
 
-/* 1.1 Container Principal */
+/* 1.1 Container */
 .secao-hero-principal {
     position: relative;
     display: flex;
@@ -75,8 +75,11 @@
 }
 
 
+/* 1.3 Imagem */
+.container-imagem-hero {
+    margin: 0;
+}
 
-/* 1.3 Imagem Hero */
 .container-imagem-hero img {
     width: 550px;
     height: auto;
@@ -91,25 +94,18 @@
     transform: scale(1.07) rotate(-2deg);
 }
 
-.container-imagem-hero {
-    margin: 0;
-}
-
-
 
 /* ========================================================================
-   2. SEÇÃO COMO PODEMOS AJUDAR
+   2. SEÇÃO COMO AJUDAR
    ======================================================================== */
 
-/* 2.1 Container Principal */
+/* 2.1 Container e Título */
 .secao-como-ajudar {
     padding: 4rem 2rem;
     background: linear-gradient(135deg, #f4f4f9 0%, #fff 100%);
     text-align: center;
 }
 
-
-/* 2.2 Título da Seção */
 .secao-como-ajudar h2 {
     position: relative;
     margin-bottom: 3rem;
@@ -131,8 +127,7 @@
 }
 
 
-
-/* 2.3 Container dos Cartões */
+/* 2.2 Grid de Cartões */
 .container-cartoes-ajuda {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -142,7 +137,7 @@
 }
 
 
-/* 2.4 Cartões de Ajuda */
+/* 2.3 Cartões Base */
 .cartao-ajuda {
     position: relative;
     padding: 2rem 1.5rem;
@@ -160,8 +155,20 @@
     transform: translateY(-12px) scale(1.02);
 }
 
+.cartao-voluntario:hover {
+    border-color: #96ac3f66;
+}
 
-/* 2.5 Efeito de Brilho */
+.cartao-atendimento:hover {
+    border-color: #3a506b66;
+}
+
+.cartao-doacao:hover {
+    border-color: #e8840766;
+}
+
+
+/* 2.4 Efeito de Brilho */
 .cartao-ajuda::before {
     content: "";
     position: absolute;
@@ -205,22 +212,7 @@
 }
 
 
-/* 2.6 Cores Específicas dos Cartões */
-.cartao-voluntario:hover {
-    border-color: #96ac3f66;
-}
-
-.cartao-atendimento:hover {
-    border-color: #3a506b66;
-}
-
-.cartao-doacao:hover {
-    border-color: #e8840766;
-}
-
-
-
-/* 2.7 Ícones dos Cartões */
+/* 2.5 Ícones */
 .icone-cartao {
     display: flex;
     align-items: center;
@@ -289,8 +281,7 @@
 }
 
 
-
-/* 2.8 Textos dos Cartões */
+/* 2.6 Textos */
 .cartao-ajuda h3 {
     margin-bottom: 1rem;
     color: #3a506b;
@@ -308,8 +299,7 @@
 }
 
 
-
-/* 2.9 Botões dos Cartões */
+/* 2.7 Botões */
 .botao-cartao {
     position: relative;
     width: 100%;
@@ -359,12 +349,11 @@
 }
 
 
-
 /* ========================================================================
-   3. SEÇÃO PORTAL DE BENEFÍCIOS
+   3. SEÇÃO BENEFÍCIOS
    ======================================================================== */
 
-/* 3.1 Container Principal */
+/* 3.1 Container e Títulos */
 .secao-portal-beneficios {
     max-width: 90%;
     margin: 1rem auto;
@@ -375,8 +364,6 @@
     text-align: center;
 }
 
-
-/* 3.2 Títulos da Seção */
 .secao-portal-beneficios h2 {
     margin: 0 0 1rem 0;
     color: #3a506b;
@@ -393,8 +380,7 @@
 }
 
 
-
-/* 3.3 Lista de Benefícios */
+/* 3.2 Lista de Benefícios */
 .lista-beneficios {
     display: flex;
     flex-direction: row;
@@ -426,8 +412,7 @@
 }
 
 
-
-/* 3.4 Ícones dos Benefícios */
+/* 3.3 Ícones */
 .lista-beneficios i {
     margin-bottom: 0.7rem;
     font-size: 2.2rem;
@@ -447,7 +432,7 @@
 }
 
 
-/* 3.5 Textos dos Benefícios */
+/* 3.4 Textos */
 .lista-beneficios span {
     color: #3a506b;
     font-family: 'Poppins', Arial, sans-serif;
@@ -469,9 +454,8 @@
    4. RESPONSIVIDADE
    ======================================================================== */
 
-/* 4.1 Extra Small Devices (phones, 600px and down) */
+/* 4.1 Mobile (max 600px) */
 @media (max-width: 600px) {
-    /* Hero Principal */
     .secao-hero-principal {
         flex-direction: column;
         padding: 2rem 1rem;
@@ -511,7 +495,6 @@
         margin: 0 auto;
     }
 
-    /* Como Podemos Ajudar */
     .secao-como-ajudar {
         padding: 2.5rem 1rem;
     }
@@ -559,7 +542,6 @@
         font-size: 0.9rem;
     }
 
-    /* Portal de Benefícios */
     .secao-portal-beneficios {
         max-width: 95%;
         padding: 2rem 1rem;
@@ -599,9 +581,10 @@
 }
 
 
-/* 4.2 Small Devices (portrait tablets and large phones, 600px and up) */
+/* ========================================
+   4.2 Small Tablets (600px+)
+   ======================================== */
 @media (min-width: 600px) {
-    /* Hero Principal */
     .secao-hero-principal {
         flex-direction: column;
         padding: 3rem 1.5rem;
@@ -635,7 +618,6 @@
         display: block;
     }
 
-    /* Como Podemos Ajudar */
     .secao-como-ajudar {
         padding: 3rem 1.5rem;
     }
@@ -663,7 +645,6 @@
         font-size: 2.2rem;
     }
 
-    /* Portal de Benefícios */
     .secao-portal-beneficios {
         max-width: 92%;
         padding: 2.2rem 1.5rem;
@@ -697,9 +678,10 @@
 }
 
 
-/* 4.3 Medium Devices (landscape tablets, 768px and up) */
+/* ========================================
+   4.3 Medium Tablets (768px+)
+   ======================================== */
 @media (min-width: 768px) {
-    /* Hero Principal */
     .secao-hero-principal {
         flex-direction: row;
         padding: 3.5rem 2rem;
@@ -740,7 +722,6 @@
         max-width: 400px;
     }
 
-    /* Como Podemos Ajudar */
     .secao-como-ajudar {
         padding: 3.5rem 2rem;
     }
@@ -761,7 +742,6 @@
         margin: 0 auto;
     }
 
-    /* Portal de Benefícios */
     .secao-portal-beneficios {
         max-width: 90%;
         padding: 2.5rem 2rem;
@@ -791,9 +771,10 @@
 }
 
 
-/* 4.4 Large Devices (laptops/desktops, 992px and up) */
+/* ========================================
+   4.4 Large Desktops (992px+)
+   ======================================== */
 @media (min-width: 992px) {
-    /* Hero Principal */
     .secao-hero-principal {
         padding: 4rem 2.5rem;
         gap: 3rem;
@@ -831,7 +812,6 @@
         max-width: none;
     }
 
-    /* Como Podemos Ajudar */
     .secao-como-ajudar {
         padding: 4rem 2.5rem;
     }
@@ -885,7 +865,6 @@
         font-size: 1rem;
     }
 
-    /* Portal de Benefícios */
     .secao-portal-beneficios {
         max-width: 90%;
         padding: 2.5rem 2rem;
@@ -922,9 +901,10 @@
 }
 
 
-/* 4.5 Extra-Large Devices (large laptops and desktops, 1300px and up) */
+/* ========================================
+   4.5 Extra-Large Desktops (1300px+)
+   ======================================== */
 @media (min-width: 1300px) {
-    /* Hero Principal */
     .secao-hero-principal {
         padding: 4rem 2.8rem;
     }
@@ -953,7 +933,6 @@
         width: 550px;
     }
 
-    /* Como Podemos Ajudar */
     .secao-como-ajudar {
         padding: 4rem 2rem;
     }
@@ -987,7 +966,6 @@
         font-size: 2.5rem;
     }
 
-    /* Portal de Benefícios */
     .secao-portal-beneficios {
         max-width: 90%;
         padding: 2.5rem 2rem;
