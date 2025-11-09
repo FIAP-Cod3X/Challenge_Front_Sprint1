@@ -3,8 +3,8 @@
 <div align="center">
 
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge)
-![Sprint](https://img.shields.io/badge/Sprint-2%2F4%20Em%20Andamento-orange?style=for-the-badge)
-![Progress](https://img.shields.io/badge/Progresso-60%25-blue?style=for-the-badge)
+![Sprint](https://img.shields.io/badge/Sprint-2%2F4%20Concluída-blue?style=for-the-badge)
+![Progress](https://img.shields.io/badge/Progresso-50%25-green?style=for-the-badge)
 
 **Plataforma de gestão inteligente para centralizar e otimizar atendimentos da ONG Turma do Bem**
 
@@ -107,7 +107,7 @@ A identidade visual foi cuidadosamente desenvolvida para transmitir **confiança
 Desenvolvido com abordagem **Mobile-First** e breakpoints completos:
 
 ```css
-/* � Mobile (max 600px) */
+/* 📱 Mobile (max 600px) */
 /* 📱 Small Tablets (600px+) */
 /* 💻 Medium Tablets (768px+) */
 /* 🖥️ Large Desktops (992px+) */
@@ -171,7 +171,7 @@ Desenvolvido com abordagem **Mobile-First** e breakpoints completos:
 </details>
 
 <details>
-<summary><strong>🔄 Sprint 1: Desenvolvimento e Aprofundamento (Concluída - 100%)</strong></summary>
+<summary><strong>✅ Sprint 2: Desenvolvimento e Aprofundamento (Concluída - 100%)</strong></summary>
 
 **🎯 Objetivo:** Tornar o site interativo e responsivo, implementar lógica de negócio.
 
