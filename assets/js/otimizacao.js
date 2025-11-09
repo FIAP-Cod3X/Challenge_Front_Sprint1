@@ -379,35 +379,6 @@
         });
     }
 
-
-    // ========================================
-    // 11. ANÁLISE DE PERFORMANCE
-    // ========================================
-    
-    /**
-     * Registra métricas de performance no console (apenas em desenvolvimento)
-     */
-    function registrarPerformance() {
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            if ('performance' in window && 'getEntriesByType' in performance) {
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        const perfData = performance.getEntriesByType('navigation')[0];
-                        
-                        console.group('📊 Métricas de Performance');
-                        console.log('⏱️ Tempo de carregamento:', Math.round(perfData.loadEventEnd - perfData.fetchStart), 'ms');
-                        console.log('🌐 Tempo de DNS:', Math.round(perfData.domainLookupEnd - perfData.domainLookupStart), 'ms');
-                        console.log('🔌 Tempo de conexão:', Math.round(perfData.connectEnd - perfData.connectStart), 'ms');
-                        console.log('📄 Tempo de resposta:', Math.round(perfData.responseEnd - perfData.requestStart), 'ms');
-                        console.log('🎨 Tempo de DOM:', Math.round(perfData.domContentLoadedEventEnd - perfData.fetchStart), 'ms');
-                        console.groupEnd();
-                    }, 0);
-                });
-            }
-        }
-    }
-
-
     // ========================================
     // 12. INICIALIZAÇÃO GLOBAL
     // ========================================
