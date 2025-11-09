@@ -1,5 +1,5 @@
 /* ========================================================================
-   SISTEMA DE LOGIN E CADASTRO COM VALIDAÇÕES PROFISSIONAIS
+   SISTEMA DE LOGIN E CADASTRO
    ======================================================================== */
 
 // ========================================
@@ -88,7 +88,7 @@ function handleLogin(event) {
     const senha = document.getElementById('senha-login').value;
     const lembrar = document.getElementById('lembrar-login').checked;
     
-    // Validações profissionais
+    // Validações
     let valido = true;
     
     // Valida e-mail
@@ -316,7 +316,7 @@ async function handleCadastro(event) {
     const senha = document.getElementById('senha-cadastro').value;
     const confirmarSenha = document.getElementById('confirmar-senha-cadastro').value;
     
-    // Validações profissionais
+    // Validações
     let valido = true;
     
     // Valida nome
@@ -457,7 +457,7 @@ document.addEventListener('keydown', function(e) {
 
 
 // ========================================
-// FUNÇÕES DE VALIDAÇÃO PROFISSIONAIS
+// FUNÇÕES DE VALIDAÇÃO
 // ========================================
 
 /**
