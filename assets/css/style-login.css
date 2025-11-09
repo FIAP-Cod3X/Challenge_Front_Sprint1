@@ -91,6 +91,28 @@
     }
 }
 
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
 
 /* 2.4 Títulos do Cabeçalho */
 .titulo-login {
@@ -185,6 +207,41 @@
     color: #999;
 }
 
+
+/* 3.4.1 Estados de Validação */
+.campo-input-login.campo-erro,
+.campo-select.campo-erro,
+.campo-textarea.campo-erro {
+    border-color: #dc3545;
+    background: #dc35450d;
+    animation: shake 0.3s ease;
+}
+
+.campo-input-login.campo-erro:focus,
+.campo-select.campo-erro:focus,
+.campo-textarea.campo-erro:focus {
+    box-shadow: 0 0 0 3px #dc35451a;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.mensagem-erro-campo {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-left: 3px solid #dc3545;
+    border-radius: 4px;
+    background: #dc35450d;
+    color: #dc3545;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    animation: slideInDown 0.3s ease;
+}
 
 
 /* 3.5 Container de Senha */
