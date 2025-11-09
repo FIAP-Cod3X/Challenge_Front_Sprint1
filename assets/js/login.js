@@ -1,6 +1,42 @@
 /* ========================================================================
-   SISTEMA DE LOGIN E CADASTRO
+   SISTEMA DE LOGIN E CADASTRO COM VALIDAÇÕES PROFISSIONAIS
    ======================================================================== */
+
+// ========================================
+// CONFIGURAÇÕES DE VALIDAÇÃO
+// ========================================
+const VALIDACAO_CONFIG = {
+    nome: {
+        minLength: 3,
+        maxLength: 100,
+        pattern: /^[a-zA-ZÀ-ÿ\s]+$/,
+        mensagens: {
+            required: 'O nome é obrigatório',
+            minLength: 'O nome deve ter no mínimo 3 caracteres',
+            maxLength: 'O nome deve ter no máximo 100 caracteres',
+            pattern: 'O nome deve conter apenas letras e espaços'
+        }
+    },
+    email: {
+        pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        mensagens: {
+            required: 'O e-mail é obrigatório',
+            pattern: 'Digite um e-mail válido (exemplo: usuario@email.com)'
+        }
+    },
+    senha: {
+        minLength: 8,
+        maxLength: 50,
+        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
+        mensagens: {
+            required: 'A senha é obrigatória',
+            minLength: 'A senha deve ter no mínimo 8 caracteres',
+            maxLength: 'A senha deve ter no máximo 50 caracteres',
+            pattern: 'A senha deve conter pelo menos uma letra maiúscula, uma minúscula e um número',
+            match: 'As senhas não coincidem'
+        }
+    }
+};
 
 /**
  * Inicialização do Sistema de Login
@@ -45,13 +81,29 @@ function inicializarSistemaLogin() {
 function handleLogin(event) {
     event.preventDefault();
     
+    // Limpa mensagens de erro anteriores
+    limparErrosValidacao();
+    
     const email = document.getElementById('email-login').value.trim();
     const senha = document.getElementById('senha-login').value;
     const lembrar = document.getElementById('lembrar-login').checked;
     
-    // Validar campos
-    if (!email || !senha) {
-        mostrarMensagem('Por favor, preencha todos os campos!', 'erro');
+    // Validações profissionais
+    let valido = true;
+    
+    // Valida e-mail
+    if (!validarCampo('email', email, 'email-login')) {
+        valido = false;
+    }
+    
+    // Valida senha (apenas obrigatório no login)
+    if (!senha) {
+        mostrarErroValidacao('senha-login', 'A senha é obrigatória');
+        valido = false;
+    }
+    
+    if (!valido) {
+        mostrarMensagem('Por favor, corrija os erros no formulário', 'erro');
         return;
     }
     
@@ -256,29 +308,43 @@ async function fecharModalCadastro() {
 async function handleCadastro(event) {
     event.preventDefault();
     
+    // Limpa mensagens de erro anteriores
+    limparErrosValidacao();
+    
     const nome = document.getElementById('nome-cadastro').value.trim();
     const email = document.getElementById('email-cadastro').value.trim();
     const senha = document.getElementById('senha-cadastro').value;
     const confirmarSenha = document.getElementById('confirmar-senha-cadastro').value;
     
-    // Validações
-    if (!nome || !email || !senha || !confirmarSenha) {
-        mostrarMensagem('Por favor, preencha todos os campos!', 'erro');
-        return;
+    // Validações profissionais
+    let valido = true;
+    
+    // Valida nome
+    if (!validarCampo('nome', nome, 'nome-cadastro')) {
+        valido = false;
     }
     
-    if (nome.length < 3) {
-        mostrarMensagem('Nome deve ter no mínimo 3 caracteres!', 'erro');
-        return;
+    // Valida e-mail
+    if (!validarCampo('email', email, 'email-cadastro')) {
+        valido = false;
     }
     
-    if (senha.length < 8) {
-        mostrarMensagem('Senha deve ter no mínimo 8 caracteres!', 'erro');
-        return;
+    // Valida senha
+    if (!validarCampo('senha', senha, 'senha-cadastro')) {
+        valido = false;
     }
     
-    if (senha !== confirmarSenha) {
-        mostrarMensagem('As senhas não coincidem!', 'erro');
+    // Valida confirmação de senha
+    if (!confirmarSenha) {
+        mostrarErroValidacao('confirmar-senha-cadastro', 'A confirmação de senha é obrigatória');
+        valido = false;
+    } else if (senha !== confirmarSenha) {
+        mostrarErroValidacao('confirmar-senha-cadastro', VALIDACAO_CONFIG.senha.mensagens.match);
+        valido = false;
+    }
+    
+    if (!valido) {
+        mostrarMensagem('Por favor, corrija os erros no formulário', 'erro');
         return;
     }
     
@@ -387,4 +453,197 @@ document.addEventListener('keydown', function(e) {
             fecharModalCadastro();
         }
     }
+});
+
+
+// ========================================
+// FUNÇÕES DE VALIDAÇÃO PROFISSIONAIS
+// ========================================
+
+/**
+ * Valida um campo específico
+ * @param {string} tipo - Tipo do campo (nome, email, senha)
+ * @param {string} valor - Valor do campo
+ * @param {string} campoId - ID do elemento do campo
+ * @returns {boolean} - true se válido
+ */
+function validarCampo(tipo, valor, campoId) {
+    const config = VALIDACAO_CONFIG[tipo];
+    
+    // Verifica se é obrigatório
+    if (!valor) {
+        mostrarErroValidacao(campoId, config.mensagens.required);
+        return false;
+    }
+    
+    // Valida tamanho mínimo
+    if (config.minLength && valor.length < config.minLength) {
+        mostrarErroValidacao(campoId, config.mensagens.minLength);
+        return false;
+    }
+    
+    // Valida tamanho máximo
+    if (config.maxLength && valor.length > config.maxLength) {
+        mostrarErroValidacao(campoId, config.mensagens.maxLength);
+        return false;
+    }
+    
+    // Valida padrão (regex)
+    if (config.pattern && !config.pattern.test(valor)) {
+        mostrarErroValidacao(campoId, config.mensagens.pattern);
+        return false;
+    }
+    
+    // Remove erro se existir
+    removerErroValidacao(campoId);
+    return true;
+}
+
+
+/**
+ * Mostra erro de validação em um campo
+ * @param {string} campoId - ID do campo
+ * @param {string} mensagem - Mensagem de erro
+ */
+function mostrarErroValidacao(campoId, mensagem) {
+    const campo = document.getElementById(campoId);
+    if (!campo) return;
+    
+    // Adiciona classe de erro ao campo
+    campo.classList.add('campo-erro');
+    campo.setAttribute('aria-invalid', 'true');
+    
+    // Verifica se já existe mensagem de erro
+    let mensagemErro = campo.parentElement.querySelector('.mensagem-erro-campo');
+    
+    if (!mensagemErro) {
+        // Cria elemento de mensagem de erro
+        mensagemErro = document.createElement('span');
+        mensagemErro.className = 'mensagem-erro-campo';
+        mensagemErro.setAttribute('role', 'alert');
+        
+        // Insere após o campo (ou após o container de senha se existir)
+        const container = campo.closest('.container-senha, .container-senha-modal');
+        if (container) {
+            container.parentElement.appendChild(mensagemErro);
+        } else {
+            campo.parentElement.appendChild(mensagemErro);
+        }
+    }
+    
+    mensagemErro.textContent = mensagem;
+    
+    // Adiciona animação
+    mensagemErro.style.animation = 'slideInDown 0.3s ease';
+}
+
+
+/**
+ * Remove erro de validação de um campo
+ * @param {string} campoId - ID do campo
+ */
+function removerErroValidacao(campoId) {
+    const campo = document.getElementById(campoId);
+    if (!campo) return;
+    
+    // Remove classe de erro
+    campo.classList.remove('campo-erro');
+    campo.removeAttribute('aria-invalid');
+    
+    // Remove mensagem de erro
+    const container = campo.closest('.container-senha, .container-senha-modal');
+    const parent = container ? container.parentElement : campo.parentElement;
+    const mensagemErro = parent.querySelector('.mensagem-erro-campo');
+    
+    if (mensagemErro) {
+        mensagemErro.style.animation = 'slideOutUp 0.3s ease';
+        setTimeout(() => mensagemErro.remove(), 300);
+    }
+}
+
+
+/**
+ * Limpa todos os erros de validação
+ */
+function limparErrosValidacao() {
+    // Remove classes de erro
+    document.querySelectorAll('.campo-erro').forEach(campo => {
+        campo.classList.remove('campo-erro');
+        campo.removeAttribute('aria-invalid');
+    });
+    
+    // Remove mensagens de erro
+    document.querySelectorAll('.mensagem-erro-campo').forEach(msg => {
+        msg.remove();
+    });
+}
+
+
+/**
+ * Adiciona validação em tempo real aos campos
+ */
+function adicionarValidacaoTempoReal() {
+    // E-mail login
+    const emailLogin = document.getElementById('email-login');
+    if (emailLogin) {
+        emailLogin.addEventListener('blur', function() {
+            if (this.value.trim()) {
+                validarCampo('email', this.value.trim(), 'email-login');
+            }
+        });
+        emailLogin.addEventListener('input', function() {
+            if (this.classList.contains('campo-erro')) {
+                removerErroValidacao('email-login');
+            }
+        });
+    }
+    
+    // Campos do modal de cadastro (serão adicionados quando o modal for criado)
+    document.addEventListener('focus', function(e) {
+        if (e.target.matches('#nome-cadastro, #email-cadastro, #senha-cadastro, #confirmar-senha-cadastro')) {
+            e.target.addEventListener('blur', validarCampoTempoReal, { once: true });
+            e.target.addEventListener('input', removerErroTempoReal);
+        }
+    }, true);
+}
+
+
+/**
+ * Valida campo em tempo real (no blur)
+ */
+function validarCampoTempoReal(event) {
+    const campo = event.target;
+    const valor = campo.value.trim();
+    
+    if (!valor) return; // Não valida campo vazio no blur
+    
+    if (campo.id === 'nome-cadastro') {
+        validarCampo('nome', valor, 'nome-cadastro');
+    } else if (campo.id === 'email-cadastro') {
+        validarCampo('email', valor, 'email-cadastro');
+    } else if (campo.id === 'senha-cadastro') {
+        validarCampo('senha', valor, 'senha-cadastro');
+    } else if (campo.id === 'confirmar-senha-cadastro') {
+        const senha = document.getElementById('senha-cadastro').value;
+        if (valor !== senha) {
+            mostrarErroValidacao('confirmar-senha-cadastro', VALIDACAO_CONFIG.senha.mensagens.match);
+        }
+    }
+}
+
+
+/**
+ * Remove erro em tempo real (no input)
+ */
+function removerErroTempoReal(event) {
+    const campo = event.target;
+    if (campo.classList.contains('campo-erro')) {
+        removerErroValidacao(campo.id);
+    }
+}
+
+
+// Adiciona validação em tempo real quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    adicionarValidacaoTempoReal();
 });
