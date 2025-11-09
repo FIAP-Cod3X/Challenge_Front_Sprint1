@@ -3,8 +3,8 @@
 <div align="center">
 
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge)
-![Sprint](https://img.shields.io/badge/Sprint-1%2F4%20Concluídas-success?style=for-the-badge)
-![Progress](https://img.shields.io/badge/Progresso-25%25-blue?style=for-the-badge)
+![Sprint](https://img.shields.io/badge/Sprint-2%2F4%20Em%20Andamento-orange?style=for-the-badge)
+![Progress](https://img.shields.io/badge/Progresso-60%25-blue?style=for-the-badge)
 
 **Plataforma de gestão inteligente para centralizar e otimizar atendimentos da ONG Turma do Bem**
 
@@ -42,17 +42,19 @@ O projeto contém as seguintes páginas principais, com navegação clara e func
 📁 Estrutura de Páginas
 ├── 🏠 Home (index.html)              → Página inicial e ponto de entrada
 ├── 💡 Sobre (sobre.html)             → Projeto, tecnologias e roadmap
-├── ❓ FAQ (faq.html)                 → Perguntas frequentes e suporte
+├── ❓ FAQ (faq.html)                 → Perguntas frequentes com validação
 ├── 📞 Contato (contato.html)        → Formulário e informações de contato
-└── 👥 Quem Somos (quem-somos.html)  → Apresentação da equipe
+├── 👥 Quem Somos (quem-somos.html)  → Apresentação da equipe
+└── 📊 Relatório FAQ (relatorio-faq.html) → Visualização de perguntas enviadas
 ```
 
 ### 📱 **Páginas Complementares**
 
 Além das páginas obrigatórias, o projeto inclui páginas específicas da solução:
 
-- **🔐 Login/Cadastro:** Sistema de autenticação para voluntários e administradores
-- **📊 Dashboard:** Painel gerencial com métricas e controles (futuro)
+- **🔐 Login/Cadastro:** Sistema completo de autenticação com validações profissionais
+- **📊 Painel:** Dashboard interativo com gerenciamento de usuários e dados
+- **📋 Relatório FAQ:** Visualização e gestão de perguntas frequentes enviadas
 - **💬 Chat:** Sistema de atendimento em tempo real (futuro)
 
 ---
@@ -97,16 +99,19 @@ A identidade visual foi cuidadosamente desenvolvida para transmitir **confiança
 - **🎯 Navegação Intuitiva:** Arquitetura de informação clara e fluida
 - **🎨 Consistência Visual:** Harmonia em **todas** as páginas do site
 - **♿ Acessibilidade:** ARIA labels, contraste adequado e navegação por teclado
+- **✅ Validações Profissionais:** Sistema JavaScript robusto para formulários
+- **💾 LocalStorage:** Persistência de dados de login, cadastro e FAQ
 
-### 📱 **Responsividade e Breakpoint**
+### 📱 **Responsividade e Breakpoints**
 
-Desenvolvido com abordagem **Desktop-First** e breakpoint estratégico:
+Desenvolvido com abordagem **Mobile-First** e breakpoints completos:
 
 ```css
-/* 🖥️ Desktop Grande (1300px+) */
-@media (min-width: 1350px) {
-  /* Layout expandido com barra de pesquisa */
-}
+/* � Mobile (max 600px) */
+/* 📱 Small Tablets (600px+) */
+/* 💻 Medium Tablets (768px+) */
+/* 🖥️ Large Desktops (992px+) */
+/* 🖥️ Extra-Large Desktops (1300px+) */
 ```
 
 ---
@@ -119,6 +124,7 @@ Desenvolvido com abordagem **Desktop-First** e breakpoint estratégico:
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-E74D89?style=for-the-badge&logo=dribbble&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![LocalStorage](https://img.shields.io/badge/LocalStorage-FFA500?style=for-the-badge&logo=html5&logoColor=white)
 
 ### **Design & UI/UX**
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
@@ -141,7 +147,7 @@ Desenvolvido com abordagem **Desktop-First** e breakpoint estratégico:
 | Sprint | Status | Título | Progresso |
 |:------:|:------:|--------|:---------:|
 | **1** | ✅ | **Fundação e Prototipagem** | 100% |
-| **2** | 🔄 | **Desenvolvimento e Aprofundamento** | 0% |
+| **2** | ✅ | **Desenvolvimento e Aprofundamento** | 100% |
 | **3** | 🔄 | **Back-end e Integração** | 0% |
 | **4** | ⏳ | **Funcionalidades Avançadas** | 0% |
 
@@ -165,13 +171,21 @@ Desenvolvido com abordagem **Desktop-First** e breakpoint estratégico:
 </details>
 
 <details>
-<summary><strong>🔄 Sprint 2: Desenvolvimento e Aprofundamento (Planejada)</strong></summary>
+<summary><strong>🔄 Sprint 1: Desenvolvimento e Aprofundamento (Concluída - 100%)</strong></summary>
 
 **🎯 Objetivo:** Tornar o site interativo e responsivo, implementar lógica de negócio.
 
 **📦 Entregas:**
-- 🔄 Responsividade completa para mobile e tablet
-- 🔄 Interatividade com JavaScript (validação de formulários)
+- ✅ Responsividade completa para mobile e tablet (5 breakpoints)
+- ✅ Interatividade com JavaScript (validações profissionais em todos os formulários)
+- ✅ Sistema de autenticação (Login/Cadastro) com LocalStorage
+- ✅ Sistema de armazenamento de perguntas FAQ com persistência
+- ✅ Menu hambúrguer responsivo para dispositivos móveis
+- ✅ Página de relatórios FAQ com visualização de dados
+- ✅ Painel administrativo com gerenciamento de usuários
+- ✅ Validações em tempo real com feedback visual
+- ✅ Notificações e mensagens de feedback ao usuário
+- ✅ Contador de caracteres em campos de texto
 - 🔄 Implementação das classes Java
 - 🔄 Modelo Lógico Relacional do banco de dados
 - 🔄 Business Model Canvas e Mapa de Empatia
