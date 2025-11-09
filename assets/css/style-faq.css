@@ -317,18 +317,42 @@
 
 
 /* 2.8 Estados de Validação */
-.campo-input:invalid:not(:placeholder-shown),
-.campo-select:invalid,
-.campo-textarea:invalid:not(:placeholder-shown) {
-    border-color: #e74c3c;
-    background: #e74c3c0d;
+.campo-input.campo-erro,
+.campo-select.campo-erro,
+.campo-textarea.campo-erro {
+    border-color: #dc3545;
+    background: #dc35450d;
+    animation: shake 0.3s ease;
 }
 
-.campo-input:valid:not(:placeholder-shown),
-.campo-select:valid,
-.campo-textarea:valid:not(:placeholder-shown) {
-    border-color: #27ae60;
-    background: #27ae600d;
+.campo-input.campo-erro:focus,
+.campo-select.campo-erro:focus,
+.campo-textarea.campo-erro:focus {
+    box-shadow: 0 0 0 3px #dc35451a;
+}
+
+.mensagem-erro-campo {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-left: 3px solid #dc3545;
+    border-radius: 4px;
+    background: #dc35450d;
+    color: #dc3545;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    animation: slideInDown 0.3s ease;
+}
+
+.contador-caracteres {
+    display: block;
+    margin-top: 0.3rem;
+    color: #3a506b;
+    font-size: 0.85rem;
+    text-align: right;
+    opacity: 0.7;
+    transition: all 0.3s;
 }
 
 .texto-ajuda {
