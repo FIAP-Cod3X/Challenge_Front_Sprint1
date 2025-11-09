@@ -11,6 +11,51 @@
     // ========================================
     const STORAGE_KEY = 'cod3x_faq_perguntas';
     const MAX_PERGUNTAS = 100; // Limite de perguntas armazenadas
+    
+    // CONFIGURAÇÕES DE VALIDAÇÃO
+    const VALIDACAO_FAQ = {
+        nome: {
+            minLength: 3,
+            maxLength: 100,
+            pattern: /^[a-zA-ZÀ-ÿ\s]+$/,
+            mensagens: {
+                required: 'O nome é obrigatório',
+                minLength: 'O nome deve ter no mínimo 3 caracteres',
+                maxLength: 'O nome deve ter no máximo 100 caracteres',
+                pattern: 'O nome deve conter apenas letras e espaços'
+            }
+        },
+        email: {
+            pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+            mensagens: {
+                required: 'O e-mail é obrigatório',
+                pattern: 'Digite um e-mail válido (exemplo: usuario@email.com)'
+            }
+        },
+        categoria: {
+            mensagens: {
+                required: 'Selecione uma categoria para sua dúvida'
+            }
+        },
+        assunto: {
+            minLength: 5,
+            maxLength: 100,
+            mensagens: {
+                required: 'O assunto é obrigatório',
+                minLength: 'O assunto deve ter no mínimo 5 caracteres',
+                maxLength: 'O assunto deve ter no máximo 100 caracteres'
+            }
+        },
+        mensagem: {
+            minLength: 10,
+            maxLength: 1000,
+            mensagens: {
+                required: 'A mensagem é obrigatória',
+                minLength: 'A mensagem deve ter no mínimo 10 caracteres',
+                maxLength: 'A mensagem deve ter no máximo 1000 caracteres'
+            }
+        }
+    };
 
 
     // ========================================
@@ -156,6 +201,9 @@
             console.log('FAQ Storage: Formulário enviado!');
             evento.preventDefault(); // Previne envio padrão
             
+            // Limpa erros anteriores
+            limparErrosValidacao();
+            
             // Coleta os dados do formulário
             const dados = {
                 nome: document.getElementById('nome-completo').value.trim(),
@@ -166,9 +214,42 @@
                 receberNovidades: document.getElementById('receber-novidades').checked
             };
             
-            // Validação básica
-            if (!dados.nome || !dados.email || !dados.categoria || !dados.assunto || !dados.mensagem) {
-                mostrarNotificacao('Por favor, preencha todos os campos obrigatórios.', 'erro');
+            // Validações profissionais
+            let valido = true;
+            
+            // Valida nome
+            if (!validarCampoFAQ('nome', dados.nome, 'nome-completo')) {
+                valido = false;
+            }
+            
+            // Valida e-mail
+            if (!validarCampoFAQ('email', dados.email, 'email')) {
+                valido = false;
+            }
+            
+            // Valida categoria
+            if (!validarCampoFAQ('categoria', dados.categoria, 'categoria-duvida')) {
+                valido = false;
+            }
+            
+            // Valida assunto
+            if (!validarCampoFAQ('assunto', dados.assunto, 'assunto')) {
+                valido = false;
+            }
+            
+            // Valida mensagem
+            if (!validarCampoFAQ('mensagem', dados.mensagem, 'mensagem')) {
+                valido = false;
+            }
+            
+            if (!valido) {
+                mostrarNotificacao('Por favor, corrija os erros no formulário antes de enviar', 'erro');
+                // Foca no primeiro campo com erro
+                const primeiroErro = document.querySelector('.campo-erro');
+                if (primeiroErro) {
+                    primeiroErro.focus();
+                    primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
                 return;
             }
             
@@ -379,8 +460,227 @@
 
 
     // ========================================
+    // FUNÇÕES DE VALIDAÇÃO
+    // ========================================
+
+    /**
+     * Valida um campo específico do FAQ
+     * @param {string} tipo - Tipo do campo (nome, email, categoria, assunto, mensagem)
+     * @param {string} valor - Valor do campo
+     * @param {string} campoId - ID do elemento do campo
+     * @returns {boolean} - true se válido
+     */
+    function validarCampoFAQ(tipo, valor, campoId) {
+        const config = VALIDACAO_FAQ[tipo];
+        
+        // Verifica se é obrigatório
+        if (!valor || (tipo === 'categoria' && valor === '')) {
+            mostrarErroValidacaoFAQ(campoId, config.mensagens.required);
+            return false;
+        }
+        
+        // Valida tamanho mínimo
+        if (config.minLength && valor.length < config.minLength) {
+            mostrarErroValidacaoFAQ(campoId, config.mensagens.minLength);
+            return false;
+        }
+        
+        // Valida tamanho máximo
+        if (config.maxLength && valor.length > config.maxLength) {
+            mostrarErroValidacaoFAQ(campoId, config.mensagens.maxLength);
+            return false;
+        }
+        
+        // Valida padrão (regex)
+        if (config.pattern && !config.pattern.test(valor)) {
+            mostrarErroValidacaoFAQ(campoId, config.mensagens.pattern);
+            return false;
+        }
+        
+        // Remove erro se existir
+        removerErroValidacaoFAQ(campoId);
+        return true;
+    }
+
+
+    /**
+     * Mostra erro de validação em um campo do FAQ
+     * @param {string} campoId - ID do campo
+     * @param {string} mensagem - Mensagem de erro
+     */
+    function mostrarErroValidacaoFAQ(campoId, mensagem) {
+        const campo = document.getElementById(campoId);
+        if (!campo) return;
+        
+        // Adiciona classe de erro ao campo
+        campo.classList.add('campo-erro');
+        campo.setAttribute('aria-invalid', 'true');
+        
+        // Verifica se já existe mensagem de erro
+        const grupoCampo = campo.closest('.grupo-campo');
+        let mensagemErro = grupoCampo ? grupoCampo.querySelector('.mensagem-erro-campo') : null;
+        
+        if (!mensagemErro) {
+            // Cria elemento de mensagem de erro
+            mensagemErro = document.createElement('span');
+            mensagemErro.className = 'mensagem-erro-campo';
+            mensagemErro.setAttribute('role', 'alert');
+            
+            // Insere após o campo
+            if (grupoCampo) {
+                grupoCampo.appendChild(mensagemErro);
+            } else {
+                campo.parentElement.appendChild(mensagemErro);
+            }
+        }
+        
+        mensagemErro.textContent = mensagem;
+        
+        // Adiciona animação
+        mensagemErro.style.animation = 'slideInDown 0.3s ease';
+    }
+
+
+    /**
+     * Remove erro de validação de um campo do FAQ
+     * @param {string} campoId - ID do campo
+     */
+    function removerErroValidacaoFAQ(campoId) {
+        const campo = document.getElementById(campoId);
+        if (!campo) return;
+        
+        // Remove classe de erro
+        campo.classList.remove('campo-erro');
+        campo.removeAttribute('aria-invalid');
+        
+        // Remove mensagem de erro
+        const grupoCampo = campo.closest('.grupo-campo');
+        const mensagemErro = grupoCampo ? grupoCampo.querySelector('.mensagem-erro-campo') : null;
+        
+        if (mensagemErro) {
+            mensagemErro.style.animation = 'slideOutUp 0.3s ease';
+            setTimeout(() => mensagemErro.remove(), 300);
+        }
+    }
+
+
+    /**
+     * Limpa todos os erros de validação do FAQ
+     */
+    function limparErrosValidacao() {
+        // Remove classes de erro
+        document.querySelectorAll('.campo-erro').forEach(campo => {
+            campo.classList.remove('campo-erro');
+            campo.removeAttribute('aria-invalid');
+        });
+        
+        // Remove mensagens de erro
+        document.querySelectorAll('.mensagem-erro-campo').forEach(msg => {
+            msg.remove();
+        });
+    }
+
+
+    /**
+     * Adiciona validação em tempo real aos campos do FAQ
+     */
+    function adicionarValidacaoTempoRealFAQ() {
+        const campos = {
+            'nome-completo': 'nome',
+            'email': 'email',
+            'categoria-duvida': 'categoria',
+            'assunto': 'assunto',
+            'mensagem': 'mensagem'
+        };
+        
+        Object.keys(campos).forEach(campoId => {
+            const campo = document.getElementById(campoId);
+            if (!campo) return;
+            
+            const tipo = campos[campoId];
+            
+            // Validação no blur (quando sai do campo)
+            campo.addEventListener('blur', function() {
+                const valor = this.value.trim();
+                if (valor || this.classList.contains('campo-erro')) {
+                    validarCampoFAQ(tipo, valor, campoId);
+                }
+            });
+            
+            // Remove erro enquanto digita
+            campo.addEventListener('input', function() {
+                if (this.classList.contains('campo-erro')) {
+                    // Valida novamente se já tinha erro
+                    const valor = this.value.trim();
+                    if (valor) {
+                        validarCampoFAQ(tipo, valor, campoId);
+                    }
+                }
+                
+                // Atualiza contador de caracteres se existir
+                atualizarContadorCaracteres(campoId);
+            });
+        });
+    }
+
+
+    /**
+     * Atualiza contador de caracteres
+     */
+    function atualizarContadorCaracteres(campoId) {
+        const campo = document.getElementById(campoId);
+        if (!campo) return;
+        
+        const grupoCampo = campo.closest('.grupo-campo');
+        if (!grupoCampo) return;
+        
+        let contador = grupoCampo.querySelector('.contador-caracteres');
+        
+        // Cria contador se não existir (apenas para assunto e mensagem)
+        if (!contador && (campoId === 'assunto' || campoId === 'mensagem')) {
+            const maxLength = VALIDACAO_FAQ[campoId === 'assunto' ? 'assunto' : 'mensagem'].maxLength;
+            contador = document.createElement('small');
+            contador.className = 'contador-caracteres';
+            contador.style.cssText = `
+                display: block;
+                margin-top: 0.4rem;
+                color: #3a506b;
+                font-size: 0.85rem;
+                font-family: 'Open Sans', Arial, sans-serif;
+                text-align: right;
+                opacity: 0.7;
+            `;
+            grupoCampo.appendChild(contador);
+        }
+        
+        if (contador) {
+            const atual = campo.value.length;
+            const max = VALIDACAO_FAQ[campoId === 'assunto' ? 'assunto' : 'mensagem'].maxLength;
+            const porcentagem = (atual / max) * 100;
+            
+            contador.textContent = `${atual}/${max} caracteres`;
+            
+            // Muda cor conforme aproxima do limite
+            if (porcentagem >= 90) {
+                contador.style.color = '#dc3545';
+                contador.style.opacity = '1';
+            } else if (porcentagem >= 70) {
+                contador.style.color = '#e88407';
+                contador.style.opacity = '0.9';
+            } else {
+                contador.style.color = '#3a506b';
+                contador.style.opacity = '0.7';
+            }
+        }
+    }
+
+
+    // ========================================
     // INICIALIZAÇÃO
     // ========================================
-    document.addEventListener('DOMContentLoaded', inicializarFormulario);
+    document.addEventListener('DOMContentLoaded', function() {
+        inicializarFormulario();
+        adicionarValidacaoTempoRealFAQ();
+    });
 
 })();
