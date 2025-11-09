@@ -367,7 +367,7 @@
             color: white;
             font-family: 'Poppins', Arial, sans-serif;
             box-shadow: 0 4px 15px rgba(150, 172, 63, 0.3);
-            z-index: 9999;
+            z-index: 999;
             display: flex;
             align-items: center;
             gap: 0.8rem;
