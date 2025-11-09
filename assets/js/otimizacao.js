@@ -302,7 +302,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            z-index: 999;
+            z-index: 998;
             box-shadow: 0 4px 12px #96ac3f33;
         `;
         
